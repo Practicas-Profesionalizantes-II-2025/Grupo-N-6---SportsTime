@@ -1,0 +1,644 @@
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.csproj.AssemblyReference.cache
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm..Designer.resources
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm..resources
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.Form_Home.Form1.resources
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.Form_Home.TurnoForm.resources
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.FormAdmin.InicoSesion.resources
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.Properties.Resources.resources
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.csproj.GenerateResource.cache
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.AssemblyInfoInputs.cache
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.AssemblyInfo.cs
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.csproj.CoreCompileInputs.cache
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\API.deps.json
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\API.runtimeconfig.json
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\appsettings.Development.json
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\appsettings.json
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\API.exe
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\WinForm.exe
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\WinForm.deps.json
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\WinForm.runtimeconfig.json
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\WinForm.dll
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\WinForm.pdb
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Azure.Core.dll
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Azure.Identity.dll
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\BCrypt.Net-Next.dll
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Data.SqlClient.dll
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.dll
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Identity.Client.dll
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Identity.Client.NativeInterop.dll
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Logging.dll
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.dll
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Tokens.dll
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.OpenApi.dll
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.SqlServer.Server.dll
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.Core.dll
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.WinForms.dll
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.Wpf.dll
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\System.Memory.Data.dll
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\System.Runtime.Caching.dll
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-arm64\native\msalruntime_arm64.dll
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-x64\native\msalruntime.dll
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-x86\native\msalruntime_x86.dll
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-arm64\native\WebView2Loader.dll
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-x64\native\WebView2Loader.dll
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-x86\native\WebView2Loader.dll
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\API.dll
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Negocio.dll
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Shared.dll
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Negocio.pdb
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\API.pdb
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Shared.pdb
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.csproj.Up2Date
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.dll
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\refint\WinForm.dll
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.pdb
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.genruntimeconfig.cache
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\ref\WinForm.dll
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\API.deps.json
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\API.runtimeconfig.json
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\appsettings.Development.json
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\appsettings.json
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\API.exe
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\WinForm.exe
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\WinForm.deps.json
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\WinForm.runtimeconfig.json
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\WinForm.dll
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\WinForm.pdb
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Azure.Core.dll
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Azure.Identity.dll
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\BCrypt.Net-Next.dll
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Data.SqlClient.dll
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.dll
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Identity.Client.dll
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Identity.Client.NativeInterop.dll
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Logging.dll
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.dll
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Tokens.dll
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.OpenApi.dll
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.SqlServer.Server.dll
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.Core.dll
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.WinForms.dll
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.Wpf.dll
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\System.Memory.Data.dll
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\System.Runtime.Caching.dll
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-arm64\native\msalruntime_arm64.dll
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-x64\native\msalruntime.dll
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-x86\native\msalruntime_x86.dll
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-arm64\native\WebView2Loader.dll
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-x64\native\WebView2Loader.dll
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-x86\native\WebView2Loader.dll
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\API.dll
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Negocio.dll
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Shared.dll
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\API.pdb
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Negocio.pdb
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Shared.pdb
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.csproj.AssemblyReference.cache
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm..Designer.resources
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm..resources
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.Form_Home.Form1.resources
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.Form_Home.TurnoForm.resources
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.FormAdmin.InicoSesion.resources
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.Properties.Resources.resources
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.csproj.GenerateResource.cache
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.AssemblyInfoInputs.cache
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.AssemblyInfo.cs
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.csproj.CoreCompileInputs.cache
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.csproj.Up2Date
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.dll
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\refint\WinForm.dll
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.pdb
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.genruntimeconfig.cache
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\ref\WinForm.dll
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\appsettings.Development.json
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\appsettings.json
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\API.deps.json
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\API.runtimeconfig.json
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\API.exe
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\WinForm.exe
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\WinForm.deps.json
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\WinForm.runtimeconfig.json
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\WinForm.dll
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\WinForm.pdb
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Azure.Core.dll
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Azure.Identity.dll
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\BCrypt.Net-Next.dll
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Data.SqlClient.dll
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.dll
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Identity.Client.dll
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Identity.Client.NativeInterop.dll
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Logging.dll
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.dll
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Tokens.dll
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.OpenApi.dll
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.SqlServer.Server.dll
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.Core.dll
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.WinForms.dll
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.Wpf.dll
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\System.Memory.Data.dll
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\System.Runtime.Caching.dll
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-arm64\native\msalruntime_arm64.dll
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-x64\native\msalruntime.dll
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-x86\native\msalruntime_x86.dll
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-arm64\native\WebView2Loader.dll
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-x64\native\WebView2Loader.dll
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-x86\native\WebView2Loader.dll
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\API.dll
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Negocio.dll
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Shared.dll
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\API.pdb
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Negocio.pdb
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Shared.pdb
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.csproj.AssemblyReference.cache
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm..Designer.resources
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm..resources
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.Form_Home.Form1.resources
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.Form_Home.TurnoForm.resources
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.FormAdmin.InicoSesion.resources
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.Properties.Resources.resources
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.csproj.GenerateResource.cache
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.AssemblyInfoInputs.cache
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.AssemblyInfo.cs
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.csproj.CoreCompileInputs.cache
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.sourcelink.json
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.csproj.Up2Date
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.dll
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\refint\WinForm.dll
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.pdb
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.genruntimeconfig.cache
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\ref\WinForm.dll
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\appsettings.Development.json
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\API.deps.json
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\API.runtimeconfig.json
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\appsettings.json
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\API.exe
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\WinForm.exe
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\WinForm.deps.json
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\WinForm.runtimeconfig.json
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\WinForm.dll
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\WinForm.pdb
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Azure.Core.dll
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Azure.Identity.dll
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\BCrypt.Net-Next.dll
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Data.SqlClient.dll
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.dll
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Identity.Client.dll
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Identity.Client.NativeInterop.dll
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Logging.dll
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.dll
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Tokens.dll
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.OpenApi.dll
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.SqlServer.Server.dll
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.Core.dll
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.WinForms.dll
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.Wpf.dll
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\System.Memory.Data.dll
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\System.Runtime.Caching.dll
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-arm64\native\msalruntime_arm64.dll
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-x64\native\msalruntime.dll
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-x86\native\msalruntime_x86.dll
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-arm64\native\WebView2Loader.dll
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-x64\native\WebView2Loader.dll
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-x86\native\WebView2Loader.dll
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\API.dll
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Negocio.dll
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Shared.dll
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\API.pdb
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Negocio.pdb
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Shared.pdb
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.csproj.AssemblyReference.cache
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm..Designer.resources
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm..resources
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.Form_Home.FormCanchas.resources
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.Form_Home.FormCliente.resources
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.Form_Home.FormInicio.resources
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.Form_Home.FormProductos.resources
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.Form_Home.TurnoForm.resources
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.FormAdmin.InicoSesion.resources
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.Properties.Resources.resources
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.csproj.GenerateResource.cache
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.AssemblyInfoInputs.cache
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.AssemblyInfo.cs
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.csproj.CoreCompileInputs.cache
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.csproj.Up2Date
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.dll
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\refint\WinForm.dll
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.pdb
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.genruntimeconfig.cache
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\ref\WinForm.dll
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\negociosettings.json
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\API.deps.json
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\API.runtimeconfig.json
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\appsettings.Development.json
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\appsettings.json
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\API.exe
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\WinForm.exe
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\negociosettings.json
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\WinForm.deps.json
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\WinForm.runtimeconfig.json
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\WinForm.dll
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\WinForm.pdb
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Azure.Core.dll
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Azure.Identity.dll
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\BCrypt.Net-Next.dll
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Data.SqlClient.dll
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.dll
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Identity.Client.dll
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Identity.Client.NativeInterop.dll
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Logging.dll
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.dll
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Tokens.dll
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.OpenApi.dll
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.SqlServer.Server.dll
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.Core.dll
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.WinForms.dll
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.Wpf.dll
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\System.Memory.Data.dll
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\System.Runtime.Caching.dll
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-arm64\native\msalruntime_arm64.dll
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-x64\native\msalruntime.dll
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-x86\native\msalruntime_x86.dll
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-arm64\native\WebView2Loader.dll
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-x64\native\WebView2Loader.dll
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-x86\native\WebView2Loader.dll
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\API.dll
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Negocio.dll
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Shared.dll
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\API.pdb
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Negocio.pdb
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Shared.pdb
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.csproj.AssemblyReference.cache
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm..Designer.resources
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm..resources
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.Form_Home.FormCanchas.resources
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.Form_Home.FormCliente.resources
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.Form_Home.FormInicio.resources
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.Form_Home.FormProductos.resources
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.Form_Home.TurnoForm.resources
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.FormAdmin.InicoSesion.resources
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.Properties.Resources.resources
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.csproj.GenerateResource.cache
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.AssemblyInfoInputs.cache
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.AssemblyInfo.cs
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.csproj.CoreCompileInputs.cache
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.csproj.Up2Date
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.dll
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\refint\WinForm.dll
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.pdb
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.genruntimeconfig.cache
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\ref\WinForm.dll
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\appsettings.Development.json
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\appsettings.json
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\API.deps.json
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\API.runtimeconfig.json
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\API.exe
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\WinForm.exe
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\negociosettings.json
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\WinForm.deps.json
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\WinForm.runtimeconfig.json
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\WinForm.dll
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\WinForm.pdb
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Azure.Core.dll
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Azure.Identity.dll
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\BCrypt.Net-Next.dll
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Data.SqlClient.dll
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.dll
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Identity.Client.dll
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Identity.Client.NativeInterop.dll
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Logging.dll
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.dll
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Tokens.dll
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.OpenApi.dll
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.SqlServer.Server.dll
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.Core.dll
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.WinForms.dll
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.Wpf.dll
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\System.Memory.Data.dll
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\System.Runtime.Caching.dll
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-arm64\native\msalruntime_arm64.dll
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-x64\native\msalruntime.dll
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-x86\native\msalruntime_x86.dll
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-arm64\native\WebView2Loader.dll
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-x64\native\WebView2Loader.dll
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-x86\native\WebView2Loader.dll
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\API.dll
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Negocio.dll
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Shared.dll
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\API.pdb
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Negocio.pdb
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Shared.pdb
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.csproj.AssemblyReference.cache
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm..Designer.resources
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm..resources
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.Form_Home.FormCanchas.resources
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.Form_Home.FormCliente.resources
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.Form_Home.FormInicio.resources
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.Form_Home.FormProductos.resources
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.Form_Home.TurnoForm.resources
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.FormAdmin.InicoSesion.resources
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.Properties.Resources.resources
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.csproj.GenerateResource.cache
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.AssemblyInfoInputs.cache
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.AssemblyInfo.cs
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.csproj.CoreCompileInputs.cache
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.csproj.Up2Date
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.dll
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\refint\WinForm.dll
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.pdb
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.genruntimeconfig.cache
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\ref\WinForm.dll
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.csproj.AssemblyReference.cache
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm..Designer.resources
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm..resources
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.Form_Home.FormCanchas.resources
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.Form_Home.FormCliente.resources
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.Form_Home.FormInicio.resources
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.Form_Home.FormProductos.resources
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.Form_Home.FormReportes.resources
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.Form_Home.TurnoForm.resources
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.FormAdmin.InicoSesion.resources
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.Properties.Resources.resources
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.csproj.GenerateResource.cache
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.AssemblyInfoInputs.cache
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.AssemblyInfo.cs
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.csproj.CoreCompileInputs.cache
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.dll
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\refint\WinForm.dll
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.pdb
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\appsettings.Development.json
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\API.deps.json
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\API.runtimeconfig.json
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\appsettings.json
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\API.exe
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\WinForm.exe
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\negociosettings.json
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\WinForm.deps.json
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\WinForm.runtimeconfig.json
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\WinForm.dll
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\WinForm.pdb
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Azure.Core.dll
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Azure.Identity.dll
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\BCrypt.Net-Next.dll
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Data.SqlClient.dll
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.dll
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Identity.Client.dll
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Identity.Client.NativeInterop.dll
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Logging.dll
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.dll
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Tokens.dll
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.OpenApi.dll
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.SqlServer.Server.dll
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.Core.dll
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.WinForms.dll
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.Wpf.dll
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\System.Memory.Data.dll
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\System.Runtime.Caching.dll
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-arm64\native\msalruntime_arm64.dll
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-x64\native\msalruntime.dll
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-x86\native\msalruntime_x86.dll
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-arm64\native\WebView2Loader.dll
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-x64\native\WebView2Loader.dll
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-x86\native\WebView2Loader.dll
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\API.dll
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Negocio.dll
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Shared.dll
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\API.pdb
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Negocio.pdb
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Shared.pdb
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.csproj.Up2Date
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.genruntimeconfig.cache
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\ref\WinForm.dll
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\appsettings.Development.json
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\appsettings.json
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\API.deps.json
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\API.runtimeconfig.json
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\API.staticwebassets.endpoints.json
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\API.exe
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\WinForm.exe
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\negociosettings.json
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\WinForm.deps.json
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\WinForm.runtimeconfig.json
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\WinForm.dll
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\WinForm.pdb
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Azure.Core.dll
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Azure.Identity.dll
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\BCrypt.Net-Next.dll
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Data.SqlClient.dll
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.dll
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Identity.Client.dll
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Identity.Client.NativeInterop.dll
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Logging.dll
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.dll
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Tokens.dll
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.OpenApi.dll
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.SqlServer.Server.dll
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.Core.dll
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.WinForms.dll
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.Wpf.dll
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\System.Memory.Data.dll
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\System.Runtime.Caching.dll
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-arm64\native\msalruntime_arm64.dll
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-x64\native\msalruntime.dll
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-x86\native\msalruntime_x86.dll
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-arm64\native\WebView2Loader.dll
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-x64\native\WebView2Loader.dll
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-x86\native\WebView2Loader.dll
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\API.dll
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Negocio.dll
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Shared.dll
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\API.pdb
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Negocio.pdb
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\bin\Debug\net8.0-windows\Shared.pdb
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.csproj.AssemblyReference.cache
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm..Designer.resources
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm..resources
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.Form_Home.FormCanchas.resources
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.Form_Home.FormCliente.resources
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.Form_Home.FormInicio.resources
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.Form_Home.FormProductos.resources
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.Form_Home.TurnoForm.resources
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.FormAdmin.InicoSesion.resources
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.Properties.Resources.resources
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.csproj.GenerateResource.cache
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.AssemblyInfoInputs.cache
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.AssemblyInfo.cs
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.csproj.CoreCompileInputs.cache
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.csproj.Up2Date
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.dll
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\refint\WinForm.dll
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.pdb
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.genruntimeconfig.cache
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\ref\WinForm.dll
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.FormAdmin.FormRegistro.resources
+C:\Users\bosca\source\repos\proyecto - copia\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.csproj.AssemblyReference.cache
+C:\Users\bosca\source\repos\proyecto - copia\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.dll
+C:\Users\bosca\source\repos\proyecto - copia\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\refint\WinForm.dll
+C:\Users\bosca\source\repos\proyecto - copia\ProyectoSportTime\WinFormsApp1\obj\Debug\net8.0-windows\WinForm.pdb

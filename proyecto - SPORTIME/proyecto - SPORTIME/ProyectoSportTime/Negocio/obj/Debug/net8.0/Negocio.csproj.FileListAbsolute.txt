@@ -1,0 +1,201 @@
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\Negocio\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\Negocio\bin\Debug\net8.0\appsettings.json
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\Negocio\bin\Debug\net8.0\API.deps.json
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\Negocio\bin\Debug\net8.0\API.runtimeconfig.json
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\Negocio\bin\Debug\net8.0\API.exe
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\Negocio\bin\Debug\net8.0\Negocio.deps.json
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\Negocio\bin\Debug\net8.0\Negocio.dll
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\Negocio\bin\Debug\net8.0\Negocio.pdb
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\Negocio\bin\Debug\net8.0\API.dll
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\Negocio\bin\Debug\net8.0\Shared.dll
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\Negocio\bin\Debug\net8.0\API.pdb
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\Negocio\bin\Debug\net8.0\Shared.pdb
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\Negocio\obj\Debug\net8.0\Negocio.csproj.AssemblyReference.cache
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\Negocio\obj\Debug\net8.0\Negocio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\Negocio\obj\Debug\net8.0\Negocio.AssemblyInfoInputs.cache
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\Negocio\obj\Debug\net8.0\Negocio.AssemblyInfo.cs
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\Negocio\obj\Debug\net8.0\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\Negocio\obj\Debug\net8.0\Negocio.csproj.Up2Date
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\Negocio\obj\Debug\net8.0\Negocio.dll
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\Negocio\obj\Debug\net8.0\refint\Negocio.dll
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\Negocio\obj\Debug\net8.0\Negocio.pdb
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\Negocio\obj\Debug\net8.0\ref\Negocio.dll
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\Negocio\bin\Debug\net8.0\API.deps.json
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\Negocio\bin\Debug\net8.0\API.runtimeconfig.json
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\Negocio\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\Negocio\bin\Debug\net8.0\appsettings.json
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\Negocio\bin\Debug\net8.0\API.exe
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\Negocio\bin\Debug\net8.0\Negocio.deps.json
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\Negocio\bin\Debug\net8.0\Negocio.dll
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\Negocio\bin\Debug\net8.0\Negocio.pdb
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\Negocio\bin\Debug\net8.0\API.dll
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\Negocio\bin\Debug\net8.0\Shared.dll
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\Negocio\bin\Debug\net8.0\API.pdb
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\Negocio\bin\Debug\net8.0\Shared.pdb
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\Negocio\obj\Debug\net8.0\Negocio.csproj.AssemblyReference.cache
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\Negocio\obj\Debug\net8.0\Negocio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\Negocio\obj\Debug\net8.0\Negocio.AssemblyInfoInputs.cache
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\Negocio\obj\Debug\net8.0\Negocio.AssemblyInfo.cs
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\Negocio\obj\Debug\net8.0\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\Negocio\obj\Debug\net8.0\Negocio.csproj.Up2Date
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\Negocio\obj\Debug\net8.0\Negocio.dll
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\Negocio\obj\Debug\net8.0\refint\Negocio.dll
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\Negocio\obj\Debug\net8.0\Negocio.pdb
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\Negocio\obj\Debug\net8.0\ref\Negocio.dll
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\Negocio\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\Negocio\bin\Debug\net8.0\appsettings.json
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\Negocio\bin\Debug\net8.0\API.deps.json
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\Negocio\bin\Debug\net8.0\API.runtimeconfig.json
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\Negocio\bin\Debug\net8.0\API.exe
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\Negocio\bin\Debug\net8.0\Negocio.deps.json
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\Negocio\bin\Debug\net8.0\Negocio.dll
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\Negocio\bin\Debug\net8.0\Negocio.pdb
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\Negocio\bin\Debug\net8.0\API.dll
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\Negocio\bin\Debug\net8.0\Shared.dll
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\Negocio\bin\Debug\net8.0\API.pdb
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\Negocio\bin\Debug\net8.0\Shared.pdb
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\Negocio\obj\Debug\net8.0\Negocio.csproj.AssemblyReference.cache
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\Negocio\obj\Debug\net8.0\Negocio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\Negocio\obj\Debug\net8.0\Negocio.AssemblyInfoInputs.cache
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\Negocio\obj\Debug\net8.0\Negocio.AssemblyInfo.cs
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\Negocio\obj\Debug\net8.0\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\Negocio\obj\Debug\net8.0\Negocio.sourcelink.json
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\Negocio\obj\Debug\net8.0\Negocio.csproj.Up2Date
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\Negocio\obj\Debug\net8.0\Negocio.dll
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\Negocio\obj\Debug\net8.0\refint\Negocio.dll
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\Negocio\obj\Debug\net8.0\Negocio.pdb
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\Negocio\obj\Debug\net8.0\ref\Negocio.dll
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\Negocio\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\Negocio\bin\Debug\net8.0\API.deps.json
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\Negocio\bin\Debug\net8.0\API.runtimeconfig.json
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\Negocio\bin\Debug\net8.0\appsettings.json
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\Negocio\bin\Debug\net8.0\API.exe
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\Negocio\bin\Debug\net8.0\Negocio.deps.json
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\Negocio\bin\Debug\net8.0\Negocio.dll
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\Negocio\bin\Debug\net8.0\Negocio.pdb
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\Negocio\bin\Debug\net8.0\API.dll
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\Negocio\bin\Debug\net8.0\Shared.dll
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\Negocio\bin\Debug\net8.0\API.pdb
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\Negocio\bin\Debug\net8.0\Shared.pdb
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\Negocio\obj\Debug\net8.0\Negocio.csproj.AssemblyReference.cache
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\Negocio\obj\Debug\net8.0\Negocio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\Negocio\obj\Debug\net8.0\Negocio.AssemblyInfoInputs.cache
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\Negocio\obj\Debug\net8.0\Negocio.AssemblyInfo.cs
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\Negocio\obj\Debug\net8.0\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\Negocio\obj\Debug\net8.0\Negocio.csproj.Up2Date
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\Negocio\obj\Debug\net8.0\Negocio.dll
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\Negocio\obj\Debug\net8.0\refint\Negocio.dll
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\Negocio\obj\Debug\net8.0\Negocio.pdb
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\Negocio\obj\Debug\net8.0\ref\Negocio.dll
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\Negocio\bin\Debug\net8.0\API.deps.json
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\Negocio\bin\Debug\net8.0\API.runtimeconfig.json
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\Negocio\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\Negocio\bin\Debug\net8.0\appsettings.json
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\Negocio\bin\Debug\net8.0\API.exe
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\Negocio\bin\Debug\net8.0\Negocio.deps.json
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\Negocio\bin\Debug\net8.0\Negocio.dll
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\Negocio\bin\Debug\net8.0\Negocio.pdb
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\Negocio\bin\Debug\net8.0\API.dll
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\Negocio\bin\Debug\net8.0\Shared.dll
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\Negocio\bin\Debug\net8.0\API.pdb
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\Negocio\bin\Debug\net8.0\Shared.pdb
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\Negocio\obj\Debug\net8.0\Negocio.csproj.AssemblyReference.cache
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\Negocio\obj\Debug\net8.0\Negocio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\Negocio\obj\Debug\net8.0\Negocio.AssemblyInfoInputs.cache
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\Negocio\obj\Debug\net8.0\Negocio.AssemblyInfo.cs
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\Negocio\obj\Debug\net8.0\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\Negocio\obj\Debug\net8.0\Negocio.csproj.Up2Date
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\Negocio\obj\Debug\net8.0\Negocio.dll
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\Negocio\obj\Debug\net8.0\refint\Negocio.dll
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\Negocio\obj\Debug\net8.0\Negocio.pdb
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\Negocio\obj\Debug\net8.0\ref\Negocio.dll
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\Negocio\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\Negocio\bin\Debug\net8.0\appsettings.json
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\Negocio\bin\Debug\net8.0\API.deps.json
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\Negocio\bin\Debug\net8.0\API.runtimeconfig.json
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\Negocio\bin\Debug\net8.0\API.exe
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\Negocio\bin\Debug\net8.0\Negocio.deps.json
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\Negocio\bin\Debug\net8.0\Negocio.dll
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\Negocio\bin\Debug\net8.0\Negocio.pdb
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\Negocio\bin\Debug\net8.0\API.dll
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\Negocio\bin\Debug\net8.0\Shared.dll
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\Negocio\bin\Debug\net8.0\API.pdb
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\Negocio\bin\Debug\net8.0\Shared.pdb
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\Negocio\obj\Debug\net8.0\Negocio.csproj.AssemblyReference.cache
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\Negocio\obj\Debug\net8.0\Negocio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\Negocio\obj\Debug\net8.0\Negocio.AssemblyInfoInputs.cache
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\Negocio\obj\Debug\net8.0\Negocio.AssemblyInfo.cs
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\Negocio\obj\Debug\net8.0\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\Negocio\obj\Debug\net8.0\Negocio.csproj.Up2Date
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\Negocio\obj\Debug\net8.0\Negocio.dll
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\Negocio\obj\Debug\net8.0\refint\Negocio.dll
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\Negocio\obj\Debug\net8.0\Negocio.pdb
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\Negocio\obj\Debug\net8.0\ref\Negocio.dll
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\Negocio\obj\Debug\net8.0\Negocio.csproj.AssemblyReference.cache
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\Negocio\obj\Debug\net8.0\Negocio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\Negocio\obj\Debug\net8.0\Negocio.AssemblyInfoInputs.cache
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\Negocio\obj\Debug\net8.0\Negocio.AssemblyInfo.cs
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\Negocio\obj\Debug\net8.0\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\Negocio\obj\Debug\net8.0\Negocio.dll
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\Negocio\obj\Debug\net8.0\refint\Negocio.dll
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\Negocio\obj\Debug\net8.0\Negocio.pdb
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\Negocio\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\Negocio\bin\Debug\net8.0\API.deps.json
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\Negocio\bin\Debug\net8.0\API.runtimeconfig.json
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\Negocio\bin\Debug\net8.0\appsettings.json
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\Negocio\bin\Debug\net8.0\API.exe
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\Negocio\bin\Debug\net8.0\Negocio.deps.json
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\Negocio\bin\Debug\net8.0\Negocio.dll
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\Negocio\bin\Debug\net8.0\Negocio.pdb
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\Negocio\bin\Debug\net8.0\API.dll
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\Negocio\bin\Debug\net8.0\Shared.dll
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\Negocio\bin\Debug\net8.0\API.pdb
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\Negocio\bin\Debug\net8.0\Shared.pdb
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\Negocio\obj\Debug\net8.0\Negocio.csproj.Up2Date
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\Negocio\obj\Debug\net8.0\ref\Negocio.dll
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\Negocio\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\Negocio\bin\Debug\net8.0\appsettings.json
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\Negocio\bin\Debug\net8.0\API.deps.json
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\Negocio\bin\Debug\net8.0\API.runtimeconfig.json
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\Negocio\bin\Debug\net8.0\API.staticwebassets.endpoints.json
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\Negocio\bin\Debug\net8.0\API.exe
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\Negocio\bin\Debug\net8.0\Negocio.deps.json
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\Negocio\bin\Debug\net8.0\Negocio.dll
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\Negocio\bin\Debug\net8.0\Negocio.pdb
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\Negocio\bin\Debug\net8.0\API.dll
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\Negocio\bin\Debug\net8.0\Shared.dll
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\Negocio\bin\Debug\net8.0\API.pdb
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\Negocio\bin\Debug\net8.0\Shared.pdb
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\Negocio\obj\Debug\net8.0\Negocio.csproj.AssemblyReference.cache
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\Negocio\obj\Debug\net8.0\Negocio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\Negocio\obj\Debug\net8.0\Negocio.AssemblyInfoInputs.cache
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\Negocio\obj\Debug\net8.0\Negocio.AssemblyInfo.cs
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\Negocio\obj\Debug\net8.0\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\Negocio\obj\Debug\net8.0\Negocio.csproj.Up2Date
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\Negocio\obj\Debug\net8.0\Negocio.dll
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\Negocio\obj\Debug\net8.0\refint\Negocio.dll
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\Negocio\obj\Debug\net8.0\Negocio.pdb
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\Negocio\obj\Debug\net8.0\ref\Negocio.dll
+C:\Users\bosca\source\repos\proyecto - copia\ProyectoSportTime\Negocio\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\bosca\source\repos\proyecto - copia\ProyectoSportTime\Negocio\bin\Debug\net8.0\appsettings.json
+C:\Users\bosca\source\repos\proyecto - copia\ProyectoSportTime\Negocio\bin\Debug\net8.0\API.staticwebassets.endpoints.json
+C:\Users\bosca\source\repos\proyecto - copia\ProyectoSportTime\Negocio\bin\Debug\net8.0\API.deps.json
+C:\Users\bosca\source\repos\proyecto - copia\ProyectoSportTime\Negocio\bin\Debug\net8.0\API.runtimeconfig.json
+C:\Users\bosca\source\repos\proyecto - copia\ProyectoSportTime\Negocio\bin\Debug\net8.0\API.exe
+C:\Users\bosca\source\repos\proyecto - copia\ProyectoSportTime\Negocio\bin\Debug\net8.0\Negocio.deps.json
+C:\Users\bosca\source\repos\proyecto - copia\ProyectoSportTime\Negocio\bin\Debug\net8.0\Negocio.dll
+C:\Users\bosca\source\repos\proyecto - copia\ProyectoSportTime\Negocio\bin\Debug\net8.0\Negocio.pdb
+C:\Users\bosca\source\repos\proyecto - copia\ProyectoSportTime\Negocio\bin\Debug\net8.0\API.dll
+C:\Users\bosca\source\repos\proyecto - copia\ProyectoSportTime\Negocio\bin\Debug\net8.0\Shared.dll
+C:\Users\bosca\source\repos\proyecto - copia\ProyectoSportTime\Negocio\bin\Debug\net8.0\API.pdb
+C:\Users\bosca\source\repos\proyecto - copia\ProyectoSportTime\Negocio\bin\Debug\net8.0\Shared.pdb
+C:\Users\bosca\source\repos\proyecto - copia\ProyectoSportTime\Negocio\obj\Debug\net8.0\Negocio.csproj.AssemblyReference.cache
+C:\Users\bosca\source\repos\proyecto - copia\ProyectoSportTime\Negocio\obj\Debug\net8.0\Negocio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bosca\source\repos\proyecto - copia\ProyectoSportTime\Negocio\obj\Debug\net8.0\Negocio.AssemblyInfoInputs.cache
+C:\Users\bosca\source\repos\proyecto - copia\ProyectoSportTime\Negocio\obj\Debug\net8.0\Negocio.AssemblyInfo.cs
+C:\Users\bosca\source\repos\proyecto - copia\ProyectoSportTime\Negocio\obj\Debug\net8.0\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\bosca\source\repos\proyecto - copia\ProyectoSportTime\Negocio\obj\Debug\net8.0\Negocio.csproj.Up2Date
+C:\Users\bosca\source\repos\proyecto - copia\ProyectoSportTime\Negocio\obj\Debug\net8.0\Negocio.dll
+C:\Users\bosca\source\repos\proyecto - copia\ProyectoSportTime\Negocio\obj\Debug\net8.0\refint\Negocio.dll
+C:\Users\bosca\source\repos\proyecto - copia\ProyectoSportTime\Negocio\obj\Debug\net8.0\Negocio.pdb
+C:\Users\bosca\source\repos\proyecto - copia\ProyectoSportTime\Negocio\obj\Debug\net8.0\ref\Negocio.dll

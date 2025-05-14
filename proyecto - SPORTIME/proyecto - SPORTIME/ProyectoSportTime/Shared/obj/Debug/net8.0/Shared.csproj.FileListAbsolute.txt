@@ -1,0 +1,127 @@
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\Shared\bin\Debug\net8.0\Shared.deps.json
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\Shared\bin\Debug\net8.0\Shared.runtimeconfig.json
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\Shared\bin\Debug\net8.0\Shared.dll
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\Shared\bin\Debug\net8.0\Shared.pdb
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\Shared\obj\Debug\net8.0\Shared.csproj.AssemblyReference.cache
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\Shared\obj\Debug\net8.0\Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\Shared\obj\Debug\net8.0\Shared.AssemblyInfoInputs.cache
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\Shared\obj\Debug\net8.0\Shared.AssemblyInfo.cs
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\Shared\obj\Debug\net8.0\Shared.csproj.CoreCompileInputs.cache
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\Shared\obj\Debug\net8.0\Shared.dll
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\Shared\obj\Debug\net8.0\refint\Shared.dll
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\Shared\obj\Debug\net8.0\Shared.pdb
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\Shared\obj\Debug\net8.0\Shared.genruntimeconfig.cache
+C:\Users\herna\OneDrive\Desktop\Grupo-3-Develop\ProyectoSportTime\Shared\obj\Debug\net8.0\ref\Shared.dll
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\Shared\bin\Debug\net8.0\Shared.deps.json
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\Shared\bin\Debug\net8.0\Shared.runtimeconfig.json
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\Shared\bin\Debug\net8.0\Shared.dll
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\Shared\bin\Debug\net8.0\Shared.pdb
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\Shared\obj\Debug\net8.0\Shared.csproj.AssemblyReference.cache
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\Shared\obj\Debug\net8.0\Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\Shared\obj\Debug\net8.0\Shared.AssemblyInfoInputs.cache
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\Shared\obj\Debug\net8.0\Shared.AssemblyInfo.cs
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\Shared\obj\Debug\net8.0\Shared.csproj.CoreCompileInputs.cache
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\Shared\obj\Debug\net8.0\Shared.dll
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\Shared\obj\Debug\net8.0\refint\Shared.dll
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\Shared\obj\Debug\net8.0\Shared.pdb
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\Shared\obj\Debug\net8.0\Shared.genruntimeconfig.cache
+C:\Users\mateo\Desktop\Grupo-3-Develop\ProyectoSportTime\Shared\obj\Debug\net8.0\ref\Shared.dll
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\Shared\bin\Debug\net8.0\Shared.deps.json
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\Shared\bin\Debug\net8.0\Shared.runtimeconfig.json
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\Shared\bin\Debug\net8.0\Shared.dll
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\Shared\bin\Debug\net8.0\Shared.pdb
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\Shared\obj\Debug\net8.0\Shared.csproj.AssemblyReference.cache
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\Shared\obj\Debug\net8.0\Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\Shared\obj\Debug\net8.0\Shared.AssemblyInfoInputs.cache
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\Shared\obj\Debug\net8.0\Shared.AssemblyInfo.cs
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\Shared\obj\Debug\net8.0\Shared.csproj.CoreCompileInputs.cache
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\Shared\obj\Debug\net8.0\Shared.sourcelink.json
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\Shared\obj\Debug\net8.0\Shared.dll
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\Shared\obj\Debug\net8.0\refint\Shared.dll
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\Shared\obj\Debug\net8.0\Shared.pdb
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\Shared\obj\Debug\net8.0\Shared.genruntimeconfig.cache
+C:\Users\mateo\OneDrive\Documentos\GitHub\Grupo-3\ProyectoSportTime\Shared\obj\Debug\net8.0\ref\Shared.dll
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\Shared\bin\Debug\net8.0\Shared.deps.json
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\Shared\bin\Debug\net8.0\Shared.runtimeconfig.json
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\Shared\bin\Debug\net8.0\Shared.dll
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\Shared\bin\Debug\net8.0\Shared.pdb
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\Shared\obj\Debug\net8.0\Shared.csproj.AssemblyReference.cache
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\Shared\obj\Debug\net8.0\Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\Shared\obj\Debug\net8.0\Shared.AssemblyInfoInputs.cache
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\Shared\obj\Debug\net8.0\Shared.AssemblyInfo.cs
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\Shared\obj\Debug\net8.0\Shared.csproj.CoreCompileInputs.cache
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\Shared\obj\Debug\net8.0\Shared.dll
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\Shared\obj\Debug\net8.0\refint\Shared.dll
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\Shared\obj\Debug\net8.0\Shared.pdb
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\Shared\obj\Debug\net8.0\Shared.genruntimeconfig.cache
+C:\Users\chris\Downloads\proyecto\proyecto\ProyectoSportTime\Shared\obj\Debug\net8.0\ref\Shared.dll
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\Shared\bin\Debug\net8.0\Shared.deps.json
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\Shared\bin\Debug\net8.0\Shared.runtimeconfig.json
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\Shared\bin\Debug\net8.0\Shared.dll
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\Shared\bin\Debug\net8.0\Shared.pdb
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\Shared\obj\Debug\net8.0\Shared.csproj.AssemblyReference.cache
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\Shared\obj\Debug\net8.0\Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\Shared\obj\Debug\net8.0\Shared.AssemblyInfoInputs.cache
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\Shared\obj\Debug\net8.0\Shared.AssemblyInfo.cs
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\Shared\obj\Debug\net8.0\Shared.csproj.CoreCompileInputs.cache
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\Shared\obj\Debug\net8.0\Shared.dll
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\Shared\obj\Debug\net8.0\refint\Shared.dll
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\Shared\obj\Debug\net8.0\Shared.pdb
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\Shared\obj\Debug\net8.0\Shared.genruntimeconfig.cache
+C:\Users\mateo\Desktop\proyecto\ProyectoSportTime\Shared\obj\Debug\net8.0\ref\Shared.dll
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\Shared\bin\Debug\net8.0\Shared.deps.json
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\Shared\bin\Debug\net8.0\Shared.runtimeconfig.json
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\Shared\bin\Debug\net8.0\Shared.dll
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\Shared\bin\Debug\net8.0\Shared.pdb
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\Shared\obj\Debug\net8.0\Shared.csproj.AssemblyReference.cache
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\Shared\obj\Debug\net8.0\Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\Shared\obj\Debug\net8.0\Shared.AssemblyInfoInputs.cache
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\Shared\obj\Debug\net8.0\Shared.AssemblyInfo.cs
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\Shared\obj\Debug\net8.0\Shared.csproj.CoreCompileInputs.cache
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\Shared\obj\Debug\net8.0\Shared.dll
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\Shared\obj\Debug\net8.0\refint\Shared.dll
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\Shared\obj\Debug\net8.0\Shared.pdb
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\Shared\obj\Debug\net8.0\Shared.genruntimeconfig.cache
+C:\Users\chris\Downloads\proyecto (1)\proyecto\ProyectoSportTime\Shared\obj\Debug\net8.0\ref\Shared.dll
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\Shared\bin\Debug\net8.0\Shared.deps.json
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\Shared\bin\Debug\net8.0\Shared.runtimeconfig.json
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\Shared\bin\Debug\net8.0\Shared.dll
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\Shared\bin\Debug\net8.0\Shared.pdb
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\Shared\obj\Debug\net8.0\Shared.csproj.AssemblyReference.cache
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\Shared\obj\Debug\net8.0\Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\Shared\obj\Debug\net8.0\Shared.AssemblyInfoInputs.cache
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\Shared\obj\Debug\net8.0\Shared.AssemblyInfo.cs
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\Shared\obj\Debug\net8.0\Shared.csproj.CoreCompileInputs.cache
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\Shared\obj\Debug\net8.0\Shared.dll
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\Shared\obj\Debug\net8.0\refint\Shared.dll
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\Shared\obj\Debug\net8.0\Shared.pdb
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\Shared\obj\Debug\net8.0\Shared.genruntimeconfig.cache
+C:\Users\herna\OneDrive\Desktop\proyecto - copia\ProyectoSportTime\Shared\obj\Debug\net8.0\ref\Shared.dll
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\Shared\bin\Debug\net8.0\Shared.deps.json
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\Shared\bin\Debug\net8.0\Shared.runtimeconfig.json
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\Shared\bin\Debug\net8.0\Shared.dll
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\Shared\bin\Debug\net8.0\Shared.pdb
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\Shared\obj\Debug\net8.0\Shared.csproj.AssemblyReference.cache
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\Shared\obj\Debug\net8.0\Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\Shared\obj\Debug\net8.0\Shared.AssemblyInfoInputs.cache
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\Shared\obj\Debug\net8.0\Shared.AssemblyInfo.cs
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\Shared\obj\Debug\net8.0\Shared.csproj.CoreCompileInputs.cache
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\Shared\obj\Debug\net8.0\Shared.dll
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\Shared\obj\Debug\net8.0\refint\Shared.dll
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\Shared\obj\Debug\net8.0\Shared.pdb
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\Shared\obj\Debug\net8.0\Shared.genruntimeconfig.cache
+C:\Users\mateo\OneDrive\Escritorio\Practica profecional\proyecto - copia\ProyectoSportTime\Shared\obj\Debug\net8.0\ref\Shared.dll
+C:\Users\bosca\source\repos\proyecto - copia\ProyectoSportTime\Shared\bin\Debug\net8.0\Shared.deps.json
+C:\Users\bosca\source\repos\proyecto - copia\ProyectoSportTime\Shared\bin\Debug\net8.0\Shared.runtimeconfig.json
+C:\Users\bosca\source\repos\proyecto - copia\ProyectoSportTime\Shared\bin\Debug\net8.0\Shared.dll
+C:\Users\bosca\source\repos\proyecto - copia\ProyectoSportTime\Shared\bin\Debug\net8.0\Shared.pdb
+C:\Users\bosca\source\repos\proyecto - copia\ProyectoSportTime\Shared\obj\Debug\net8.0\Shared.csproj.AssemblyReference.cache
+C:\Users\bosca\source\repos\proyecto - copia\ProyectoSportTime\Shared\obj\Debug\net8.0\Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bosca\source\repos\proyecto - copia\ProyectoSportTime\Shared\obj\Debug\net8.0\Shared.AssemblyInfoInputs.cache
+C:\Users\bosca\source\repos\proyecto - copia\ProyectoSportTime\Shared\obj\Debug\net8.0\Shared.AssemblyInfo.cs
+C:\Users\bosca\source\repos\proyecto - copia\ProyectoSportTime\Shared\obj\Debug\net8.0\Shared.csproj.CoreCompileInputs.cache
+C:\Users\bosca\source\repos\proyecto - copia\ProyectoSportTime\Shared\obj\Debug\net8.0\Shared.dll
+C:\Users\bosca\source\repos\proyecto - copia\ProyectoSportTime\Shared\obj\Debug\net8.0\refint\Shared.dll
+C:\Users\bosca\source\repos\proyecto - copia\ProyectoSportTime\Shared\obj\Debug\net8.0\Shared.pdb
+C:\Users\bosca\source\repos\proyecto - copia\ProyectoSportTime\Shared\obj\Debug\net8.0\Shared.genruntimeconfig.cache
+C:\Users\bosca\source\repos\proyecto - copia\ProyectoSportTime\Shared\obj\Debug\net8.0\ref\Shared.dll
