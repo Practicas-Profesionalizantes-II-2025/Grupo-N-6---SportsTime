@@ -1,0 +1,5 @@
+{
+  "ApiServer": {
+    "BaseURL": "https://localhost:7094", // Asegúrate de usar la misma URL de tu API
+  }
+}
