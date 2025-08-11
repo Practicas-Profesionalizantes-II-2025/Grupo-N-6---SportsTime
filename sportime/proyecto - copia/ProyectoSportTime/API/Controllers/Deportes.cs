@@ -5,7 +5,7 @@ using Shared.Entidades;
 using API.Data;
 using Microsoft.EntityFrameworkCore;
 
-namespace API.Controllers.DeportesController
+namespace API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]

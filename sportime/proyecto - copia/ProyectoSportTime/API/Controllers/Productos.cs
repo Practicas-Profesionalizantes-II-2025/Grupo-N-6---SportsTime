@@ -6,7 +6,7 @@ using API.Data;
 using Microsoft.EntityFrameworkCore;
 using Shared.Dtos;
 
-namespace API.Controllers.ProductosController
+namespace API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]

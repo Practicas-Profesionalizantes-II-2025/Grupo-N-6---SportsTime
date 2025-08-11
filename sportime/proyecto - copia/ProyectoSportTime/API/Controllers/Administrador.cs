@@ -11,7 +11,7 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 
 
-namespace API.Controllers.AdministradorController
+namespace API.Controllers
 {
 
     [ApiController]
