@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using API.Data;
 using Shared.Dtos;
 
-namespace API.Controllers.CanchasController
+namespace API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]

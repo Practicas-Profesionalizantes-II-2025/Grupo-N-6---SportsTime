@@ -5,7 +5,7 @@ using Shared.Dtos;
 using Shared.Entidades;
 using Microsoft.EntityFrameworkCore;
 
-namespace API.Controllers.ProveedoresController
+namespace API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
