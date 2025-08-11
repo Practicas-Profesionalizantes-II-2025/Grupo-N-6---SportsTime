@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Shared.Entidades;
-using API.Data;
+using CDatos.Data;
 using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers

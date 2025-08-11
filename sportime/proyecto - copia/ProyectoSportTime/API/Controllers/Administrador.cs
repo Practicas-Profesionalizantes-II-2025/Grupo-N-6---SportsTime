@@ -6,7 +6,7 @@ using Shared.Entidades;
 using System.Collections.Generic;
 using System.Linq;
 using BCrypt.Net;
-using API.Data;
+using CDatos.Data;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 
