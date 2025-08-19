@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Negocio.ClienteHttp;
-using Newtonsoft.Json;
+﻿//using Microsoft.AspNetCore.Mvc;
+//using Negocio.ClienteHttp;
+//using Newtonsoft.Json;
 using Shared.Dtos;
 using System;
 using System.Collections.Generic;
@@ -9,44 +9,54 @@ using System.Text;
 using System.Threading.Tasks;
 using CDatos.Data;
 using Shared.Entidades;
+using Shared.Dtos;
 using Microsoft.EntityFrameworkCore;
+using CDatos.Repositorys.IRepositorys;
 
-namespace Negocio.Repositorys
+namespace CDatos.Repositorys
 {
-    public class AdministradorRepository
+    public class AdministradorRepository : IAdministradorRepository
     {
-        private static readonly HttpClient client = ApiServer.ObtenerClientHttp(); // Instancia global de HttpClient
+        //private static readonly HttpClient client = ApiServer.ObtenerClientHttp(); // Instancia global de HttpClient
 
+        private readonly ProyectoDbContext _context;
+
+        public AdministradorRepository(ProyectoDbContext context)
+        {
+            _context = context;
+        }
         // Crear un nuevo administrador
-        public static async Task CreateAdministrador(AdministradorDTO adminDTO)
+        public async Task CreateAdministrador(AdministradorDTO adminDTO)
         {
             ArgumentNullException.ThrowIfNull(adminDTO);
 
-            var url = ApiServer.ObtenerUrlEndPoint("/api/administrador/singup");
-            var content = new StringContent(JsonConvert.SerializeObject(new
+            //var url = ApiServer.ObtenerUrlEndPoint("/api/administrador/singup");
+            //var content = new StringContent(JsonConvert.SerializeObject(new
+            var admin = new Administrador
             {
                 Email = adminDTO.Email,
                 Nombre = adminDTO.Nombre,
-                PasswordHash = adminDTO.PasswordHash,
+                Contraseña = adminDTO.PasswordHash,
                 IsSuperAdmin = adminDTO.IsSuperAdmin
-            }), Encoding.UTF8, "application/json");
-
-            try
-            {
-                var response = await client.PostAsync(url, content);
-                response.EnsureSuccessStatusCode(); // Esto lanzará una excepción si el código no es 2xx
-            }
-            catch (Exception ex)
-            {
-                // Manejar error (por ejemplo, loguear o retornar un mensaje detallado)
-                throw new ApplicationException($"Error al crear administrador: {ex.Message}");
-            }
+            };
+            _context.Administradores.Add(admin);
+            await _context.SaveChangesAsync();
         }
 
         // Obtener todos los administradores
-        public static async Task<List<AdministradorDTO>> GetAllAdministradores()
+        public async Task<List<AdministradorDTO>> GetAllAdministradores()
         {
-            var url = ApiServer.ObtenerUrlEndPoint("/api/administrador/get");
+            return await _context.Administradores
+              .Select(a => new AdministradorDTO
+              {
+                  Admin_ID = a.Admin_ID,
+                  Nombre = a.Nombre,
+                  Email = a.Email,
+                  IsSuperAdmin = a.IsSuperAdmin
+              })
+              .ToListAsync();
+
+            /*var url = ApiServer.ObtenerUrlEndPoint("/api/administrador/get");
 
             try
             {
@@ -61,55 +71,85 @@ namespace Negocio.Repositorys
                 // Manejar error
                 throw new ApplicationException($"Error al obtener administradores: {ex.Message}");
             }
+            */
         }
 
         // Actualizar un administrador
-        public static async Task UpdateAdministrador(int adminID, AdministradorDTO updatedAdmin)
+        public async Task UpdateAdministrador(int adminID, AdministradorDTO updatedAdmin)
         {
-            ArgumentNullException.ThrowIfNull(updatedAdmin);
+            var admin = await _context.Administradores.FindAsync(adminID);
+            if (admin == null) throw new KeyNotFoundException("Administrador no encontrado");
 
-            var url = ApiServer.ObtenerUrlEndPoint($"/api/administrador/{adminID}");
-            var content = new StringContent(JsonConvert.SerializeObject(new
-            {
-                Nombre = updatedAdmin.Nombre,
-                Email = updatedAdmin.Email,
-                PasswordHash = updatedAdmin.PasswordHash,
-                IsSuperAdmin = updatedAdmin.IsSuperAdmin
-            }), Encoding.UTF8, "application/json");
+            admin.Nombre = updatedAdmin.Nombre;
+            admin.Email = updatedAdmin.Email;
+            if (!string.IsNullOrEmpty(updatedAdmin.PasswordHash))
+                admin.Contraseña = updatedAdmin.PasswordHash; // Hashear si corresponde
+            admin.IsSuperAdmin = updatedAdmin.IsSuperAdmin;
 
-            try
-            {
-                var response = await client.PutAsync(url, content);
-                response.EnsureSuccessStatusCode();
-            }
-            catch (Exception ex)
-            {
-                // Manejar error
-                throw new ApplicationException($"Error al actualizar el administrador {adminID}: {ex.Message}");
-            }
+            await _context.SaveChangesAsync();
+
+            /* ArgumentNullException.ThrowIfNull(updatedAdmin);
+
+             var url = ApiServer.ObtenerUrlEndPoint($"/api/administrador/{adminID}");
+             var content = new StringContent(JsonConvert.SerializeObject(new
+             {
+                 Nombre = updatedAdmin.Nombre,
+                 Email = updatedAdmin.Email,
+                 PasswordHash = updatedAdmin.PasswordHash,
+                 IsSuperAdmin = updatedAdmin.IsSuperAdmin
+             }), Encoding.UTF8, "application/json");
+
+             try
+             {
+                 var response = await client.PutAsync(url, content);
+                 response.EnsureSuccessStatusCode();
+             }
+             catch (Exception ex)
+             {
+                 // Manejar error
+                 throw new ApplicationException($"Error al actualizar el administrador {adminID}: {ex.Message}");
+             }
+             */
         }
 
         // Eliminar un administrador
-        public static async Task DeleteAdministrador(int adminID)
+        public async Task DeleteAdministrador(int adminID)
         {
-            var url = ApiServer.ObtenerUrlEndPoint($"/api/administrador/{adminID}");
+            var admin = await _context.Administradores.FindAsync(adminID);
+            if (admin == null) throw new KeyNotFoundException("Administrador no encontrado");
 
-            try
-            {
-                var response = await client.DeleteAsync(url);
-                response.EnsureSuccessStatusCode();
-            }
-            catch (Exception ex)
-            {
-                // Manejar error
-                throw new ApplicationException($"Error al eliminar el administrador {adminID}: {ex.Message}");
-            }
+            _context.Administradores.Remove(admin);
+            await _context.SaveChangesAsync();
+
+            /* var url = ApiServer.ObtenerUrlEndPoint($"/api/administrador/{adminID}");
+
+             try
+             {
+                 var response = await client.DeleteAsync(url);
+                 response.EnsureSuccessStatusCode();
+             }
+             catch (Exception ex)
+             {
+                 // Manejar error
+                 throw new ApplicationException($"Error al eliminar el administrador {adminID}: {ex.Message}");
+             }
+             */
         }
 
         // Obtener un administrador por ID
-        public static async Task<AdministradorDTO?> GetAdministradorById(int id)
+        public async Task<AdministradorDTO?> GetAdministradorById(int id)
         {
-            var url = ApiServer.ObtenerUrlEndPoint($"/api/administrador/{id}");
+            var admin = await _context.Administradores.FindAsync(id);
+            if (admin == null) return null;
+
+            return new AdministradorDTO
+            {
+                Admin_ID = admin.Admin_ID,
+                Nombre = admin.Nombre,
+                Email = admin.Email,
+                IsSuperAdmin = admin.IsSuperAdmin
+            };
+            /*var url = ApiServer.ObtenerUrlEndPoint($"/api/administrador/{id}");
 
             try
             {
@@ -124,6 +164,24 @@ namespace Negocio.Repositorys
                 // Manejar error
                 throw new ApplicationException($"Error al obtener el administrador con ID {id}: {ex.Message}");
             }
+            */
+        }
+
+        public async Task<AdministradorDTO?> GetAdministradorByEmail(string email)
+        {
+            var admin = await _context.Administradores
+                .FirstOrDefaultAsync(a => a.Email == email);
+
+            if (admin == null) return null;
+
+            return new AdministradorDTO
+            {
+                Admin_ID = admin.Admin_ID,
+                Nombre = admin.Nombre,
+                Email = admin.Email,
+                PasswordHash = admin.Contraseña,
+                // Otros campos si es necesario
+            };
         }
     }
 

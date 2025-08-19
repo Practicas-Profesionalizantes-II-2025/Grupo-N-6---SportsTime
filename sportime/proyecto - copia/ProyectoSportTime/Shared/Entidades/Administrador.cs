@@ -16,6 +16,7 @@ namespace Shared.Entidades
         public string Contraseña { get; set; }
         public DateTime LastLogIn { get; set; }
 
+        public bool IsSuperAdmin { get; set; } = true;
         public ICollection<Turnos>? Turnos { get; set; }
     }
 }
