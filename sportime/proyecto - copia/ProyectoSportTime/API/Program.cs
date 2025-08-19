@@ -1,7 +1,10 @@
 
-
-using API.Data;
+using Negocio.Contracts;
+using Negocio.Implementations;
+using CDatos.Repositorys;
+using CDatos.Repositorys.IRepositorys;
 using Microsoft.EntityFrameworkCore;
+using CDatos.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +17,13 @@ builder.Services.AddHttpClient();
 // Configuración del DbContext con la cadena de conexión
 builder.Services.AddDbContext<ProyectoDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DBContext")));
+
+// Registro de servicios de lógica
+builder.Services.AddScoped<IAdministrador, AdministradorLogic>();
+
+// Registro de repositorio
+builder.Services.AddScoped<IAdministradorRepository, AdministradorRepository>();
+
 
 var app = builder.Build();
 

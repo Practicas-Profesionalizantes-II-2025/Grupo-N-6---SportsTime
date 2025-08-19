@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Microsoft.EntityFrameworkCore.Design;
 
 
-namespace API.Data
+namespace CDatos.Data
 {
     public class ProyectoDbContext : DbContext
     {
