@@ -1,10 +1,12 @@
 
-using Negocio.Contracts;
-using Negocio.Implementations;
+using CDatos.Data;
 using CDatos.Repositorys;
 using CDatos.Repositorys.IRepositorys;
+using CNegocio.Contracts;
 using Microsoft.EntityFrameworkCore;
-using CDatos.Data;
+using Negocio.Contracts;
+using Negocio.Implementations;
+using Negocio.Repositorys;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,10 +22,11 @@ builder.Services.AddDbContext<ProyectoDbContext>(options =>
 
 // Registro de servicios de lógica
 builder.Services.AddScoped<IAdministrador, AdministradorLogic>();
+builder.Services.AddScoped<ICanchas, CanchasLogic>();
 
 // Registro de repositorio
 builder.Services.AddScoped<IAdministradorRepository, AdministradorRepository>();
-
+builder.Services.AddScoped<ICanchasRepository, CanchasRepository>();
 
 var app = builder.Build();
 

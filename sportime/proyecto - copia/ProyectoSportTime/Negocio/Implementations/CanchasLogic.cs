@@ -1,28 +1,34 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Negocio.Contracts;
-using API.Data;
 using Shared.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Negocio.Repositorys;
+using CDatos.Repositorys.IRepositorys;
 using Shared.Dtos;
+using CNegocio.Contracts;
+
 
 namespace Negocio.Implementations
 {
-    public class CanchasLogic
+    public class CanchasLogic : ICanchas
     {
+        private readonly ICanchasRepository _repo;
+
+        public CanchasLogic(ICanchasRepository repo)
+        {
+            _repo = repo;
+        }
         public async Task AltaCancha(CanchaDTO nuevaCancha)
         {
             ArgumentNullException.ThrowIfNull(nuevaCancha);
 
-            // Validaciones adicionales si las necesitas
+            // Validaciones adicionales 
             if (nuevaCancha.Deporte_ID <= 0)
                 throw new ArgumentException("Deporte_ID debe ser mayor a cero");
 
-            await CanchasRepository.CreateCancha(nuevaCancha);  
+            await _repo.CreateCancha(nuevaCancha);
         }
 
         public async Task ModificarCancha(int canchaID, CanchaDTO canchaModificada)
@@ -32,7 +38,7 @@ namespace Negocio.Implementations
             if (canchaID <= 0)
                 throw new ArgumentException("Cancha_ID debe ser mayor a cero");
 
-            await CanchasRepository.UpdateCancha(canchaID, canchaModificada);  
+            await _repo.UpdateCancha(canchaID, canchaModificada);  
         }
 
         public async Task BajaCancha(int canchaID)
@@ -40,12 +46,12 @@ namespace Negocio.Implementations
             if (canchaID <= 0)
                 throw new ArgumentException("Cancha_ID debe ser mayor a cero");
 
-            await CanchasRepository.DeleteCancha(canchaID);  
+            await _repo.DeleteCancha(canchaID);  
         }
 
         public async Task<List<CanchaDTO>> ObtenerTodasLasCanchas()
         {
-            return await CanchasRepository.GetAllCanchas();  
+            return await _repo.GetAllCanchas();  
         }
 
         public async Task<CanchaDTO?> ObtenerCanchaPorId(int id)
@@ -53,7 +59,7 @@ namespace Negocio.Implementations
             if (id <= 0)
                 throw new ArgumentException("Cancha_ID debe ser mayor a cero");
 
-            return await CanchasRepository.GetCanchaById(id);  
+            return await _repo.GetCanchaById(id);  
         }
     }
 
