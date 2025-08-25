@@ -20,6 +20,7 @@ namespace Shared.Entidades
         [ForeignKey("Proveedores")]
         public int Proveedor_ID { get; set; } // Clave Foránea
         public Proveedores Proveedores { get; set; }
+        public decimal Precio { get; set; }
 
         public ICollection<ConsumicionProducto> ConsumicionProductos { get; set; } 
     }

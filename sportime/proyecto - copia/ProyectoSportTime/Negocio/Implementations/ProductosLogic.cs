@@ -1,24 +1,35 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Negocio.Contracts;
-using API.Data;
-using Shared.Entidades;
+using CNegocio.Contracts;
+using CDatos.Repositorys.IRepositorys;   
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Negocio.Repositorys;
 using Shared.Dtos;
 
-namespace Negocio.Implementations
+namespace CNegocio.Implementations
 {
-    public class ProductosLogic 
+    public class ProductosLogic : IProductos
     {
+        private readonly IProductoRepository _repo;
+
+        public ProductosLogic(IProductoRepository repo)
+        {
+            _repo = repo;
+        }
         public async Task AltaProducto(ProductoDTO nuevoProducto)
         {
             ArgumentNullException.ThrowIfNull(nuevoProducto);
 
-            await ProductosRepository.CreateProducto(nuevoProducto);  // Llamamos al repositorio para crear el producto
+            if (string.IsNullOrWhiteSpace(nuevoProducto.Descripcion))
+                throw new ArgumentException("La descripción no puede estar vacía.");
+
+            if (nuevoProducto.Precio < 0)
+                throw new ArgumentException("El precio no puede ser negativo.");
+
+            await _repo.CrearProducto(nuevoProducto);
+
         }
 
         public async Task ModificarProducto(int productoID, ProductoDTO productoModificado)
@@ -30,7 +41,7 @@ namespace Negocio.Implementations
                 throw new ArgumentException("Id debe ser mayor a cero");
             }
 
-            await ProductosRepository.UpdateProducto(productoID, productoModificado);  // Llamamos al repositorio para modificar el producto
+            await _repo.ModificarProducto(productoID, productoModificado);  // Llamamos al repositorio para modificar el producto
         }
 
         public async Task BajaProducto(int productoID)
@@ -40,12 +51,12 @@ namespace Negocio.Implementations
                 throw new ArgumentException("Id debe ser mayor a cero");
             }
 
-            await ProductosRepository.DeleteProducto(productoID);  // Llamamos al repositorio para eliminar el producto
+            await _repo.EliminarProducto(productoID);  // Llamamos al repositorio para eliminar el producto
         }
 
         public async Task<List<ProductoDTO>> ObtenerTodosLosProductos()
         {
-            return await ProductosRepository.GetAllProductos();  // Llamamos al repositorio para obtener todos los productos
+            return await _repo.ObtenerTodosLosProductos();  // Llamamos al repositorio para obtener todos los productos
         }
 
         public async Task<ProductoDTO?> ObtenerProductoPorId(int productoID)
@@ -55,7 +66,7 @@ namespace Negocio.Implementations
                 throw new ArgumentException("Id debe ser mayor a cero");
             }
 
-            return await ProductosRepository.GetProductoById(productoID);  // Llamamos al repositorio para obtener un producto por ID
+            return await _repo.ObtenerProductoPorId(productoID);  // Llamamos al repositorio para obtener un producto por ID
         }
     }
 

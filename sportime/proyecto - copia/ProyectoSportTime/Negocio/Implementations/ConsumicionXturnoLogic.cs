@@ -1,5 +1,6 @@
 ﻿using Shared.Dtos;
-using Negocio.Repositorys;
+using CNegocio.Contracts;
+using CDatos.Repositorys.IRepositorys;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,33 +8,38 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net.Http.Json;
 
-namespace Negocio.Implementations
+namespace CNegocio.Implementations
 {
-    public class ConsumicionXturnoLogic
+    public class ConsumicionXturnoLogic : IConsumicionXTurno
     {
-        private readonly HttpClient _httpClient;
+        private readonly IConsumicionXTurnoRepository _repo;
+
+        public ConsumicionXturnoLogic(IConsumicionXTurnoRepository repo)
+        {
+            _repo = repo;
+        }
+        /* private readonly HttpClient _httpClient;
 
         public ConsumicionXturnoLogic()
         {
             _httpClient = new HttpClient { BaseAddress = new Uri("https://localhost:7094/api/") };
         }
+        */
 
-        public async Task<(bool EsExitoso, string MensajeError)> AgregarConsumicion(ConsumicionXturnoDTO consumicion)
+        public async Task AgregarConsumicion(ConsumicionXturnoDTO consumicion)
         {
-            if (consumicion == null)
-                return (false, "El producto no puede ser nulo.");
+            ArgumentNullException.ThrowIfNull(consumicion);
 
             if (consumicion.Turno_ID <= 0)
-                return (false, "Seleccione un turno válido.");
+                throw new ArgumentException("Seleccione un turno válido.");
 
             if (consumicion.Producto_ID <= 0)
-                return (false, "Seleccione un producto válido.");
+                throw new ArgumentException("Seleccione un producto válido.");
 
             if (consumicion.Cantidad <= 0)
-                return (false, "La cantidad debe ser mayor a 0.");
+                throw new ArgumentException("La cantidad debe ser mayor a 0.");
 
-            await ConsumicionXTurnoRepo.AgregarConsumicion(consumicion);
-            return (true, "Producto agregado correctamente.");
+            await _repo.AgregarConsumicion(consumicion);
         }
 
         public async Task<List<ConsumicionXturnoDTO>> ObtenerConsumicionesPorTurno(int turnoId)
@@ -41,7 +47,7 @@ namespace Negocio.Implementations
             if (turnoId <= 0)
                 throw new ArgumentException("El ID del turno debe ser válido.");
 
-            var consumiciones = await ConsumicionXTurnoRepo.ObtenerConsumicionesPorTurno(turnoId);
+            var consumiciones = await _repo.ObtenerConsumicionesPorTurno(turnoId);
             return consumiciones ?? new List<ConsumicionXturnoDTO>();
         }
 
@@ -50,10 +56,10 @@ namespace Negocio.Implementations
             if (turnoID <= 0 || productoID <= 0)
                 throw new ArgumentException("Los IDs deben ser mayores a cero.");
 
-            await ConsumicionXTurnoRepo.QuitarConsumicion(turnoID, productoID);
+            await _repo.QuitarConsumicion(turnoID, productoID);
         }
 
-        public async Task<string> ObtenerTextoConsumiciones(int turnoId)
+       /*  public async Task<string> ObtenerTextoConsumiciones(int turnoId)
         {
             var consumiciones = await ObtenerConsumicionesPorTurno(turnoId);
             var productos = await _httpClient.GetFromJsonAsync<List<ProductoDTO>>("productos");
@@ -66,6 +72,7 @@ namespace Negocio.Implementations
                     : $"Producto no encontrado, ID: {c.Producto_ID}, Cantidad: {c.Cantidad}";
             }));
         }
+       */
     }
 
 
