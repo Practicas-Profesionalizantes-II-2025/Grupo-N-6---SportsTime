@@ -1,4 +1,3 @@
-
 using CDatos.Data;
 using CDatos.Repositorys;
 using CDatos.Repositorys.IRepositorys;
@@ -12,7 +11,7 @@ using Negocio.Repositorys;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddControllers();
+builder.Services.AddControllersWithViews();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddHttpClient();
@@ -56,4 +55,7 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 app.Run();

@@ -1,0 +1,179 @@
+﻿@{
+    ViewData["Title"] = "Turnos";
+}
+<style>
+    body {
+        background: linear-gradient(135deg, #00e6e6 0%, #00bfae 100%);
+        min-height: 100vh;
+        margin: 0;
+        font-family: 'Segoe UI', Arial, sans-serif;
+    }
+
+    .turnos-container {
+        max-width: 1100px;
+        margin: 40px auto;
+        background: #fff;
+        border-radius: 18px;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+        padding: 32px 40px 32px 40px;
+    }
+
+    .turnos-title {
+        font-size: 2.8rem;
+        font-weight: 700;
+        color: #009688;
+        margin-bottom: 24px;
+        text-align: center;
+        letter-spacing: 1px;
+    }
+
+    .turnos-flex {
+        display: flex;
+        gap: 24px;
+        flex-wrap: wrap;
+    }
+
+    .turnos-list {
+        flex: 2;
+        min-width: 400px;
+        min-height: 320px;
+        background: #e0e0e0;
+        border-radius: 10px;
+        padding: 18px;
+        margin-bottom: 16px;
+        overflow-y: auto;
+    }
+
+    .turnos-sidebar {
+        flex: 1;
+        min-width: 220px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+        .turnos-sidebar input[type="text"] {
+            width: 100%;
+            padding: 8px 10px;
+            border-radius: 6px;
+            border: 1px solid #bdbdbd;
+            font-size: 1rem;
+        }
+
+        .turnos-sidebar button {
+            background: #009688;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            padding: 10px 0;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+            .turnos-sidebar button:hover {
+                background: #00796b;
+            }
+
+    .turnos-form-row {
+        display: flex;
+        gap: 18px;
+        margin-bottom: 14px;
+        flex-wrap: wrap;
+    }
+
+        .turnos-form-row label {
+            font-weight: 500;
+            margin-bottom: 4px;
+            display: block;
+        }
+
+        .turnos-form-row select,
+        .turnos-form-row input[type="text"],
+        .turnos-form-row input[type="number"],
+        .turnos-form-row input[type="time"] {
+            padding: 7px 10px;
+            border-radius: 6px;
+            border: 1px solid #bdbdbd;
+            font-size: 1rem;
+            min-width: 120px;
+        }
+
+    .turnos-actions {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-top: 10px;
+    }
+
+        .turnos-actions button {
+            background: #009688;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            padding: 10px 18px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+    .turnos-actions button:hover {
+        background: #00796b;    .turnos-actions button:hover {
+        background: #00796b;
+    }
+</style>
+
+<div class="turnos-container">
+    <div class="turnos-title">Turnos</div>
+    <div class="turnos-flex">
+        <div class="turnos-list">
+            <!-- Aquí iría la lista de turnos (tabla o cards) -->
+            <p style="color:#757575;text-align:center;">No hay turnos cargados.</p>
+        </div>
+        <div class="turnos-sidebar">
+            <label for="buscar">Buscar</label>
+            <input type="text" id="buscar" placeholder="Buscar...">
+            <button>Estadísticas</button>
+        </div>
+    </div>
+    <form>
+        <div class="turnos-form-row">
+            <div>
+                <label for="cliente">Cliente</label>
+                <select id="cliente"><option>Seleccionar</option></select>
+            </div>
+            <div>
+                <label for="cancha">Cancha</label>
+                <select id="cancha"><option>Seleccionar</option></select>
+            </div>
+            <div>
+                <label for="producto">Producto</label>
+                <select id="producto"><option>Seleccionar</option></select>
+            </div>
+            <div>
+                <label for="cantidad">Cantidad</label>
+                <input type="number" id="cantidad" min="1" value="1">
+            </div>
+            <div>
+                <label for="inicio">Inicio</label>
+                <input type="time" id="inicio" value="21:00">
+            </div>
+            <div>
+                <label for="fin">Fin</label>
+                <input type="time" id="fin" value="21:00">
+            </div>
+        </div>
+        <div class="turnos-actions">
+            <button type="submit">Guardar</button>
+            <button type="button">Modificar</button>
+            <button type="button">Eliminar</button>
+            <button type="button">Agregar</button>
+            <button type="button">Quitar</button>
+            <button type="button">Mostrar</button>
+            <button type="reset">Limpiar</button>
+            <button type="button" onclick="window.location.href='@Url.Action("Index", "Home")'">Volver</button>
+        </div>
+    </form>
+</div>  
