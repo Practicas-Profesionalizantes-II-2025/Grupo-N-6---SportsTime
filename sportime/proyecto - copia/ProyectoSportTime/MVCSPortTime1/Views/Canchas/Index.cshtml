@@ -1,0 +1,76 @@
+﻿@model List<Shared.Dtos.CanchaDTO>
+@{
+    ViewData["Title"] = "Canchas";
+    var deportes = ViewBag.Deportes as List<Shared.Entidades.Deportes>;
+    var search = ViewBag.Search as string;
+}
+<style>
+    body { background: linear-gradient(135deg, #00e6e6 0%, #00bfae 100%); min-height: 100vh; margin: 0; font-family: 'Segoe UI', Arial, sans-serif; }
+    .canchas-container { max-width: 1000px; margin: 40px auto; background: #fff; border-radius: 18px; box-shadow: 0 8px 32px rgba(0,0,0,0.18); padding: 32px 40px; }
+    .canchas-title { font-size: 2.5rem; font-weight: 700; color: #009688; margin-bottom: 24px; text-align: center; }
+    .canchas-form-row { display: flex; gap: 18px; margin-bottom: 18px; flex-wrap: wrap; }
+    .canchas-form-row label { font-weight: 500; margin-bottom: 4px; display: block; }
+    .canchas-form-row select, .canchas-form-row input[type="text"], .canchas-form-row input[type="number"] { padding: 7px 10px; border-radius: 6px; border: 1px solid #bdbdbd; font-size: 1rem; min-width: 120px; }
+    .canchas-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 10px; }
+    .canchas-actions button { background: #009688; color: #fff; border: none; border-radius: 6px; padding: 10px 18px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: background 0.2s; }
+    .canchas-actions button:hover { background: #00796b; }
+    .canchas-table { width: 100%; border-collapse: collapse; margin-bottom: 18px; }
+    .canchas-table th, .canchas-table td { border: 1px solid #bdbdbd; padding: 10px; text-align: center; }
+    .canchas-table th { background: #009688; color: #fff; }
+    .search-box { float: right; margin-bottom: 10px; }
+    .search-box input { padding: 6px 10px; border-radius: 6px; border: 1px solid #bdbdbd; }
+</style>
+
+<div class="canchas-container">
+    <div class="canchas-title">Canchas</div>
+    <form method="get" asp-action="Index" class="search-box">
+        <input type="text" name="search" value="@search" placeholder="Buscar...">
+        <button type="submit">Buscar</button>
+    </form>
+    <table class="canchas-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Deporte</th>
+                <th>Tipo</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var cancha in Model)
+        {
+            <tr>
+                <td>@cancha.Cancha_ID</td>
+                <td>@(cancha.deporte?.Tipo ?? deportes?.FirstOrDefault(d => d.Deporte_ID == cancha.Deporte_ID)?.Tipo)</td>
+                <td>@cancha.Tipo</td>
+                <td>
+                    <form method="post" asp-action="Eliminar" style="display:inline;">
+                        <input type="hidden" name="canchaId" value="@cancha.Cancha_ID" />
+                        <button type="submit" onclick="return confirm('¿Eliminar cancha?')">Eliminar</button>
+                    </form>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+    <form method="post" asp-action="Guardar">
+        <div class="canchas-form-row">
+            <div>
+                <label for="deporteId">Deporte</label>
+                <select id="deporteId" name="deporteId" required>
+                    <option value="">Seleccionar</option>
+                    @if (deportes != null)
+                    {
+                        foreach (var d in deportes)
+                        {
+                            <option value="@d.Deporte_ID">@d.Tipo</option>
+                        }
+                    }
+                </select>
+            </div>
+        </div>
+        <div class="canchas-actions">
+            <button type="submit">Guardar</button>
+        </div>
+    </form>
+</div>
