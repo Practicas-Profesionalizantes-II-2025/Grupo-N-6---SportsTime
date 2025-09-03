@@ -1,12 +1,9 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Shared.Dtos;
 using Shared.Entidades;
 using System.Collections.Generic;
 using System.Linq;
-using BCrypt.Net;
-using CDatos.Data;
 using Negocio.Contracts;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 

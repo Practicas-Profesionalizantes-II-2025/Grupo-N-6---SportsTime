@@ -1,25 +1,42 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Negocio.Contracts;
-using API.Data;
+﻿using CDatos.Repositorys.IRepositorys;
+using CNegocio.Contracts;
+using Microsoft.EntityFrameworkCore;
+using Negocio.Repositorys;
+using Shared.Dtos;
 using Shared.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Negocio.Repositorys;
-using Shared.Dtos;
 
-namespace Negocio.Implementations
+namespace CNegocio.Implementations
 {
-    public class DeportesLogic 
+    public class DeportesLogic : IDeportes
     {
+        private readonly IDeportesRepository _repo;
+
+        public DeportesLogic(IDeportesRepository repo)
+        {
+            _repo = repo;
+        }
+
         public async Task AltaDeporte(DeporteDTO nuevoDeporte)
+        {
+            ArgumentNullException.ThrowIfNull(nuevoDeporte);
+
+            if (string.IsNullOrWhiteSpace(nuevoDeporte.Tipo))
+                throw new ArgumentException("El tipo de deporte no puede estar vacío.");
+
+            await _repo.CrearDeporte(nuevoDeporte);
+        }
+        /* public async Task AltaDeporte(DeporteDTO nuevoDeporte)
         {
             ArgumentNullException.ThrowIfNull(nuevoDeporte);
 
             await DeportesRepository.CreateDeporte(nuevoDeporte);  // Llamamos al repositorio para crear el deporte
         }
+        */
 
         public async Task ModificarDeporte(int deporteID, DeporteDTO deporteModificado)
         {
@@ -30,7 +47,7 @@ namespace Negocio.Implementations
                 throw new ArgumentException("Id debe ser mayor a cero");
             }
 
-            await DeportesRepository.UpdateDeporte(deporteID, deporteModificado);  // Llamamos al repositorio para modificar el deporte
+            await _repo.ModificarDeporte(deporteID, deporteModificado);  // Llamamos al repositorio para modificar el deporte
         }
 
         public async Task BajaDeporte(int deporteID)
@@ -40,12 +57,12 @@ namespace Negocio.Implementations
                 throw new ArgumentException("Id debe ser mayor a cero");
             }
 
-            await DeportesRepository.DeleteDeporte(deporteID);  // Llamamos al repositorio para eliminar el deporte
+            await _repo.EliminarDeporte(deporteID);  // Llamamos al repositorio para eliminar el deporte
         }
 
         public async Task<List<DeporteDTO>> ObtenerTodosLosDeportes()
         {
-            return await DeportesRepository.GetAllDeportes();  // Llamamos al repositorio para obtener todos los deportes
+            return await _repo.ObtenerTodosLosDeportes();  // Llamamos al repositorio para obtener todos los deportes
         }
 
         public async Task<DeporteDTO?> ObtenerDeportePorId(int deporteID)
@@ -55,7 +72,7 @@ namespace Negocio.Implementations
                 throw new ArgumentException("Id debe ser mayor a cero");
             }
 
-            return await DeportesRepository.GetDeporteById(deporteID);  // Llamamos al repositorio para obtener un deporte por ID
+            return await _repo.ObtenerDeportePorId(deporteID);  // Llamamos al repositorio para obtener un deporte por ID
         }
     }
 

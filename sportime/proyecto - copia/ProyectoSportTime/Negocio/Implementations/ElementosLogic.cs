@@ -1,12 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Negocio.Contracts;
-using API.Data;
+using API;
 using Shared.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CDatos.Data;
 
 namespace Negocio.Implementations
 {
