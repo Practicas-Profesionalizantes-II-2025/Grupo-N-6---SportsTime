@@ -7,16 +7,12 @@ using System.Threading.Tasks;
 
 namespace Shared.Entidades
 {
-    public class Administrador
+    public class Usuarios
     {
-        [Key]
-        public int Admin_ID { get; set; }
+        public int Usuario_ID { get; set; }
         public string Nombre { get; set; }
         public string Email { get; set; }
         public string Contraseña { get; set; }
-        public DateTime LastLogIn { get; set; }
-
-        public bool IsSuperAdmin { get; set; } = true;
-        public ICollection<Turnos>? Turnos { get; set; }
+        public bool EsAdmin { get; set; } = true;
     }
 }

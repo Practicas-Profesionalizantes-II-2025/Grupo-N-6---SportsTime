@@ -12,33 +12,33 @@ using System.Text;
 using System.Threading.Tasks;
 using BCrypt.Net;
 
-namespace Negocio.Implementations
+namespace CNegocio.Implementations
 {
-    public class AdministradorLogic : IAdministrador
+    public class UsuariosLogic : IUsuarios
     {
         private readonly IAdministradorRepository _repo;
 
-        public AdministradorLogic(IAdministradorRepository repo)
+        public UsuariosLogic(IAdministradorRepository repo)
         {
             _repo = repo;
         }
 
-        public async Task CrearAdministrador(AdministradorDTO adminDTO)
+        public async Task CrearAdministrador(UsuarioDTO adminDTO)
         {
-            await _repo.CreateAdministrador(adminDTO);
+            await _repo.CrearAdministrador(adminDTO);
         }
 
-        public async Task<List<AdministradorDTO>> ObtenerTodos()
+        public async Task<List<UsuarioDTO>> ObtenerTodos()
         {
             return await _repo.GetAllAdministradores();
         }
 
-        public async Task<AdministradorDTO?> ObtenerPorId(int id)
+        public async Task<UsuarioDTO?> ObtenerPorId(int id)
         {
             return await _repo.GetAdministradorById(id);
         }
 
-        public async Task ActualizarAdministrador(int id, AdministradorDTO adminDTO)
+        public async Task ActualizarAdministrador(int id, UsuarioDTO adminDTO)
         {
             await _repo.UpdateAdministrador(id, adminDTO);
         }
@@ -47,7 +47,7 @@ namespace Negocio.Implementations
         {
             await _repo.DeleteAdministrador(id);
         }
-        public async Task<AdministradorDTO?> Login(LoginDTO loginDto)
+        public async Task<UsuarioDTO?> Login(LoginDTO loginDto)
         {
             if (loginDto == null || string.IsNullOrEmpty(loginDto.Email) || string.IsNullOrEmpty(loginDto.Password))
                 return null;

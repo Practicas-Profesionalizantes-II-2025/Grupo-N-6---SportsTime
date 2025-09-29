@@ -1,12 +1,14 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using CDatos.Repositorys.IRepositorys;
 using CNegocio.Contracts;
+using Microsoft.EntityFrameworkCore;
+using Shared.Dtos;
+using Shared.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CDatos.Repositorys.IRepositorys;
-using Shared.Dtos;
+using System.Text.RegularExpressions;
 
 namespace CNegocio.Implementations
 {
@@ -19,65 +21,136 @@ namespace CNegocio.Implementations
             _repo = repo;
         }
         // Alta de un proveedor
-        public async Task AltaProveedor(ProveedorDTO nuevoProveedor)
+        public async Task<ProveedorDTO> CrearProveedor(ProveedorDTO proveedorDTO)
         {
-            ArgumentNullException.ThrowIfNull(nuevoProveedor);
+            List<string> camposErroneos = new List<string>();
+            if (string.IsNullOrEmpty(proveedorDTO.Nombre) || !IsValidName(proveedorDTO.Nombre))
+                camposErroneos.Add("Nombre");
 
-            // Validaciones adicionales si las necesitas
-            if (string.IsNullOrWhiteSpace(nuevoProveedor.Nombre))
-                throw new ArgumentException("El nombre del proveedor no puede estar vacío");
+            if (camposErroneos.Count > 0)
+            {
+                throw new ArgumentException("Los siguientes campos son inválidos: ", string.Join(", ", camposErroneos));
+            }
 
-            if (string.IsNullOrWhiteSpace(nuevoProveedor.Email))
-                throw new ArgumentException("El email del proveedor no puede estar vacío");
+            var proveedor = new Proveedores
+            {
+                Nombre = proveedorDTO.Nombre,
+                Direccion = proveedorDTO.Direccion,
+                Telefono = proveedorDTO.Telefono,
+                Email = proveedorDTO.Email
+            };
 
-            if (string.IsNullOrWhiteSpace(nuevoProveedor.Telefono))
-                throw new ArgumentException("El teléfono del proveedor no puede estar vacío");
+            var nuevoProveedor = await _repo.CrearProveedor(proveedor);
 
-            await _repo.CrearProveedor(nuevoProveedor);
+            proveedorDTO.Proveedor_ID = nuevoProveedor.Proveedor_ID;
+
+            return proveedorDTO;
         }
 
         // Modificar un proveedor existente
-        public async Task ModificarProveedor(int proveedorID, ProveedorDTO proveedorModificado)
+        public async Task ModificarProveedor(ProveedorDTO proveedorDTO)
         {
-            ArgumentNullException.ThrowIfNull(proveedorModificado);
+            if (proveedorDTO.Proveedor_ID <= 0)
+                throw new ArgumentException("El Id del proveedor no es válido.");
 
-            if (proveedorID <= 0)
-                throw new ArgumentException("Proveedor_ID debe ser mayor a cero");
-         
-            if (string.IsNullOrWhiteSpace(proveedorModificado.Nombre))
-                throw new ArgumentException("El nombre del proveedor no puede estar vacío");
+            var existente = await _repo.ObtenerProveedorPorId(proveedorDTO.Proveedor_ID);
+            if (existente == null)
+                throw new InvalidOperationException("No se encontró el proveedor a actualizar.");
 
-            if (string.IsNullOrWhiteSpace(proveedorModificado.Email))
-                throw new ArgumentException("El email del proveedor no puede estar vacío");
+            ValidarProveedorDTO(proveedorDTO, esNuevo: false);
 
-            if (string.IsNullOrWhiteSpace(proveedorModificado.Telefono))
-                throw new ArgumentException("El teléfono del proveedor no puede estar vacío");
-
-            await _repo.ModificarProveedor(proveedorID, proveedorModificado);
+            var proveedor = new Proveedores
+            {
+                Proveedor_ID = proveedorDTO.Proveedor_ID,
+                Nombre = proveedorDTO.Nombre,
+                Direccion = proveedorDTO.Direccion,
+                Telefono = proveedorDTO.Telefono,
+                Email = proveedorDTO.Email
+            };
+            _repo.ModificarProveedor(proveedor);
         }
 
         // Baja de un proveedor
-        public async Task BajaProveedor(int proveedorID)
+        public async Task BajaProveedor(int ProveedorID)
         {
-            if (proveedorID <= 0)
-                throw new ArgumentException("Proveedor_ID debe ser mayor a cero");
+            if (ProveedorID <= 0)
+                throw new ArgumentException("El Id del proveedor debe ser mayor a cero");
+            var existente = await _repo.ObtenerProveedorPorId(ProveedorID);
+            if (existente == null)
+                throw new InvalidOperationException("No se encontró el proveedor a eliminar.");
 
-            await _repo.EliminarProveedor(proveedorID);
+             _repo.EliminarProveedor(ProveedorID);
         }
 
         // Obtener todos los proveedores
         public async Task<List<ProveedorDTO>> ObtenerTodosLosProveedores()
         {
-            return await _repo.ObtenerTodosLosProveedores();
+            var proveedores = await _repo.ObtenerTodosLosProveedores();
+            return proveedores.Select(p => new ProveedorDTO
+            {
+                Proveedor_ID = p.Proveedor_ID,
+                Nombre = p.Nombre,
+                Direccion = p.Direccion,
+                Telefono = p.Telefono,
+                Email = p.Email
+            }).ToList();
         }
 
         // Obtener un proveedor por ID
-        public async Task<ProveedorDTO?> ObtenerProveedorPorId(int id)
+        public async Task<ProveedorDTO?> ObtenerProveedorPorId(int ProveedorID)
         {
-            if (id <= 0)
-                throw new ArgumentException("Proveedor_ID debe ser mayor a cero");
+            if (ProveedorID <= 0)
+                throw new ArgumentException("El ID del proveedor debe ser mayor que cero.");
 
-            return await _repo.ObtenerProveedorPorId(id);
+            var proveedor = await _repo.ObtenerProveedorPorId(ProveedorID);
+            if (proveedor == null)
+                throw new ArgumentException($"No se encontró un proveedor con el ID {ProveedorID}");
+
+            return new ProveedorDTO
+            {
+                Proveedor_ID = proveedor.Proveedor_ID,
+                Nombre = proveedor.Nombre,
+                Direccion = proveedor.Direccion,
+                Telefono = proveedor.Telefono,
+                Email = proveedor.Email
+            };
         }
+
+        private void ValidarProveedorDTO(ProveedorDTO proveedorDTO, bool esNuevo)
+        {
+
+            if (proveedorDTO == null)
+                throw new ArgumentNullException(nameof(proveedorDTO), "El proveedor no puede ser nulo.");
+
+            if (string.IsNullOrWhiteSpace(proveedorDTO.Nombre))
+                throw new ArgumentException("El nombre del proveedor es obligatorio.");
+
+            if (string.IsNullOrWhiteSpace(proveedorDTO.Direccion))
+                throw new ArgumentException("La dirección del proveedor es obligatoria.");
+
+            if (string.IsNullOrWhiteSpace(proveedorDTO.Telefono))
+                throw new ArgumentException("El teléfono del proveedor es obligatorio.");
+
+            if (!Regex.IsMatch(proveedorDTO.Telefono, @"^\+?\d{7,15}$"))
+                throw new ArgumentException("El teléfono no tiene un formato válido.");
+
+            if (string.IsNullOrWhiteSpace(proveedorDTO.Email))
+                throw new ArgumentException("El email del proveedor es obligatorio.");
+
+            if (!Regex.IsMatch(proveedorDTO.Email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
+                throw new ArgumentException("El email del proveedor no tiene un formato válido.");
+        }
+
+        private bool ContainsInvalidCharacter(string text)
+        {
+            char[] caracteres = { '!', '"', '#', '$', '%', '/', '(', ')', '=', '.', ',' };
+            return caracteres.Any(c => text.Contains(c));
+        }
+        private bool IsValidName(string nombre)
+        {
+            return nombre.Length < 15 && !ContainsInvalidCharacter(nombre);
+        }
+
     }
 }
+

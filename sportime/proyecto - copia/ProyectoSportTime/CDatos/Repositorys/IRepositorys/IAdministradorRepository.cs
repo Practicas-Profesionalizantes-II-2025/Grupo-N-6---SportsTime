@@ -1,20 +1,21 @@
-﻿using System;
+﻿using Shared.Dtos;
+using Shared.Entidades;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Shared.Dtos;
 
 namespace CDatos.Repositorys.IRepositorys
 {
     public interface IAdministradorRepository
     {
-        Task CreateAdministrador(AdministradorDTO adminDTO);
-        Task<List<AdministradorDTO>> GetAllAdministradores();
-        Task<AdministradorDTO?> GetAdministradorById(int id);
-        Task UpdateAdministrador(int adminID, AdministradorDTO updatedAdmin);
-        Task DeleteAdministrador(int adminID);
-        Task<AdministradorDTO?> GetAdministradorByEmail(string email);
+        Task CrearAdministrador(Administrador administrador);
+        Task<List<Administrador>> ObtenerTodosLosAdministradores();
+        Task<Administrador?> ObtenerAdministradorPorId(int id);
+        Task ModificarAdministrador(Administrador administradorModificado);
+        Task EliminiarAdministrador(int administradorID);
+      //  Task<AdministradorDTO?> GetAdministradorByEmail(string email);
 
     }
 }

@@ -13,9 +13,9 @@ namespace Negocio.Repositorys
 {
     public class CanchasRepository : ICanchasRepository
     {
-        private readonly ProyectoDbContext _context;
+        private readonly DataContext _context;
 
-        public CanchasRepository(ProyectoDbContext context)
+        public CanchasRepository(DataContext context)
         {
             _context = context;
         }
@@ -85,13 +85,12 @@ namespace Negocio.Repositorys
         public async Task<List<CanchaDTO>> GetAllCanchas()
         {
             return await _context.Canchas
-                .Include(c => c.Deporte)
+                .Include(c => c.Deporte_ID)
                 .Select(c => new CanchaDTO
                 {
                     Cancha_ID = c.Cancha_ID,
                     Deporte_ID = c.Deporte_ID,
-                    Tipo = c.Deporte.Tipo,
-                    deporte = c.Deporte
+                    
                 })
                 .ToListAsync();
             /* var client = ApiServer.ObtenerClientHttp();
@@ -109,7 +108,7 @@ namespace Negocio.Repositorys
         public async Task<CanchaDTO?> GetCanchaById(int id)
         {
             var cancha = await _context.Canchas
-                .Include(c => c.Deporte)
+                .Include(c => c.Deporte_ID)
                 .FirstOrDefaultAsync(c => c.Cancha_ID == id);
 
             if (cancha == null) return null;
@@ -118,8 +117,7 @@ namespace Negocio.Repositorys
             {
                 Cancha_ID = cancha.Cancha_ID,
                 Deporte_ID = cancha.Deporte_ID,
-                Tipo = cancha.Deporte.Tipo,
-                deporte = cancha.Deporte
+                
             };
 
             /* var client = ApiServer.ObtenerClientHttp();

@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace Negocio.Contracts
 {
-    public interface IAdministrador
+    public interface IUsuarios
     {
-        Task CrearAdministrador(AdministradorDTO adminDTO);
-        Task<List<AdministradorDTO>> ObtenerTodos();
-        Task<AdministradorDTO?> ObtenerPorId(int id);
-        Task ActualizarAdministrador(int id, AdministradorDTO adminDTO);
+        Task CrearAdministrador(UsuarioDTO adminDTO);
+        Task<List<UsuarioDTO>> ObtenerTodos();
+        Task<UsuarioDTO?> ObtenerPorId(int id);
+        Task ActualizarAdministrador(int id, UsuarioDTO adminDTO);
         Task EliminarAdministrador(int id);
-        Task<AdministradorDTO?> Login(LoginDTO loginDto);
+        Task<UsuarioDTO?> Login(LoginDTO loginDto);
 
     }
     /* void AltaAdministrador(string nombre, string email);

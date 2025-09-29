@@ -10,18 +10,10 @@ namespace Shared.Entidades
 {
     public class Productos
     {
-        [Key]
         public int Producto_ID { get; set; }
-        public string Tipo { get; set; }
-        public string Descripcion { get; set; }
-
-        public string DisplayName => $"{Producto_ID} - {Descripcion}";
-
-        [ForeignKey("Proveedores")]
+        public string TipoProducto { get; set; }
         public int Proveedor_ID { get; set; } // Clave Foránea
-        public Proveedores Proveedores { get; set; }
         public decimal Precio { get; set; }
 
-        public ICollection<ConsumicionProducto> ConsumicionProductos { get; set; } 
     }
 }

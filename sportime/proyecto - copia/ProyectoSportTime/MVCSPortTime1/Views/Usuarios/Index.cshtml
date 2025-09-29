@@ -3,6 +3,7 @@
     ViewData["Title"] = "Clientes";
 }
 
+
 <style>
     body {
         background: #00bfae;
@@ -93,15 +94,7 @@
 
 <div class="clientes-container">
     <div class="clientes-title">Clientes</div>
-    <form asp-action="Guardar" method="post" class="clientes-form">
-        <label for="nombre">Nombre</label>
-        <input type="text" id="nombre" name="nombre" required />
-        <label for="telefono">Teléfono</label>
-        <input type="number" id="telefono" name="telefono" required />
-        <div class="clientes-actions">
-            <button type="submit">Guardar</button>
-        </div>
-    </form>
+    <a asp-action="Crear" class="btn btn-success mb-2">Agregar Cliente</a>
     <table class="clientes-table">
         <thead>
             <tr>
@@ -112,26 +105,19 @@
             </tr>
         </thead>
         <tbody>
-        @foreach (var cliente in Model)
-        {
-            <tr>
-                <td>@cliente.Cliente_ID</td>
-                <td>
-                    <form asp-action="Modificar" method="post" style="display:inline;">
-                        <input type="hidden" name="clienteId" value="@cliente.Cliente_ID" />
-                        <input type="text" name="nombre" value="@cliente.Nombre" required style="width:120px;" />
-                        <input type="number" name="telefono" value="@cliente.NumeroTelefono" required style="width:120px;" />
-                        <button type="submit">Modificar</button>
-                    </form>
-                </td>
-                <td>
-                    <form asp-action="Eliminar" method="post" style="display:inline;">
-                        <input type="hidden" name="clienteId" value="@cliente.Cliente_ID" />
-                        <button type="submit" onclick="return confirm('¿Eliminar cliente?')">Eliminar</button>
-                    </form>
-                </td>
-            </tr>
-        }
+            @foreach (var cliente in Model)
+            {
+                <tr>
+                    <td>@cliente.Cliente_ID</td>
+                    <td>@cliente.Nombre</td>
+                    <td>@cliente.NumeroTelefono</td>
+                    <td>
+                        <a asp-action="Detalles" asp-route-id="@cliente.Cliente_ID" class="btn btn-info btn-sm">Detalles</a>
+                        <a asp-action="Editar" asp-route-id="@cliente.Cliente_ID" class="btn btn-warning btn-sm">Editar</a>
+                        <a asp-action="Eliminar" asp-route-id="@cliente.Cliente_ID" class="btn btn-danger btn-sm">Eliminar</a>
+                    </td>
+                </tr>
+            }
         </tbody>
     </table>
     <button class="volver-btn" onclick="window.location.href='@Url.Action("Index", "Home")'">Volver</button>

@@ -9,19 +9,11 @@ using System.Threading.Tasks;
 
 namespace Shared.Entidades
 {
-    public class ConsumicionProducto
+    public class TurnoProducto
     {
-        [Key]
-        public int ConsumicionProducto_ID { get; set; }
-
-        [ForeignKey("Consumicion")]
-        public int Consumicion_ID { get; set; }
-        public Consumiciones Consumicion { get; set; }
-
-        [ForeignKey("Producto")]
+        public int TurnoProducto_ID { get; set; }
+        public int Turno_ID { get; set; }         
         public int Producto_ID { get; set; }
-        public Productos Producto { get; set; }
-
         public int Cantidad { get; set; } // Representa la cantidad del producto
     }
 }

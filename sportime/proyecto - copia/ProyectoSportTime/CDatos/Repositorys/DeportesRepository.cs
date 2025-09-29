@@ -13,9 +13,9 @@ namespace CDatos.Repositorys
 {
     public class DeportesRepository : IDeportesRepository
     {
-        private readonly ProyectoDbContext _context;
+        private readonly DataContext _context;
 
-        public DeportesRepository(ProyectoDbContext context)
+        public DeportesRepository(DataContext context)
         {
             _context = context;
         }
@@ -26,7 +26,7 @@ namespace CDatos.Repositorys
 
             var nuevoDeporte = new Deportes
             {
-                Tipo = deporte.Tipo
+                Nombre = deporte.Nombre
             };
 
             _context.Deportes.Add(nuevoDeporte);
@@ -54,7 +54,7 @@ namespace CDatos.Repositorys
             if (deporte == null)
                 throw new KeyNotFoundException("Deporte no encontrado.");
 
-            deporte.Tipo = deporteModificado.Tipo;
+            deporte.Nombre = deporteModificado.Nombre;
             await _context.SaveChangesAsync();
         }
         /* public static async Task UpdateDeporte(int deporteID, DeporteDTO deporteModificadoDto)
@@ -98,7 +98,7 @@ namespace CDatos.Repositorys
                 .Select(d => new DeporteDTO
                 {
                     Deporte_ID = d.Deporte_ID,
-                    Tipo = d.Tipo
+                    Nombre = d.Nombre
                 })
                 .ToListAsync();
         }
@@ -123,7 +123,7 @@ namespace CDatos.Repositorys
             return new DeporteDTO
             {
                 Deporte_ID = deporte.Deporte_ID,
-                Tipo = deporte.Tipo
+                Nombre = deporte.Nombre
             };
         }
     }

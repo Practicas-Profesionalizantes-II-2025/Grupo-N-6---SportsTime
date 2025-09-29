@@ -6,14 +6,8 @@ namespace MVCSPortTime1.Controllers
 {
     public class CanchasController : Controller
     {
-        // Lista de ejemplo en memoria
-        private static readonly List<CanchaDTO> canchasEjemplo = new List<CanchaDTO>
-        {
-            new CanchaDTO { Cancha_ID = 1, Deporte_ID = 1, Tipo = "Fútbol 5" },
-            new CanchaDTO { Cancha_ID = 2, Deporte_ID = 2, Tipo = "Tenis" },
-            new CanchaDTO { Cancha_ID = 3, Deporte_ID = 1, Tipo = "Fútbol 7" }
-        };
-
+       
+        /*
         public IActionResult Index(string? search)
         {
             var canchas = canchasEjemplo;
@@ -25,5 +19,6 @@ namespace MVCSPortTime1.Controllers
             ViewBag.Search = search;
             return View(canchas);
         }
+        */
     }
 }

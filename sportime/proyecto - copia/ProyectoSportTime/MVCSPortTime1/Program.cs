@@ -11,11 +11,13 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<IClientes, ClientesLogic>();
+builder.Services.AddScoped<IClienteRepository, ClientesRepository>();
 builder.Services.AddScoped<ICanchas, CanchasLogic>();
 builder.Services.AddScoped<IDeportes, DeportesLogic>();
 builder.Services.AddScoped<ICanchasRepository, CanchasRepository>();
 builder.Services.AddScoped<IDeportesRepository, DeportesRepository>();
-builder.Services.AddDbContext<ProyectoDbContext>(options =>
+builder.Services.AddDbContext<DataContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 WebApplication app = builder.Build();   
@@ -28,6 +30,7 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
@@ -38,5 +41,6 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
 
 app.Run();

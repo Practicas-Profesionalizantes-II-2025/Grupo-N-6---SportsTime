@@ -16,15 +16,15 @@ namespace API.Controllers
     [Route("api/[controller]")]
     public class AdministradorController : ControllerBase
     {
-        private readonly IAdministrador _administradorLogic;
+        private readonly IUsuarios _administradorLogic;
 
-        public AdministradorController(IAdministrador administradorLogic)
+        public AdministradorController(IUsuarios administradorLogic)
         {
             _administradorLogic = administradorLogic;
         }
 
         [HttpPost("singup")]
-        public async Task<IActionResult> SingUp([FromBody] AdministradorDTO adminDTO)
+        public async Task<IActionResult> SingUp([FromBody] UsuarioDTO adminDTO)
         {
             if (adminDTO == null)
                 return BadRequest("Datos de administrador inválidos.");
@@ -139,7 +139,7 @@ namespace API.Controllers
 
         // PUT: api/administrador (Actualizar los datos del administrador)
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id, [FromBody] AdministradorDTO updatedAdmin)
+        public async Task<IActionResult> Update(int id, [FromBody] UsuarioDTO updatedAdmin)
         {
             if (updatedAdmin == null)
                 return BadRequest("Datos inválidos.");

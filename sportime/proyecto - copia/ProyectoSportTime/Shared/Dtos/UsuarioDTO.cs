@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Shared.Dtos
 {
-    public class ProveedorDTO
+    public class UsuarioDTO
     {
-        public int Proveedor_ID { get; set; } // Clave primaria
+        public int Usuario_ID { get; set; }
         public string Nombre { get; set; }
-        public string Direccion { get; set; }
         public string Email { get; set; }
-        public string Telefono { get; set; }
+        public string Contraseña { get; set; }
+        public bool EsAdmin { get; set; } = true;
     }
 
 }

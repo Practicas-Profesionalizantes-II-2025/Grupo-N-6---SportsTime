@@ -9,10 +9,8 @@ namespace Shared.Entidades
 {
     public class Deportes
     {
-        [Key]
         public int Deporte_ID { get; set; }
-        public string Tipo { get; set; }
-        
-        public ICollection<Canchas>? Canchas { get; set; }
+        public string Nombre { get; set; }
+
     }
 }

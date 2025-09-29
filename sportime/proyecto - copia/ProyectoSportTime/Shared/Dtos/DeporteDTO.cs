@@ -9,10 +9,9 @@ namespace Shared.Dtos
     public class DeporteDTO
     {
         public int Deporte_ID { get; set; }
-        public string? Tipo { get; set; }
-        public string? Nombre { get; set; }
+        public string Nombre { get; set; }
 
-       
+
     }
 
 }

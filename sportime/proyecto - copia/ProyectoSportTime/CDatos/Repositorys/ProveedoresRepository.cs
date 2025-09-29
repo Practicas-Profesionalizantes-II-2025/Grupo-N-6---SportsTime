@@ -1,7 +1,6 @@
 ﻿using CDatos.Data;
 using CDatos.Repositorys.IRepositorys;
 using Microsoft.EntityFrameworkCore;
-using Shared.Dtos;
 using Shared.Entidades;
 using System;
 using System.Collections.Generic;
@@ -13,26 +12,18 @@ namespace CDatos.Repositorys
 {
     public class ProveedoresRepository : IProveedoresRepository
     {
-        private readonly ProyectoDbContext _context;
+        private readonly DataContext _context;
 
-        public ProveedoresRepository(ProyectoDbContext context)
+        public ProveedoresRepository(DataContext context)
         {
             _context = context;
         }
         // Crear un nuevo proveedor
-        public async Task CrearProveedor(ProveedorDTO proveedor)
+        public async Task<Proveedores> CrearProveedor(Proveedores proveedor)
         {
-            ArgumentNullException.ThrowIfNull(proveedor);
-
-            var nuevoProveedor = new Proveedores
-            {
-                Nombre = proveedor.Nombre,
-                Telefono = proveedor.Telefono,
-                Email = proveedor.Email
-            };
-
-            _context.Proveedores.Add(nuevoProveedor);
+            _context.Proveedores.Add(proveedor);
             await _context.SaveChangesAsync();
+            return proveedor;
         }
         /* public static async Task CreateProveedor(ProveedorDTO proveedor)
         {
@@ -53,18 +44,22 @@ namespace CDatos.Repositorys
         */
 
         // Actualizar un proveedor existente
-        public async Task ModificarProveedor(int proveedorID, ProveedorDTO proveedorModificado)
+        public void  ModificarProveedor(Proveedores proveedor)
         {
-            ArgumentNullException.ThrowIfNull(proveedorModificado);
+            ArgumentNullException.ThrowIfNull(proveedor);
 
-            var proveedor = await _context.Proveedores.FindAsync(proveedorID);
-            if (proveedor == null)
-                throw new KeyNotFoundException("Proveedor no encontrado.");
+            var proveedorExistente =  _context.Proveedores.Find(proveedor.Proveedor_ID);
+            if (proveedorExistente == null)
+            {
+                throw new Exception("Proveedor no encontrado.");
+            }
 
-            proveedor.Nombre = proveedorModificado.Nombre;
-            proveedor.Telefono = proveedorModificado.Telefono;
-            proveedor.Email = proveedorModificado.Email;
-            await _context.SaveChangesAsync();
+            proveedorExistente.Nombre = proveedor.Nombre;
+            proveedorExistente.Telefono = proveedor.Telefono;
+            proveedorExistente.Direccion = proveedor.Direccion;
+            proveedorExistente.Email = proveedor.Email;
+
+            _context.SaveChangesAsync();
         }
         /* public static async Task UpdateProveedor(int proveedorID, ProveedorDTO proveedorModificado)
         {
@@ -85,14 +80,14 @@ namespace CDatos.Repositorys
         */
 
         // Eliminar un proveedor
-        public async Task EliminarProveedor(int proveedorID)
+        public void EliminarProveedor(int ProveedorID)
         {
-            var proveedor = await _context.Proveedores.FindAsync(proveedorID);
-            if (proveedor == null)
-                throw new KeyNotFoundException("Proveedor no encontrado.");
-
-            _context.Proveedores.Remove(proveedor);
-            await _context.SaveChangesAsync();
+            var Proveedor = _context.Proveedores.FirstOrDefault(x => x.Proveedor_ID == ProveedorID);
+            if (Proveedor != null)
+            {
+                _context.Proveedores.Remove(Proveedor);
+                _context.SaveChanges();
+            }
         }
         /* public static async Task DeleteProveedor(int proveedorID)
          {
@@ -105,17 +100,9 @@ namespace CDatos.Repositorys
         */
 
         // Obtener todos los proveedores
-        public async Task<List<ProveedorDTO>> ObtenerTodosLosProveedores()
+        public async Task<List<Proveedores>> ObtenerTodosLosProveedores()
         {
-            return await _context.Proveedores
-                .Select(p => new ProveedorDTO
-                {
-                    Proveedor_ID = p.Proveedor_ID,
-                    Nombre = p.Nombre,
-                    Telefono = p.Telefono,
-                    Email = p.Email
-                })
-                .ToListAsync();
+            return await _context.Proveedores.ToListAsync();
         }
         /*public static async Task<List<ProveedorDTO>> GetAllProveedores()
         {
@@ -130,18 +117,9 @@ namespace CDatos.Repositorys
         }
         */
         // Obtener un proveedor por ID
-        public async Task<ProveedorDTO?> ObtenerProveedorPorId(int id)
+        public async Task<Proveedores?> ObtenerProveedorPorId(int ProveedorID)
         {
-            var proveedor = await _context.Proveedores.FindAsync(id);
-            if (proveedor == null) return null;
-
-            return new ProveedorDTO
-            {
-                Proveedor_ID = proveedor.Proveedor_ID,
-                Nombre = proveedor.Nombre,
-                Telefono = proveedor.Telefono,
-                Email = proveedor.Email
-            };
+            return await _context.Proveedores.FindAsync(ProveedorID);
         }
         /* public static async Task<ProveedorDTO?> GetProveedorById(int id)
         {

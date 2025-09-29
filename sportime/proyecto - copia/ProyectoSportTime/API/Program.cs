@@ -17,11 +17,11 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddHttpClient();
 
 // Configuración del DbContext con la cadena de conexión
-builder.Services.AddDbContext<ProyectoDbContext>(options =>
+builder.Services.AddDbContext<DataContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DBContext")));
 
 // Registro de servicios de lógica
-builder.Services.AddScoped<IAdministrador, AdministradorLogic>();
+builder.Services.AddScoped<IUsuarios, UsuariosLogic>();
 builder.Services.AddScoped<ICanchas, CanchasLogic>();
 builder.Services.AddScoped<IClientes, ClientesLogic>();
 builder.Services.AddScoped<IConsumiciones, ConsumicionesLogic>();

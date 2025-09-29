@@ -7,10 +7,11 @@ using System.Threading.Tasks;
 
 namespace Shared.Dtos
 {
-    public class ConsumicionProductoDTO
+    public class TurnoProductoDTO
     {
-        public int Consumicion_ID { get; set; }
+        public int TurnoProducto_ID { get; set; }
+        public int Turno_ID { get; set; }
         public int Producto_ID { get; set; }
-        public int Cantidad { get; set; }  
+        public int Cantidad { get; set; } // Representa la cantidad del producto
     }
 }

@@ -13,9 +13,9 @@ namespace CDatos.Repositorys
 {
     public class ProductosRepository : IProductoRepository
     {
-        private readonly ProyectoDbContext _context;
+        private readonly DataContext _context;
 
-        public ProductosRepository(ProyectoDbContext context)
+        public ProductosRepository(DataContext context)
         {
             _context = context;
         }
@@ -25,9 +25,9 @@ namespace CDatos.Repositorys
             ArgumentNullException.ThrowIfNull(producto);
             var nuevoProducto = new Productos
             {
-                Tipo = producto.Tipo,
+                TipoProducto = producto.TipoProducto,
                 Precio = producto.Precio,
-                Descripcion = producto.Descripcion
+                
             };
             _context.Productos.Add(nuevoProducto);
             await _context.SaveChangesAsync();
@@ -52,9 +52,9 @@ namespace CDatos.Repositorys
             var producto = await _context.Productos.FindAsync(productoID);
             if (producto == null)
                 throw new KeyNotFoundException("Producto no encontrado.");
-            producto.Tipo = productoModificado.Tipo;
+            producto.TipoProducto = productoModificado.TipoProducto;
             producto.Precio = productoModificado.Precio;
-            producto.Descripcion = productoModificado.Descripcion;
+            
             await _context.SaveChangesAsync();
         }
         /* public static async Task UpdateProducto(int productoID, ProductoDTO productoModificadoDto)
@@ -98,9 +98,9 @@ namespace CDatos.Repositorys
                 .Select(p => new ProductoDTO
                 {
                     Producto_ID = p.Producto_ID,
-                    Tipo = p.Tipo,
+                    TipoProducto = p.TipoProducto,
                     Precio = p.Precio,
-                    Descripcion = p.Descripcion
+                    
                 })
                 .ToListAsync();
         }
@@ -126,9 +126,9 @@ namespace CDatos.Repositorys
             return new ProductoDTO
             {
                 Producto_ID = producto.Producto_ID,
-                Tipo = producto.Tipo,
+                TipoProducto = producto.TipoProducto,
                 Precio = producto.Precio,
-                Descripcion = producto.Descripcion
+                
             };
         }
         /*public static async Task<ProductoDTO?> GetProductoById(int id)

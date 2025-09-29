@@ -37,12 +37,13 @@
             </tr>
         </thead>
         <tbody>
-        @foreach (var cancha in Model)
+            
+     @*    @foreach (var cancha in Model)
         {
             <tr>
                 <td>@cancha.Cancha_ID</td>
-                <td>@(cancha.deporte?.Tipo ?? deportes?.FirstOrDefault(d => d.Deporte_ID == cancha.Deporte_ID)?.Tipo)</td>
-                <td>@cancha.Tipo</td>
+                    <td>@(cancha.Deporte_ID?.Nombre ?? deportes?.FirstOrDefault(d => d.Deporte_ID == cancha.Deporte_ID)?.Nombre)</td>
+                <td>@cancha.Nombre</td>
                 <td>
                     <form method="post" asp-action="Eliminar" style="display:inline;">
                         <input type="hidden" name="canchaId" value="@cancha.Cancha_ID" />
@@ -50,7 +51,8 @@
                     </form>
                 </td>
             </tr>
-        }
+        } *@
+        
         </tbody>
     </table>
     <form method="post" asp-action="Guardar">
@@ -63,7 +65,7 @@
                     {
                         foreach (var d in deportes)
                         {
-                            <option value="@d.Deporte_ID">@d.Tipo</option>
+                            <option value="@d.Deporte_ID">@d.Nombre</option>
                         }
                     }
                 </select>

@@ -1,45 +1,30 @@
-﻿using System;
+﻿using CDatos.Data;
+using CDatos.Repositorys.IRepositorys;
+using Microsoft.EntityFrameworkCore;
 using Shared.Dtos;
+using Shared.Entidades;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Shared.Entidades;
-using CDatos.Data;
-using CDatos.Repositorys.IRepositorys;
-using Microsoft.EntityFrameworkCore;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 
 namespace CDatos.Repositorys
 {
     public class TurnosRepository : ITurnosRepository
     {
-        private readonly ProyectoDbContext _context;
+        private readonly DataContext _context;
 
-        public TurnosRepository(ProyectoDbContext context)
+        public TurnosRepository(DataContext context)
         {
             _context = context;
         }
         // Crear un nuevo turno
-        public async Task CrearTurno(TurnoDTO turno)
-        {
-            ArgumentNullException.ThrowIfNull(turno);
-
-            var nuevoTurno = new Turnos
-            {
-                Admin_ID = turno.Admin_ID,
-                Cancha_ID = turno.Cancha_ID,
-                Cliente_ID = turno.Cliente_ID,
-                HoraInicio = turno.HoraInicio,
-                HoraFin = turno.HoraFin,
-                ConsumicionProductos = turno.ConsumicionProductos?.Select(cp => new ConsumicionProducto
-                {
-                    Consumicion_ID = cp.Consumicion_ID,
-                    Producto_ID = cp.Producto_ID,
-                    Cantidad = cp.Cantidad
-                }).ToList() // Mapeo de consumiciones 
-            };
-            _context.Turnos.Add(nuevoTurno);
+        public async Task CrearTurno(Turnos turno)
+        {          
+            _context.Turnos.Add(turno);
             await _context.SaveChangesAsync();
         }
 
@@ -57,27 +42,12 @@ namespace CDatos.Repositorys
         */
 
         //Obtener turnos por cancha y rango horario
-        public async Task<List<TurnoDTO>> ObtenerTurnosPorCancha(int canchaID, DateTime horaInicio, DateTime horaFin)
+        public async Task<List<Turnos>> ObtenerTurnosPorCancha(int canchaID)
         {
             return await _context.Turnos
-                .Where(t => t.Cancha_ID == canchaID && t.HoraInicio >= horaInicio && t.HoraFin <= horaFin)
-                .Include(t => t.ConsumicionProductos) // Incluir las consumiciones asociadas
-                .Select(t => new TurnoDTO
-                {
-                    Turno_ID = t.Turno_ID,
-                    Admin_ID = t.Admin_ID,
-                    Cancha_ID = t.Cancha_ID,
-                    Cliente_ID = t.Cliente_ID,
-                    HoraInicio = t.HoraInicio,
-                    HoraFin = t.HoraFin,
-                    ConsumicionProductos = t.ConsumicionProductos.Select(cp => new ConsumicionProductoDTO
-                    {
-                        Consumicion_ID = cp.Consumicion_ID,
-                        Producto_ID = cp.Producto_ID,
-                        Cantidad = cp.Cantidad // Incluir la cantidad
-                    }).ToList()
-                })
-                .ToListAsync();
+                .Where(p => p.Cancha_ID == canchaID)
+               .ToListAsync();
+
         }
 
         /* public static async Task<List<TurnoDTO>> GetTurnosPorCancha(int canchaID, DateTime horaInicio, DateTime horaFin)
@@ -102,36 +72,10 @@ namespace CDatos.Repositorys
         }
         */
         //Actualizar un turno existente
-        public async Task ModificarTurno(int turnoID, TurnoDTO turnoModificado)
+        public async Task ModificarTurno(Turnos turnoModificado)
         {
-            ArgumentNullException.ThrowIfNull(turnoModificado);
-            var turno = await _context.Turnos.FindAsync(turnoID);
-            if (turno == null)
-                throw new ArgumentException("Turno no encontrado");
-            turno.Admin_ID = turnoModificado.Admin_ID;
-            turno.Cancha_ID = turnoModificado.Cancha_ID;
-            turno.Cliente_ID = turnoModificado.Cliente_ID;
-            turno.HoraInicio = turnoModificado.HoraInicio;
-            turno.HoraFin = turnoModificado.HoraFin;
-            // Actualizar las consumiciones asociadas
-            if (turnoModificado.ConsumicionProductos != null)
-            {
-                // Eliminar las consumiciones existentes
-                var consumicionesExistentes = _context.consumicionProductos.Where(cp => cp.Consumicion_ID == turnoID).ToList();
-                _context.consumicionProductos.RemoveRange(consumicionesExistentes);
-                // Agregar las nuevas consumiciones
-                foreach (var consumicionProductoDTO in turnoModificado.ConsumicionProductos)
-                {
-                    var consumicionProducto = new ConsumicionProducto
-                    {
-                        Consumicion_ID = consumicionProductoDTO.Consumicion_ID,
-                        Producto_ID = consumicionProductoDTO.Producto_ID,
-                        Cantidad = consumicionProductoDTO.Cantidad // Establecer la cantidad
-                    };
-                    _context.consumicionProductos.Add(consumicionProducto);
-                }
-            }
-            await _context.SaveChangesAsync();
+           _context.Turnos.Update(turnoModificado);
+              await _context.SaveChangesAsync();
         }
         /* public static async Task UpdateTurno(int turnoID, TurnoDTO turnoModificar)
          {
@@ -149,10 +93,14 @@ namespace CDatos.Repositorys
         //Eliminar un turno
         public async Task EliminarTurno(int turnoID)
         {
-            var turno = await _context.Turnos.FindAsync(turnoID);
+            var turno = await ObtenerTurnoPorId(turnoID);
             if (turno == null)
-                throw new KeyNotFoundException("Turno no encontrado.");
+            {
+                throw new Exception("Turno no encontrado.");
+            }
+
             _context.Turnos.Remove(turno);
+
             await _context.SaveChangesAsync();
         }
         /*  public static async Task DeleteTurno(int turnoID)
@@ -180,26 +128,10 @@ namespace CDatos.Repositorys
         */
 
         //Obtener todos los turnos
-        public async Task<List<TurnoDTO>> ObtenerTodosLosTurnos()
+        public async Task<List<Turnos>> ObtenerTodosLosTurnos()
         {
-            return await _context.Turnos
-                .Include(t => t.ConsumicionProductos) // Incluir las consumiciones asociadas
-                .Select(t => new TurnoDTO
-                {
-                    Turno_ID = t.Turno_ID,
-                    Admin_ID = t.Admin_ID,
-                    Cancha_ID = t.Cancha_ID,
-                    Cliente_ID = t.Cliente_ID,
-                    HoraInicio = t.HoraInicio,
-                    HoraFin = t.HoraFin,
-                    ConsumicionProductos = t.ConsumicionProductos.Select(cp => new ConsumicionProductoDTO
-                    {
-                        Consumicion_ID = cp.Consumicion_ID,
-                        Producto_ID = cp.Producto_ID,
-                        Cantidad = cp.Cantidad // Incluir la cantidad
-                    }).ToList()
-                })
-                .ToListAsync();
+            return await _context.Turnos.ToListAsync();
+
         }
         /* public static async Task<List<TurnoDTO>> GetAllTurnos()
         {
@@ -215,28 +147,10 @@ namespace CDatos.Repositorys
         */
 
         //Obtener un turno por ID
-        public async Task<TurnoDTO?> ObtenerTurnoPorId(int id)
+        public async Task<Turnos?> ObtenerTurnoPorId(int id)
         {
-            var turno = await _context.Turnos
-                .Include(t => t.ConsumicionProductos) // Incluir las consumiciones asociadas
-                .FirstOrDefaultAsync(t => t.Turno_ID == id);
-            if (turno == null)
-                return null;
-            return new TurnoDTO
-            {
-                Turno_ID = turno.Turno_ID,
-                Admin_ID = turno.Admin_ID,
-                Cancha_ID = turno.Cancha_ID,
-                Cliente_ID = turno.Cliente_ID,
-                HoraInicio = turno.HoraInicio,
-                HoraFin = turno.HoraFin,
-                ConsumicionProductos = turno.ConsumicionProductos.Select(cp => new ConsumicionProductoDTO
-                {
-                    Consumicion_ID = cp.Consumicion_ID,
-                    Producto_ID = cp.Producto_ID,
-                    Cantidad = cp.Cantidad // Incluir la cantidad
-                }).ToList()
-            };
+            return await _context.Turnos.FindAsync(id);
+
         }
         /* public static async Task<TurnoDTO?> GetTurnoById(int id)
          {

@@ -14,9 +14,9 @@ namespace Negocio.Repositorys
 {
     public class ClientesRepository : IClienteRepository
     {
-        private readonly ProyectoDbContext _context;
+        private readonly DataContext _context;
 
-        public ClientesRepository(ProyectoDbContext context)
+        public ClientesRepository(DataContext context)
         {
             _context = context;
         }
