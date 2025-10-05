@@ -10,6 +10,7 @@ namespace Shared.Entidades
 {
     public class Turnos
     {
+        [Key]
         public int Turno_ID { get; set; }
         public DateTime HoraInicio { get; set; }
         public DateTime HoraFin { get; set; }

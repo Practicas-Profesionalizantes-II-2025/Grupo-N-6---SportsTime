@@ -9,11 +9,11 @@ namespace CDatos.Repositorys.IRepositorys
 {
     public interface IDeportesRepository
     {
-        Task CrearDeporte(DeporteDTO deporte);
-        Task ModificarDeporte(int deporteID, DeporteDTO deporteModificado);
-        Task EliminarDeporte(int deporteID);
-        Task<List<DeporteDTO>> ObtenerTodosLosDeportes();
-        Task<DeporteDTO?> ObtenerDeportePorId(int id);
+        //Task CrearDeporte(DeporteDTO deporte);
+        //Task ModificarDeporte(int deporteID, DeporteDTO deporteModificado);
+        //Task EliminarDeporte(int deporteID);
+        //Task<List<DeporteDTO>> ObtenerTodosLosDeportes();
+        //Task<DeporteDTO?> ObtenerDeportePorId(int id);
 
     }
 }

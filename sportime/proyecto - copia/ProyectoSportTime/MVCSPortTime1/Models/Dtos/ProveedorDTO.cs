@@ -1,20 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Shared.Entidades
+﻿namespace MVCSPortTime1.Models.Dtos
 {
-    public class Proveedores
+    public class ProveedorDTO
     {
-        [Key]
         public int Proveedor_ID { get; set; } // Clave primaria
         public string Nombre { get; set; }
         public string Direccion { get; set; }
         public string Email { get; set; }
         public string Telefono { get; set; }
-
     }
 }

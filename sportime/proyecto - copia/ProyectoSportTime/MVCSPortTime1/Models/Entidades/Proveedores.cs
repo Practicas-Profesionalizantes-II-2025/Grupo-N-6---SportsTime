@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace Shared.Entidades
+namespace MVCSPortTime1.Models.Entidades
 {
     public class Proveedores
     {
@@ -15,6 +10,5 @@ namespace Shared.Entidades
         public string Direccion { get; set; }
         public string Email { get; set; }
         public string Telefono { get; set; }
-
     }
 }

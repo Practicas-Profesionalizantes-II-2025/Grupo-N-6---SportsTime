@@ -9,12 +9,12 @@ namespace Negocio.Contracts
 {
     public interface IUsuarios
     {
-        Task CrearAdministrador(UsuarioDTO adminDTO);
-        Task<List<UsuarioDTO>> ObtenerTodos();
-        Task<UsuarioDTO?> ObtenerPorId(int id);
-        Task ActualizarAdministrador(int id, UsuarioDTO adminDTO);
-        Task EliminarAdministrador(int id);
-        Task<UsuarioDTO?> Login(LoginDTO loginDto);
+        //Task CrearAdministrador(UsuarioDTO adminDTO);
+        //Task<List<UsuarioDTO>> ObtenerTodos();
+        //Task<UsuarioDTO?> ObtenerPorId(int id);
+        //Task ActualizarAdministrador(int id, UsuarioDTO adminDTO);
+        //Task EliminarAdministrador(int id);
+        //Task<UsuarioDTO?> Login(LoginDTO loginDto);
 
     }
     /* void AltaAdministrador(string nombre, string email);

@@ -9,11 +9,11 @@ namespace CDatos.Repositorys.IRepositorys
 {
     public interface IClienteRepository
     {
-        Task CrearCliente(ClienteDTO cliente);
-        Task ModificarCliente(int clienteID, ClienteDTO clienteModificado);
-        Task EliminarCliente(int clienteID);
-        Task<List<ClienteDTO>> ObtenerTodosLosClientes();
-        Task<ClienteDTO?> ObtenerClientePorId(int id);
+        //Task CrearCliente(ClienteDTO cliente);
+        //Task ModificarCliente(int clienteID, ClienteDTO clienteModificado);
+        //Task EliminarCliente(int clienteID);
+        //Task<List<ClienteDTO>> ObtenerTodosLosClientes();
+        //Task<ClienteDTO?> ObtenerClientePorId(int id);
 
     }
 }

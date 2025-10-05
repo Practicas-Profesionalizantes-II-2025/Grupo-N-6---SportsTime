@@ -9,11 +9,11 @@ namespace CNegocio.Contracts
 {
     public interface ICanchas
     {
-        Task AltaCancha(CanchaDTO nuevaCancha);
-        Task ModificarCancha(int canchaID, CanchaDTO canchaModificada);
-        Task BajaCancha(int canchaID);
-        Task<List<CanchaDTO>> ObtenerTodasLasCanchas();
-        Task<CanchaDTO?> ObtenerCanchaPorId(int id);
+        //Task AltaCancha(CanchaDTO nuevaCancha);
+        //Task ModificarCancha(int canchaID, CanchaDTO canchaModificada);
+        //Task BajaCancha(int canchaID);
+        //Task<List<CanchaDTO>> ObtenerTodasLasCanchas();
+        //Task<CanchaDTO?> ObtenerCanchaPorId(int id);
 
     }
 }

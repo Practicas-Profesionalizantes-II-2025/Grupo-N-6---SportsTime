@@ -10,13 +10,13 @@ namespace CDatos.Repositorys.IRepositorys
 {
     public interface ITurnosRepository
     {
-        Task CrearTurno(Turnos turno);
-        Task<List<Turnos>> ObtenerTurnosPorCancha(int canchaID);
-        Task ModificarTurno(Turnos turnoModificado);
-        Task EliminarTurno(int turnoID);
-        Task<List<Turnos>> ObtenerTodosLosTurnos();
+        //Task CrearTurno(Turnos turno);
+        //Task<List<Turnos>> ObtenerTurnosPorCancha(int canchaID);
+        //Task ModificarTurno(Turnos turnoModificado);
+        //Task EliminarTurno(int turnoID);
+        //Task<List<Turnos>> ObtenerTodosLosTurnos();
 
-        Task<Turnos?> ObtenerTurnoPorId(int id);
+        //Task<Turnos?> ObtenerTurnoPorId(int id);
 
 
 

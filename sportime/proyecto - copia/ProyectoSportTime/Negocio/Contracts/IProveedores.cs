@@ -10,7 +10,7 @@ namespace CNegocio.Contracts
     public interface IProveedores
     {
         Task<ProveedorDTO> CrearProveedor(ProveedorDTO proveedorDTO);
-        Task ModificarProveedor(ProveedorDTO proveedorDTO);
+        Task<ProveedorDTO> ModificarProveedor(ProveedorDTO proveedorDTO);
         Task BajaProveedor(int ProveedorID);
         Task<List<ProveedorDTO>> ObtenerTodosLosProveedores();
         Task<ProveedorDTO?> ObtenerProveedorPorId(int ProveedorID);

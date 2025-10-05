@@ -44,11 +44,11 @@ namespace CDatos.Repositorys
         */
 
         // Actualizar un proveedor existente
-        public void  ModificarProveedor(Proveedores proveedor)
+        public async Task<Proveedores> ModificarProveedor(Proveedores proveedor)
         {
             ArgumentNullException.ThrowIfNull(proveedor);
 
-            var proveedorExistente =  _context.Proveedores.Find(proveedor.Proveedor_ID);
+            var proveedorExistente = _context.Proveedores.Find(proveedor.Proveedor_ID);
             if (proveedorExistente == null)
             {
                 throw new Exception("Proveedor no encontrado.");
@@ -59,7 +59,8 @@ namespace CDatos.Repositorys
             proveedorExistente.Direccion = proveedor.Direccion;
             proveedorExistente.Email = proveedor.Email;
 
-            _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
+            return proveedorExistente;
         }
         /* public static async Task UpdateProveedor(int proveedorID, ProveedorDTO proveedorModificado)
         {

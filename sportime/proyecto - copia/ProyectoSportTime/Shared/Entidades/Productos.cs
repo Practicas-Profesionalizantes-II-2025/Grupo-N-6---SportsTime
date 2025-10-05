@@ -10,6 +10,7 @@ namespace Shared.Entidades
 {
     public class Productos
     {
+        [Key]
         public int Producto_ID { get; set; }
         public string TipoProducto { get; set; }
         public int Proveedor_ID { get; set; } // Clave Foránea

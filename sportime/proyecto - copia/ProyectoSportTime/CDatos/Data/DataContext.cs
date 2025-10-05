@@ -11,14 +11,14 @@ namespace CDatos.Data
         {
         }
         public DataContext() { }
-        public DbSet<Administrador> Administradores { get; set; }
         public DbSet<Canchas> Canchas { get; set; }
-        public DbSet<Clientes> Clientes { get; set; }
         public DbSet<Deportes> Deportes { get; set; }
         public DbSet<Productos> Productos { get; set; }
         public DbSet<Proveedores> Proveedores { get; set; }
         public DbSet<Turnos> Turnos { get; set; }
-        public DbSet<TurnoProducto> consumicionProductos { get; set; }
+        public DbSet<TurnoProducto> TurnoProductos { get; set; }
+        public DbSet<Usuarios> Usuarios { get; set; }
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -29,20 +29,20 @@ namespace CDatos.Data
             base.OnModelCreating(modelBuilder);
 
             // Administradores
-            modelBuilder.Entity<Administrador>().HasData(
-                new Administrador { Admin_ID = 1, Nombre = "Admin1", Email = "admin1@test.com", Contraseña = "1234", IsSuperAdmin = true },
-                new Administrador { Admin_ID = 2, Nombre = "Admin2", Email = "admin2@test.com", Contraseña = "1234", IsSuperAdmin = false },
-                new Administrador { Admin_ID = 3, Nombre = "Admin3", Email = "admin3@test.com", Contraseña = "1234", IsSuperAdmin = false },
-                new Administrador { Admin_ID = 4, Nombre = "Admin4", Email = "admin4@test.com", Contraseña = "1234", IsSuperAdmin = true }
-            );
+            //modelBuilder.Entity<Administrador>().HasData(
+            //    new Administrador { Admin_ID = 1, Nombre = "Admin1", Email = "admin1@test.com", Contraseña = "1234", IsSuperAdmin = true },
+            //    new Administrador { Admin_ID = 2, Nombre = "Admin2", Email = "admin2@test.com", Contraseña = "1234", IsSuperAdmin = false },
+            //    new Administrador { Admin_ID = 3, Nombre = "Admin3", Email = "admin3@test.com", Contraseña = "1234", IsSuperAdmin = false },
+            //    new Administrador { Admin_ID = 4, Nombre = "Admin4", Email = "admin4@test.com", Contraseña = "1234", IsSuperAdmin = true }
+            //);
 
             // Clientes
-            modelBuilder.Entity<Clientes>().HasData(
-                new Clientes { Cliente_ID = 1, Nombre = "Juan Perez", NumeroTelefono = 111111111 },
-                new Clientes { Cliente_ID = 2, Nombre = "Ana Gomez", NumeroTelefono = 222222222 },
-                new Clientes { Cliente_ID = 3, Nombre = "Carlos Lopez", NumeroTelefono = 333333333 },
-                new Clientes { Cliente_ID = 4, Nombre = "Maria Diaz", NumeroTelefono = 444444444 }
-            );
+            //modelbuilder.entity<clientes>().hasdata(
+            //    new clientes { cliente_id = 1, nombre = "juan perez", numerotelefono = 111111111 },
+            //    new clientes { cliente_id = 2, nombre = "ana gomez", numerotelefono = 222222222 },
+            //    new clientes { cliente_id = 3, nombre = "carlos lopez", numerotelefono = 333333333 },
+            //    new clientes { cliente_id = 4, nombre = "maria diaz", numerotelefono = 444444444 }
+            //);
 
             // Deportes
             modelBuilder.Entity<Deportes>().HasData(
@@ -63,10 +63,10 @@ namespace CDatos.Data
 
             // Proveedores
             modelBuilder.Entity<Proveedores>().HasData(
-                new Proveedores { Proveedor_ID = 1, Nombre = "Proveedor1", Email = "prov1@test.com", Telefono = "1111" },
-                new Proveedores { Proveedor_ID = 2, Nombre = "Proveedor2", Email = "prov2@test.com", Telefono = "2222" },
-                new Proveedores { Proveedor_ID = 3, Nombre = "Proveedor3", Email = "prov3@test.com", Telefono = "3333" },
-                new Proveedores { Proveedor_ID = 4, Nombre = "Proveedor4", Email = "prov4@test.com", Telefono = "4444" }
+                new Proveedores { Proveedor_ID = 1, Nombre = "Proveedor1", Direccion = "Buenos aires 510" , Email = "prov1@test.com", Telefono = "1111" },
+                new Proveedores { Proveedor_ID = 2, Nombre = "Proveedor2", Direccion = "Buenos aires 511" , Email = "prov2@test.com", Telefono = "2222" },
+                new Proveedores { Proveedor_ID = 3, Nombre = "Proveedor3", Direccion = "Buenos aires 512" , Email = "prov3@test.com", Telefono = "3333" },
+                new Proveedores { Proveedor_ID = 4, Nombre = "Proveedor4", Direccion = "Buenos aires 513" , Email = "prov4@test.com", Telefono = "4444" }
             );
 
             // Productos

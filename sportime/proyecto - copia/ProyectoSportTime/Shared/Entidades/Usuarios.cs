@@ -9,6 +9,7 @@ namespace Shared.Entidades
 {
     public class Usuarios
     {
+        [Key]
         public int Usuario_ID { get; set; }
         public string Nombre { get; set; }
         public string Email { get; set; }

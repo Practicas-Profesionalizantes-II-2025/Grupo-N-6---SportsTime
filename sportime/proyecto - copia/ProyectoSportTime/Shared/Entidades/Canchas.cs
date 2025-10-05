@@ -9,7 +9,8 @@ using System.Threading.Tasks;
 namespace Shared.Entidades
 {
     public class Canchas
-    {       
+    {
+        [Key]
         public int Cancha_ID { get; set; }               
         public int Deporte_ID { get; set; }              
     

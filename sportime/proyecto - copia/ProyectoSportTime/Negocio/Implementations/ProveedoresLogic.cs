@@ -48,7 +48,7 @@ namespace CNegocio.Implementations
         }
 
         // Modificar un proveedor existente
-        public async Task ModificarProveedor(ProveedorDTO proveedorDTO)
+        public async Task<ProveedorDTO> ModificarProveedor(ProveedorDTO proveedorDTO)
         {
             if (proveedorDTO.Proveedor_ID <= 0)
                 throw new ArgumentException("El Id del proveedor no es válido.");
@@ -67,7 +67,19 @@ namespace CNegocio.Implementations
                 Telefono = proveedorDTO.Telefono,
                 Email = proveedorDTO.Email
             };
-            _repo.ModificarProveedor(proveedor);
+            var actualizado = await _repo.ModificarProveedor(proveedor);
+
+            // Mapear de la entidad a DTO
+            var proveedorActualizadoDTO = new ProveedorDTO
+            {
+                Proveedor_ID = actualizado.Proveedor_ID,
+                Nombre = actualizado.Nombre,
+                Direccion = actualizado.Direccion,
+                Telefono = actualizado.Telefono,
+                Email = actualizado.Email
+            };
+
+            return proveedorActualizadoDTO;
         }
 
         // Baja de un proveedor
