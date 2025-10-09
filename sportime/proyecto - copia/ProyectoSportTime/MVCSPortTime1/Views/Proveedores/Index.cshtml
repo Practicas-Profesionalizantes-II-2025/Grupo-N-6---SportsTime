@@ -1,40 +1,49 @@
 ﻿@using MVCSPortTime1.Models.Dtos
-
-@model List<ProveedorDTO>
+@model MVCSPortTime1.ViewModels.ProveedorIndexViewModel
 
 <style>
+    body {
+        background: #16a085;
+        font-family: 'Segoe UI', sans-serif;
+    }
+
     .main-card {
         background: #fff;
         border-radius: 24px;
         box-shadow: 0 8px 32px rgba(0,0,0,0.18);
-        padding: 36px 32px 32px 32px;
-        max-width: 900px;
+        padding: 24px 18px 18px 18px;
+        max-width: 750px;
         margin: 40px auto;
         position: relative;
     }
-    .main-card h2 {
-        font-size: 2.8rem;
-        font-weight: 800;
-        color: #009688;
-        margin-bottom: 28px;
-        letter-spacing: 1px;
-        text-shadow: 2px 2px 0 #b2dfdb;
-    }
+
+        .main-card h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #009688;
+            margin-bottom: 28px;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 0 #b2dfdb;
+        }
+
     .form-row {
         display: flex;
         gap: 24px;
         margin-bottom: 18px;
         flex-wrap: wrap;
-        justify-content: flex-start;
     }
-    .form-row input[type="text"] {
-        padding: 12px;
-        border: 2px solid #009688;
-        border-radius: 8px;
-        font-size: 1.1rem;
-        min-width: 180px;
-        outline: none;
-    }
+
+        .form-row input, .form-row select {
+            padding: 12px;
+            border: 2px solid #009688;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            min-width: 180px;
+            outline: none;
+            margin-bottom: 8px;
+            background: #f8f8f8;
+        }
+
     .btn-guardar {
         background: #009688;
         color: #fff;
@@ -43,13 +52,16 @@
         border-radius: 8px;
         padding: 12px 32px;
         font-size: 1.2rem;
+        margin-right: 12px;
         box-shadow: 0 2px 8px rgba(0,0,0,0.10);
         cursor: pointer;
         transition: background 0.2s;
     }
-    .btn-guardar:hover {
-        background: #00796b;
-    }
+
+        .btn-guardar:hover {
+            background: #00796b;
+        }
+
     .btn-volver {
         background: #009688;
         color: #fff;
@@ -64,27 +76,37 @@
         margin-top: 18px;
         display: inline-block;
     }
-    .btn-volver:hover {
-        background: #00796b;
-    }
+
+        .btn-volver:hover {
+            background: #00796b;
+        }
+
     .table-proveedores {
         width: 100%;
         border-collapse: collapse;
-        margin-top: 12px;
+        margin-top: 24px;
+        background: #fff;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.06);
     }
-    .table-proveedores th, .table-proveedores td {
-        padding: 14px 10px;
-        text-align: left;
-    }
-    .table-proveedores th {
-        background: #00796b;
-        color: #fff;
-        font-size: 1.1rem;
-        font-weight: 700;
-    }
-    .table-proveedores tr:nth-child(even) {
-        background: #e0f2f1;
-    }
+
+        .table-proveedores th, .table-proveedores td {
+            padding: 14px 10px;
+            text-align: left;
+        }
+
+        .table-proveedores th {
+            background: #00796b;
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .table-proveedores tr:nth-child(even) {
+            background: #e0f2f1;
+        }
+
     .btn-modificar {
         background: #ffb300;
         color: #fff;
@@ -97,9 +119,11 @@
         cursor: pointer;
         transition: background 0.2s;
     }
-    .btn-modificar:hover {
-        background: #ffa000;
-    }
+
+        .btn-modificar:hover {
+            background: #ffa000;
+        }
+
     .btn-eliminar {
         background: #e53935;
         color: #fff;
@@ -111,44 +135,112 @@
         cursor: pointer;
         transition: background 0.2s;
     }
-    .btn-eliminar:hover {
-        background: #b71c1c;
+
+        .btn-eliminar:hover {
+            background: #b71c1c;
+        }
+
+    .validation-summary-errors, .text-danger {
+        color: #e53935;
+        font-size: 1rem;
+        margin-bottom: 8px;
     }
+
+    .tabla-scroll {
+        max-height: 250px; 
+        overflow-y: auto;
+        margin-top: 24px;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        background: #fff;
+    }
+
+    .table-proveedores {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 750px;
+    }
+
+        .table-proveedores th, .table-proveedores td {
+            padding: 14px 10px;
+            text-align: left;
+        }
+
+        .table-proveedores th {
+            background: #00796b;
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: 700;
+            position: sticky;
+            top: 0;
+            z-index: 2;
+        }
+
+        .table-proveedores tr:nth-child(even) {
+            background: #e0f2f1;
+        }
 </style>
 
 <div class="main-card">
     <h2>Proveedores</h2>
-    <div class="form-row">
-        <a asp-action="Create" class="btn-guardar">Agregar</a>
-        <input type="text" placeholder="Buscar..." />
+
+    
+    <form asp-action="Create" method="post" autocomplete="off">
+        @Html.ValidationSummary(true, "", new { @class = "validation-summary-errors" })
+        <div class="form-row">
+            <input asp-for="NuevoProveedor.Nombre" placeholder="Nombre" />
+            @Html.ValidationMessageFor(m => m.NuevoProveedor.Nombre, "", new { @class = "text-danger" })
+
+            <input asp-for="NuevoProveedor.Direccion" placeholder="Dirección" />
+            @Html.ValidationMessageFor(m => m.NuevoProveedor.Direccion, "", new { @class = "text-danger" })
+
+            <input asp-for="NuevoProveedor.Email" placeholder="Email" type="email" />
+            @Html.ValidationMessageFor(m => m.NuevoProveedor.Email, "", new { @class = "text-danger" })
+
+            <input asp-for="NuevoProveedor.Telefono" placeholder="Teléfono" />
+            @Html.ValidationMessageFor(m => m.NuevoProveedor.Telefono, "", new { @class = "text-danger" })
+        </div>
+        ...
+    </form>
+
+    <!-- Tabla de proveedores -->
+    <div class="tabla-scroll">
+        <table class="table-proveedores">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Dirección</th>
+                    <th>Email</th>
+                    <th>Teléfono</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.Proveedores != null && Model.Proveedores.Count > 0)
+                {
+                    foreach (var proveedor in Model.Proveedores)
+                    {
+                        <tr>
+                            <td>@proveedor.Proveedor_ID</td>
+                            <td>@proveedor.Nombre</td>
+                            <td>@proveedor.Direccion</td>
+                            <td>@proveedor.Email</td>
+                            <td>@proveedor.Telefono</td>
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@proveedor.Proveedor_ID" class="btn-modificar">Modificar</a>
+                                <a asp-action="Delete" asp-route-id="@proveedor.Proveedor_ID" class="btn-eliminar">Eliminar</a>
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="6">No hay proveedores registrados.</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
     </div>
-    <table class="table-proveedores">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nombre</th>
-                <th>Dirección</th>
-                <th>Email</th>
-                <th>Teléfono</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-        @foreach (var proveedor in Model)
-        {
-            <tr>
-                <td>@proveedor.Proveedor_ID</td>
-                <td>@proveedor.Nombre</td>
-                <td>@proveedor.Direccion</td>
-                <td>@proveedor.Email</td>
-                <td>@proveedor.Telefono</td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@proveedor.Proveedor_ID" class="btn-modificar">Modificar</a>
-                    <a asp-action="Delete" asp-route-id="@proveedor.Proveedor_ID" class="btn-eliminar">Eliminar</a>
-                </td>
-            </tr>
-        }
-        </tbody>
-    </table>
-    <a href="@Url.Action("Index", "Home")" class="btn-volver">Volver</a>
 </div>

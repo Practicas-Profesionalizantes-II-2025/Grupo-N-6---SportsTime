@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 using MVCSPortTime1.Models.Dtos;
+using MVCSPortTime1.ViewModels;
 
 public class ProveedoresController : Controller
 {
@@ -25,14 +26,62 @@ public class ProveedoresController : Controller
     // GET: Proveedores
     public async Task<IActionResult> Index()
     {
+        var viewModel = new ProveedorIndexViewModel();
+
         var response = await _httpClient.GetAsync("/api/proveedores");
-        if (!response.IsSuccessStatusCode)
-            return View(new List<ProveedorDTO>());
+        if (response.IsSuccessStatusCode)
+        {
+            var json = await response.Content.ReadAsStringAsync();
+            viewModel.Proveedores = JsonConvert.DeserializeObject<List<ProveedorDTO>>(json);
+        }
 
-        var json = await response.Content.ReadAsStringAsync();
-        var proveedores = JsonConvert.DeserializeObject<List<ProveedorDTO>>(json);
+        viewModel.NuevoProveedor = new ProveedorDTO();
 
-        return View(proveedores);
+        return View(viewModel);
+    }
+
+    // POST: Proveedores/Create (el formulario de alta está en Index)
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> Create(ProveedorIndexViewModel model)
+    {
+        if (!ModelState.IsValid)
+        {
+            // Recargar la lista para que la tabla no desaparezca
+            var response = await _httpClient.GetAsync("/api/proveedores");
+            if (response.IsSuccessStatusCode)
+            {
+                var jsonStr = await response.Content.ReadAsStringAsync();
+                model.Proveedores = JsonConvert.DeserializeObject<List<ProveedorDTO>>(jsonStr);
+            }
+            else
+            {
+                model.Proveedores = new List<ProveedorDTO>();
+            }
+            return View("Index", model);
+        }
+
+        var json = JsonConvert.SerializeObject(model.NuevoProveedor);
+        var content = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
+
+        var responseApi = await _httpClient.PostAsync("/api/proveedores", content);
+        if (responseApi.IsSuccessStatusCode)
+            return RedirectToAction(nameof(Index));
+
+        ModelState.AddModelError("", "Error al crear el proveedor.");
+
+        // Recargar la lista si hay error
+        var response2 = await _httpClient.GetAsync("/api/proveedores");
+        if (response2.IsSuccessStatusCode)
+        {
+            var jsonStr = await response2.Content.ReadAsStringAsync();
+            model.Proveedores = JsonConvert.DeserializeObject<List<ProveedorDTO>>(jsonStr);
+        }
+        else
+        {
+            model.Proveedores = new List<ProveedorDTO>();
+        }
+        return View("Index", model);
     }
 
     // GET: Proveedores/Details/5
@@ -45,31 +94,6 @@ public class ProveedoresController : Controller
         var json = await response.Content.ReadAsStringAsync();
         var proveedor = JsonConvert.DeserializeObject<ProveedorDTO>(json);
 
-        return View(proveedor);
-    }
-
-    // GET: Proveedores/Create
-    public IActionResult Create()
-    {
-        return View();
-    }
-
-    // POST: Proveedores/Create
-    [HttpPost]
-    [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Create(ProveedorDTO proveedor)
-    {
-        if (ModelState.IsValid)
-        {
-            var json = JsonConvert.SerializeObject(proveedor);
-            var content = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
-
-            var response = await _httpClient.PostAsync("/api/proveedores", content);
-            if (response.IsSuccessStatusCode)
-                return RedirectToAction(nameof(Index));
-
-            ModelState.AddModelError("", "Error al crear el proveedor.");
-        }
         return View(proveedor);
     }
 
