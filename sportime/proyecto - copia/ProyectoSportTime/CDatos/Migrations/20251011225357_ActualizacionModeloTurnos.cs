@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace CDatos.Migrations
 {
     /// <inheritdoc />
-    public partial class FixProveedores : Migration
+    public partial class ActualizacionModeloTurnos : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -19,7 +19,8 @@ namespace CDatos.Migrations
                 {
                     Cancha_ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Deporte_ID = table.Column<int>(type: "int", nullable: false)
+                    Deporte_ID = table.Column<int>(type: "int", nullable: false),
+                    Activa = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -93,8 +94,8 @@ namespace CDatos.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     HoraInicio = table.Column<DateTime>(type: "datetime2", nullable: false),
                     HoraFin = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Cliente_ID = table.Column<int>(type: "int", nullable: false),
-                    Admin_ID = table.Column<int>(type: "int", nullable: false),
+                    Estado = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Usuario_ID = table.Column<int>(type: "int", nullable: false),
                     Cancha_ID = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -110,8 +111,9 @@ namespace CDatos.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Nombre = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    NumeroTelefono = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Contraseña = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    EsAdmin = table.Column<bool>(type: "bit", nullable: false)
+                    Rol = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -120,13 +122,13 @@ namespace CDatos.Migrations
 
             migrationBuilder.InsertData(
                 table: "Canchas",
-                columns: new[] { "Cancha_ID", "Deporte_ID" },
+                columns: new[] { "Cancha_ID", "Activa", "Deporte_ID" },
                 values: new object[,]
                 {
-                    { 1, 1 },
-                    { 2, 2 },
-                    { 3, 3 },
-                    { 4, 4 }
+                    { 1, false, 1 },
+                    { 2, false, 2 },
+                    { 3, false, 3 },
+                    { 4, false, 4 }
                 });
 
             migrationBuilder.InsertData(
@@ -168,18 +170,25 @@ namespace CDatos.Migrations
                 values: new object[,]
                 {
                     { 1, 2, 1, 1 },
-                    { 2, 1, 2, 2 },
-                    { 3, 3, 3, 3 },
-                    { 4, 2, 4, 4 }
+                    { 2, 1, 2, 2 }
                 });
 
             migrationBuilder.InsertData(
                 table: "Turnos",
-                columns: new[] { "Turno_ID", "Admin_ID", "Cancha_ID", "Cliente_ID", "HoraFin", "HoraInicio" },
+                columns: new[] { "Turno_ID", "Cancha_ID", "Estado", "HoraFin", "HoraInicio", "Usuario_ID" },
                 values: new object[,]
                 {
-                    { 1, 1, 1, 1, new DateTime(2024, 1, 1, 10, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2024, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 2, 2, 2, 2, new DateTime(2024, 1, 1, 11, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2024, 1, 1, 10, 0, 0, 0, DateTimeKind.Unspecified) }
+                    { 1, 1, "Confirmado", new DateTime(2024, 1, 1, 10, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2024, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified), 1 },
+                    { 2, 2, "Confirmado", new DateTime(2024, 1, 1, 11, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2024, 1, 1, 10, 0, 0, 0, DateTimeKind.Unspecified), 2 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Usuarios",
+                columns: new[] { "Usuario_ID", "Contraseña", "Email", "Nombre", "NumeroTelefono", "Rol" },
+                values: new object[,]
+                {
+                    { 1, "1111", "usuario1@test.com", "Usuario1", "3493112233", "Cliente" },
+                    { 2, "2222", "usuario2@test.com", "Usuario2", "3493112244", "Administrador" }
                 });
         }
 

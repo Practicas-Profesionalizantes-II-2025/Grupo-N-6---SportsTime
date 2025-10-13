@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Shared.Entidades;
 using System.Collections.Generic;
 
@@ -28,21 +29,11 @@ namespace CDatos.Data
         {
             base.OnModelCreating(modelBuilder);
 
-            // Administradores
-            //modelBuilder.Entity<Administrador>().HasData(
-            //    new Administrador { Admin_ID = 1, Nombre = "Admin1", Email = "admin1@test.com", Contraseña = "1234", IsSuperAdmin = true },
-            //    new Administrador { Admin_ID = 2, Nombre = "Admin2", Email = "admin2@test.com", Contraseña = "1234", IsSuperAdmin = false },
-            //    new Administrador { Admin_ID = 3, Nombre = "Admin3", Email = "admin3@test.com", Contraseña = "1234", IsSuperAdmin = false },
-            //    new Administrador { Admin_ID = 4, Nombre = "Admin4", Email = "admin4@test.com", Contraseña = "1234", IsSuperAdmin = true }
-            //);
-
-            // Clientes
-            //modelbuilder.entity<clientes>().hasdata(
-            //    new clientes { cliente_id = 1, nombre = "juan perez", numerotelefono = 111111111 },
-            //    new clientes { cliente_id = 2, nombre = "ana gomez", numerotelefono = 222222222 },
-            //    new clientes { cliente_id = 3, nombre = "carlos lopez", numerotelefono = 333333333 },
-            //    new clientes { cliente_id = 4, nombre = "maria diaz", numerotelefono = 444444444 }
-            //);
+            //Usuarios
+            modelBuilder.Entity<Usuarios>().HasData(
+            new Usuarios { Usuario_ID = 1, Nombre = "Usuario1", Email = "usuario1@test.com", NumeroTelefono = "3493112233", Contraseña = "1111", Rol = "Cliente" },
+            new Usuarios { Usuario_ID = 2, Nombre = "Usuario2", Email = "usuario2@test.com", NumeroTelefono = "3493112244", Contraseña = "2222", Rol = "Administrador" }
+            );
 
             // Deportes
             modelBuilder.Entity<Deportes>().HasData(
@@ -85,8 +76,8 @@ namespace CDatos.Data
                     Turno_ID = 1,
                     HoraInicio = new DateTime(2024, 1, 1, 9, 0, 0),
                     HoraFin = new DateTime(2024, 1, 1, 10, 0, 0),
-                    Cliente_ID = 1,
-                    Admin_ID = 1,
+                    Estado = "Confirmado",
+                    Usuario_ID = 1,                    
                     Cancha_ID = 1
                 },
                 new Turnos
@@ -94,17 +85,16 @@ namespace CDatos.Data
                     Turno_ID = 2,
                     HoraInicio = new DateTime(2024, 1, 1, 10, 0, 0),
                     HoraFin = new DateTime(2024, 1, 1, 11, 0, 0),
-                    Cliente_ID = 2,
-                    Admin_ID = 2,
+                    Estado = "Confirmado",
+                    Usuario_ID = 2,
                     Cancha_ID = 2
                 }
             );
             // TurnoProducto
             modelBuilder.Entity<TurnoProducto>().HasData(
                 new TurnoProducto { TurnoProducto_ID = 1, Turno_ID = 1, Producto_ID = 1, Cantidad = 2},
-                new TurnoProducto { TurnoProducto_ID = 2, Turno_ID = 2, Producto_ID = 2, Cantidad = 1},
-                new TurnoProducto { TurnoProducto_ID = 3, Turno_ID = 3, Producto_ID = 3, Cantidad = 3},
-                new TurnoProducto { TurnoProducto_ID = 4, Turno_ID = 4, Producto_ID = 4, Cantidad = 2}
+                new TurnoProducto { TurnoProducto_ID = 2, Turno_ID = 2, Producto_ID = 2, Cantidad = 1}
+              
             );
 
          

@@ -10,15 +10,15 @@ namespace CDatos.Repositorys.IRepositorys
 {
     public interface ITurnosRepository
     {
-        //Task CrearTurno(Turnos turno);
-        //Task<List<Turnos>> ObtenerTurnosPorCancha(int canchaID);
-        //Task ModificarTurno(Turnos turnoModificado);
-        //Task EliminarTurno(int turnoID);
-        //Task<List<Turnos>> ObtenerTodosLosTurnos();
-
-        //Task<Turnos?> ObtenerTurnoPorId(int id);
-
-
+        Task<Turnos> CrearTurno(Turnos turno);
+        Task<Turnos> ModificarTurno(Turnos turnoModificado);
+        void EliminarTurno(int turnoID);
+        Task<List<Turnos>> ObtenerTodosLosTurnos();
+        Task<List<Turnos>> ObtenerTurnosPorCancha(int canchaID);
+        Task<List<Turnos>> ObtenerTurnosPorUsuario(int usuarioID);
+        Task<Turnos?> ObtenerTurnoPorId(int id);
+        Task<bool> TurnoDuplicado(int canchaId, DateTime horaInicio, DateTime horaFin, int? turnoIdExcluir = null);
+        Task<bool> CanchaActiva(int canchaId);
 
     }
 }

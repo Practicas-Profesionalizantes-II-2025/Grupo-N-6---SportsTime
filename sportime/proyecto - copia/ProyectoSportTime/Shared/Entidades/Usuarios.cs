@@ -13,7 +13,8 @@ namespace Shared.Entidades
         public int Usuario_ID { get; set; }
         public string Nombre { get; set; }
         public string Email { get; set; }
+        public string NumeroTelefono { get; set; }
         public string Contraseña { get; set; }
-        public bool EsAdmin { get; set; } = true;
+        public string Rol { get; set; } 
     }
 }

@@ -4,7 +4,6 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using Newtonsoft.Json;
-using MVCSPortTime1.Models.Dtos;
 using MVCSPortTime1.ViewModels;
 
 public class ProveedoresController : Controller

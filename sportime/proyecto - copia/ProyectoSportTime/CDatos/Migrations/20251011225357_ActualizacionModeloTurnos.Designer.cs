@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CDatos.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20250929185625_FixProveedores")]
-    partial class FixProveedores
+    [Migration("20251011225357_ActualizacionModeloTurnos")]
+    partial class ActualizacionModeloTurnos
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -33,6 +33,9 @@ namespace CDatos.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Cancha_ID"));
 
+                    b.Property<bool>("Activa")
+                        .HasColumnType("bit");
+
                     b.Property<int>("Deporte_ID")
                         .HasColumnType("int");
 
@@ -44,21 +47,25 @@ namespace CDatos.Migrations
                         new
                         {
                             Cancha_ID = 1,
+                            Activa = false,
                             Deporte_ID = 1
                         },
                         new
                         {
                             Cancha_ID = 2,
+                            Activa = false,
                             Deporte_ID = 2
                         },
                         new
                         {
                             Cancha_ID = 3,
+                            Activa = false,
                             Deporte_ID = 3
                         },
                         new
                         {
                             Cancha_ID = 4,
+                            Activa = false,
                             Deporte_ID = 4
                         });
                 });
@@ -253,20 +260,6 @@ namespace CDatos.Migrations
                             Cantidad = 1,
                             Producto_ID = 2,
                             Turno_ID = 2
-                        },
-                        new
-                        {
-                            TurnoProducto_ID = 3,
-                            Cantidad = 3,
-                            Producto_ID = 3,
-                            Turno_ID = 3
-                        },
-                        new
-                        {
-                            TurnoProducto_ID = 4,
-                            Cantidad = 2,
-                            Producto_ID = 4,
-                            Turno_ID = 4
                         });
                 });
 
@@ -278,20 +271,21 @@ namespace CDatos.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Turno_ID"));
 
-                    b.Property<int>("Admin_ID")
-                        .HasColumnType("int");
-
                     b.Property<int>("Cancha_ID")
                         .HasColumnType("int");
 
-                    b.Property<int>("Cliente_ID")
-                        .HasColumnType("int");
+                    b.Property<string>("Estado")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("HoraFin")
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime>("HoraInicio")
                         .HasColumnType("datetime2");
+
+                    b.Property<int>("Usuario_ID")
+                        .HasColumnType("int");
 
                     b.HasKey("Turno_ID");
 
@@ -301,20 +295,20 @@ namespace CDatos.Migrations
                         new
                         {
                             Turno_ID = 1,
-                            Admin_ID = 1,
                             Cancha_ID = 1,
-                            Cliente_ID = 1,
+                            Estado = "Confirmado",
                             HoraFin = new DateTime(2024, 1, 1, 10, 0, 0, 0, DateTimeKind.Unspecified),
-                            HoraInicio = new DateTime(2024, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            HoraInicio = new DateTime(2024, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            Usuario_ID = 1
                         },
                         new
                         {
                             Turno_ID = 2,
-                            Admin_ID = 2,
                             Cancha_ID = 2,
-                            Cliente_ID = 2,
+                            Estado = "Confirmado",
                             HoraFin = new DateTime(2024, 1, 1, 11, 0, 0, 0, DateTimeKind.Unspecified),
-                            HoraInicio = new DateTime(2024, 1, 1, 10, 0, 0, 0, DateTimeKind.Unspecified)
+                            HoraInicio = new DateTime(2024, 1, 1, 10, 0, 0, 0, DateTimeKind.Unspecified),
+                            Usuario_ID = 2
                         });
                 });
 
@@ -334,16 +328,41 @@ namespace CDatos.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("EsAdmin")
-                        .HasColumnType("bit");
-
                     b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NumeroTelefono")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Rol")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Usuario_ID");
 
                     b.ToTable("Usuarios");
+
+                    b.HasData(
+                        new
+                        {
+                            Usuario_ID = 1,
+                            Contraseña = "1111",
+                            Email = "usuario1@test.com",
+                            Nombre = "Usuario1",
+                            NumeroTelefono = "3493112233",
+                            Rol = "Cliente"
+                        },
+                        new
+                        {
+                            Usuario_ID = 2,
+                            Contraseña = "2222",
+                            Email = "usuario2@test.com",
+                            Nombre = "Usuario2",
+                            NumeroTelefono = "3493112244",
+                            Rol = "Administrador"
+                        });
                 });
 #pragma warning restore 612, 618
         }
