@@ -1,19 +1,16 @@
-﻿using System;
+﻿using Shared.Entidades;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using Shared.Dtos;
 
 namespace CDatos.Repositorys.IRepositorys
 {
     public interface ICanchasRepository
     {
-        //Task CreateCancha(CanchaDTO cancha);
-        //Task UpdateCancha(int canchaID, CanchaDTO canchaModificada);
-        //Task DeleteCancha(int canchaID);
-        //Task<List<CanchaDTO>> GetAllCanchas();
-        //Task<CanchaDTO?> GetCanchaById(int id);
-       // Task<List<CanchaDTO>> GetCanchasByDeporteId(int deporteId);
+        Task<Canchas> CrearCancha(Canchas cancha);
+        Task<Canchas> ModificarCancha(Canchas cancha);
+        void EliminarCancha(int canchaId);
+        Task<List<Canchas>> ObtenerTodasLasCanchas();
+        Task<Canchas?> ObtenerCanchaPorId(int canchaId);
+        Task<List<Canchas>> ObtenerCanchasPorDeporteId(int deporteId);
     }
 }

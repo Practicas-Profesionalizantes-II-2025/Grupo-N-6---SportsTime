@@ -1,145 +1,61 @@
-﻿//using CDatos.Data;
-//using CDatos.Repositorys.IRepositorys;
-//using Microsoft.EntityFrameworkCore;
-//using Shared.Dtos;
-//using Shared.Entidades;
-//using System;
-//using System.Collections.Generic;
-//using System.Linq;
-//using System.Text;
-//using System.Threading.Tasks;
+﻿using CDatos.Data;
+using CDatos.Repositorys.IRepositorys;
+using Microsoft.EntityFrameworkCore;
+using Shared.Entidades;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
-//namespace CDatos.Repositorys
-//{
-//    public class DeportesRepository : IDeportesRepository
-//    {
-//        //private readonly DataContext _context;
+namespace CDatos.Repositorys
+{
+    public class DeportesRepository : IDeportesRepository
+    {
+        private readonly DataContext _context;
 
-//        //public DeportesRepository(DataContext context)
-//        //{
-//        //    _context = context;
-//        //}
-//        //// Crear un nuevo deporte
-//        //public async Task CrearDeporte(DeporteDTO deporte)
-//        //{
-//        //    ArgumentNullException.ThrowIfNull(deporte);
+        public DeportesRepository(DataContext context)
+        {
+            _context = context;
+        }
 
-//        //    var nuevoDeporte = new Deportes
-//        //    {
-//        //        Nombre = deporte.Nombre
-//        //    };
+        public async Task<Deportes> CrearDeporte(Deportes deporte)
+        {
+            _context.Deportes.Add(deporte);
+            await _context.SaveChangesAsync();
+            return deporte;
+        }
 
-//        //    _context.Deportes.Add(nuevoDeporte);
-//        //    await _context.SaveChangesAsync();
-//        //}
-//        ///*public static async Task CreateDeporte(DeporteDTO deporteDto)
-//        //{
-//        //    ArgumentNullException.ThrowIfNull(deporteDto);
+        public async Task<Deportes> ModificarDeporte(Deportes deporte)
+        {
+            var existente = _context.Deportes.Find(deporte.Deporte_ID);
+            if (existente == null)
+                throw new Exception("Deporte no encontrado.");
 
-//        //    var client = ApiServer.ObtenerClientHttp();
-//        //    var url = ApiServer.ObtenerUrlEndPoint("/api/deportes");
-//        //    var content = new StringContent(JsonConvert.SerializeObject(deporteDto), Encoding.UTF8, "application/json");
+            existente.Nombre = deporte.Nombre;
+            await _context.SaveChangesAsync();
+            return existente;
+        }
 
-//        //    var response = await client.PostAsync(url, content);
-//        //    response.EnsureSuccessStatusCode();
-//        //}
-//        //*/
+        public void EliminarDeporte(int deporteId)
+        {
+            var deporte = _context.Deportes.FirstOrDefault(d => d.Deporte_ID == deporteId);
+            if (deporte != null)
+            {
+                _context.Deportes.Remove(deporte);
+                _context.SaveChanges();
+            }
+        }
 
-//        //// Actualizar un deporte existente
-//        //public async Task ModificarDeporte(int deporteID, DeporteDTO deporteModificado)
-//        //{
-//        //    ArgumentNullException.ThrowIfNull(deporteModificado);
+        public async Task<List<Deportes>> ObtenerTodosLosDeportes()
+        {
+            return await _context.Deportes.ToListAsync();
+        }
 
-//        //    var deporte = await _context.Deportes.FindAsync(deporteID);
-//        //    if (deporte == null)
-//        //        throw new KeyNotFoundException("Deporte no encontrado.");
-
-//        //    deporte.Nombre = deporteModificado.Nombre;
-//        //    await _context.SaveChangesAsync();
-//        //}
-//        ///* public static async Task UpdateDeporte(int deporteID, DeporteDTO deporteModificadoDto)
-//        // {
-//        //     ArgumentNullException.ThrowIfNull(deporteModificadoDto);
-
-//        //     var client = ApiServer.ObtenerClientHttp();
-//        //     var url = ApiServer.ObtenerUrlEndPoint($"/api/deportes/{deporteID}");
-//        //     var content = new StringContent(JsonConvert.SerializeObject(deporteModificadoDto), Encoding.UTF8, "application/json");
-
-//        //     var response = await client.PutAsync(url, content);
-//        //     response.EnsureSuccessStatusCode();
-//        // }
-//        //*/
-
-//        //// Eliminar un deporte
-//        //public async Task EliminarDeporte(int deporteID)
-//        //{
-//        //    var deporte = await _context.Deportes.FindAsync(deporteID);
-//        //    if (deporte == null)
-//        //        throw new KeyNotFoundException("Deporte no encontrado.");
-
-//        //    _context.Deportes.Remove(deporte);
-//        //    await _context.SaveChangesAsync();
-//        //}
-
-//        ///* public static async Task DeleteDeporte(int deporteID)
-//        // {
-//        //     var client = ApiServer.ObtenerClientHttp();
-//        //     var url = ApiServer.ObtenerUrlEndPoint($"/api/deportes/{deporteID}");
-
-//        //     var response = await client.DeleteAsync(url);
-//        //     response.EnsureSuccessStatusCode();
-//        // }
-//        //*/
-
-//        //// Obtener todos los deportes
-//        //public async Task<List<DeporteDTO>> ObtenerTodosLosDeportes()
-//        //{
-//        //    return await _context.Deportes
-//        //        .Select(d => new DeporteDTO
-//        //        {
-//        //            Deporte_ID = d.Deporte_ID,
-//        //            Nombre = d.Nombre
-//        //        })
-//        //        .ToListAsync();
-//        //}
-//        ///* public static async Task<List<DeporteDTO>> GetAllDeportes()
-//        //{
-//        //    var client = ApiServer.ObtenerClientHttp();
-//        //    var url = ApiServer.ObtenerUrlEndPoint("/api/deportes");
-
-//        //    var response = await client.GetAsync(url);
-//        //    response.EnsureSuccessStatusCode();
-
-//        //    var result = await response.Content.ReadAsStringAsync();
-//        //    return JsonConvert.DeserializeObject<List<DeporteDTO>>(result);
-//        //}
-//        //*/
-//        //// Obtener un deporte por su ID
-//        //public async Task<DeporteDTO?> ObtenerDeportePorId(int id)
-//        //{
-//        //    var deporte = await _context.Deportes.FindAsync(id);
-//        //    if (deporte == null) return null;
-
-//        //    return new DeporteDTO
-//        //    {
-//        //        Deporte_ID = deporte.Deporte_ID,
-//        //        Nombre = deporte.Nombre
-//        //    };
-//        //}
-
-//    }
-//    /* public static async Task<DeporteDTO?> GetDeporteById(int id)
-//    {
-//        var client = ApiServer.ObtenerClientHttp();
-//        var url = ApiServer.ObtenerUrlEndPoint($"/api/deportes/{id}");
-
-//        var response = await client.GetAsync(url);
-//        response.EnsureSuccessStatusCode();
-
-//        var result = await response.Content.ReadAsStringAsync();
-//        return JsonConvert.DeserializeObject<DeporteDTO>(result);
-//    }
-//    */
-//}
+        public async Task<Deportes?> ObtenerDeportePorId(int deporteId)
+        {
+            return await _context.Deportes.FindAsync(deporteId);
+        }
+    }
+}
 
 

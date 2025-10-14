@@ -1,6 +1,6 @@
 using CDatos.Data;
-using CDatos.Repositorys;
 using CDatos.Repositorys.IRepositorys;
+using CDatos.Repositorys;
 using CNegocio.Contracts;
 using CNegocio.Implementations;
 using Microsoft.EntityFrameworkCore;
@@ -18,24 +18,14 @@ builder.Services.AddDbContext<DataContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DBContext")));
 
 // Registro de servicios de lógica
-//builder.Services.AddScoped<IUsuarios, UsuariosLogic>();
-//builder.Services.AddScoped<ICanchas, CanchasLogic>();
-//builder.Services.AddScoped<IClientes, ClientesLogic>();
-//builder.Services.AddScoped<IConsumiciones, ConsumicionesLogic>();
-//builder.Services.AddScoped<IDeportes, DeportesLogic>();
-//builder.Services.AddScoped<IProductos, ProductosLogic>();
+builder.Services.AddScoped<IDeportes, DeportesLogic>();
+builder.Services.AddScoped<ICanchas, CanchasLogic>();
 builder.Services.AddScoped<IProveedores, ProveedoresLogic>();
 builder.Services.AddScoped<ITurnos, TurnosLogic>();
 
-
 // Registro de repositorio
-//builder.Services.AddScoped<IAdministradorRepository, AdministradorRepository>();
-//builder.Services.AddScoped<ICanchasRepository, CanchasRepository>();
-//builder.Services.AddScoped<IClienteRepository, ClientesRepository>();
-//builder.Services.AddScoped<IConsumicionesRepository, ConsumicionesRepository>();
-//builder.Services.AddScoped<IConsumicionXTurnoRepository, ConsumicionXTurnoRepository>();
-//builder.Services.AddScoped<IDeportesRepository, DeportesRepository>();
-//builder.Services.AddScoped<IProductoRepository, ProductosRepository>();
+builder.Services.AddScoped<IDeportesRepository, DeportesRepository>();
+builder.Services.AddScoped<ICanchasRepository, CanchasRepository>();
 builder.Services.AddScoped<IProveedoresRepository, ProveedoresRepository>();
 builder.Services.AddScoped<ITurnosRepository, TurnosRepository>();
 
