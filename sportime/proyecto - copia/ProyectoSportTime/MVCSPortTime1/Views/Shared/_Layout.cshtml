@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/MVCSPortTime1.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/menu.css" />
 </head>
 <body>
     <header>
@@ -25,13 +26,12 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link btn btn-primary text-white ms-2" asp-area="" asp-controller="Proveedores" asp-action="Index">Proveedores</a>
-                        </li>
+                        
                     </ul>
                 </div>
             </div>
         </nav>
+        @await Html.PartialAsync("_MainMenu")
     </header>
     <div class="container">
         <main role="main" class="pb-3">
