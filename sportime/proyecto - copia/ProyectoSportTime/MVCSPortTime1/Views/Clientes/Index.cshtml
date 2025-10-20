@@ -1,0 +1,60 @@
+@{
+    ViewData["Title"] = "Clientes";
+    ViewData["BodyId"] = "clientes-page";
+}
+
+<div class="section-header">
+    <span>Clientes</span>
+    <a asp-controller="Home" asp-action="Index">
+        <img src="~/img/atras.png" alt="Volver al Menú" class="icono-volver" />
+    </a>
+</div>
+
+<div class="container">
+    <!-- Formulario -->
+    <form class="formulario">
+      <div class="campo">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" required>
+      </div>
+
+      <div class="campo">
+        <label for="telefono">Teléfono</label>
+        <input type="text" id="telefono" name="telefono" required>
+      </div>
+
+      <button type="submit" class="btn-guardar">Guardar</button>
+    </form>
+
+    <!-- Tabla -->
+    <table class="tabla">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Teléfono</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Juan Pérez</td>
+          <td>123456789</td>
+          <td>
+            <button class="btn-modificar">Modificar</button>
+            <button class="btn-eliminar">Eliminar</button>
+          </td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Ana López</td>
+          <td>987654321</td>
+          <td>
+            <button class="btn-modificar">Modificar</button>
+            <button class="btn-eliminar">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+</div>

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Shared.Dtos;
 
 
 namespace MVCSPortTime1.ViewModels

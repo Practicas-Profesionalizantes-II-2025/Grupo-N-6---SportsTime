@@ -1,0 +1,42 @@
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Menú Principal";
+    ViewData["BodyClass"] = "menu-body";
+}
+
+<header class="menu-header">
+  <h1>Menú Principal</h1>
+</header>
+
+<div class="menu-shell">
+  <section class="card">
+    <h2 class="menu-section-title">Gestión</h2>
+    <div class="menu-buttons">
+      <a asp-page="/Turnos/Index" class="menu-btn">
+        <img src="~/img/turnos.png" alt="Turnos">
+        <span>Turnos</span>
+      </a>
+
+      <a asp-page="/Canchas/Index" class="menu-btn">
+        <img src="~/img/canchas.png" alt="Canchas">
+        <span>Canchas</span>
+      </a>
+
+      <a asp-page="/Productos/Index" class="menu-btn">
+        <img src="~/img/productos.png" alt="Productos">
+        <span>Productos</span>
+      </a>
+
+      <a asp-page="/Clientes/Index" class="menu-btn">
+        <img src="~/img/clientes.png" alt="Clientes">
+        <span>Clientes</span>
+      </a>
+      
+      <a asp-page="/Proveedores/Index" class="menu-btn">
+        <img src="~/img/proveedores.png" alt="Proveedores">
+        <span>Proveedores</span>
+      </a>
+    </div>
+  </section>
+</div>

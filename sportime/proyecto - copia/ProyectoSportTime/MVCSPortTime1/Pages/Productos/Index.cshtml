@@ -1,0 +1,114 @@
+@page
+@model MVCSPortTime1.Pages.Productos.IndexModel
+@{
+    ViewData["Title"] = "Productos";
+    ViewData["BodyId"] = "productos-page";
+}
+
+<div class="section-header">
+  <span>Productos</span>
+  <a asp-page="/Index" aria-label="Volver al menú principal">
+    <img src="~/img/atras.png" alt="Volver al Menú" class="icono-volver" />
+  </a>
+</div>
+
+<partial name="Shared/_Feedback" />
+
+<div class="two-col-shell">
+  <section class="card form-card">
+    <h2>Nuevo Producto</h2>
+    <form class="formulario" method="post">
+      <label asp-for="Input.Tipo"></label>
+      <input asp-for="Input.Tipo" placeholder="Tipo" />
+      <span asp-validation-for="Input.Tipo" class="field-error"></span>
+
+      <label asp-for="Input.Descripcion"></label>
+      <input asp-for="Input.Descripcion" placeholder="Descripción" />
+      <span asp-validation-for="Input.Descripcion" class="field-error"></span>
+
+      <label asp-for="Input.ProveedorId">Proveedor</label>
+      <select asp-for="Input.ProveedorId" asp-items="Model.ProveedorOptions">
+        <option value="">Seleccionar proveedor</option>
+      </select>
+      <span asp-validation-for="Input.ProveedorId" class="field-error"></span>
+
+      <label asp-for="Input.Precio"></label>
+      <input asp-for="Input.Precio" placeholder="0" />
+      <span asp-validation-for="Input.Precio" class="field-error"></span>
+
+      <div class="form-actions">
+        <button type="submit" asp-page-handler="Guardar" class="btn btn-primary">Guardar</button>
+        <button type="reset" class="btn btn-ghost">Limpiar</button>
+      </div>
+    </form>
+  </section>
+
+  <section class="card list-card">
+    <div class="list-header">
+      <h2>Productos Registrados</h2>
+      <div class="toolbar">
+        <input type="text" id="buscar" placeholder="Buscar..." />
+        <button type="button" class="btn btn-secondary" onclick="filtrarProductos()">Buscar</button>
+      </div>
+    </div>
+
+    <div class="table-wrap">
+      <table id="tablaProductos">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Tipo</th>
+                <th>Proveedor</th>
+                <th>Precio</th>
+                <th style="width:110px">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+        @if (Model.Productos?.Count > 0)
+        {
+            foreach (var p in Model.Productos)
+            {
+                <tr>
+                  <td>@p.Producto_ID</td>
+                  <td>@p.TipoProducto</td>
+                  <td>@(Model.Proveedores.FirstOrDefault(x => x.Proveedor_ID == p.Proveedor_ID)?.Nombre)</td>
+                  <td>@p.Precio</td>
+                  <td class="table-actions">
+                    <button type="button" class="btn btn-secondary" onclick="alert('Editar demo')">Editar</button>
+                    <button type="button" class="btn btn-ghost" onclick="if(confirm('¿Eliminar?')) alert('Eliminar demo')">Eliminar</button>
+                  </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="5" style="text-align:center;">No hay productos registrados.</td>
+            </tr>
+        }
+        </tbody>
+      </table>
+    </div>
+</section>
+</div>
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+<script>
+function filtrarProductos() {
+    var input = document.getElementById("buscar");
+    if (!input) return;
+    var filter = input.value.toLowerCase();
+    var table = document.getElementById("tablaProductos");
+    var trs = table.getElementsByTagName("tr");
+    for (var i = 1; i < trs.length; i++) {
+        var tds = trs[i].getElementsByTagName("td");
+        var show = false;
+        for (var j = 0; j < tds.length - 1; j++) {
+            if (tds[j].innerText.toLowerCase().indexOf(filter) > -1) show = true;
+        }
+        trs[i].style.display = show ? "" : "none";
+    }
+}
+</script>
+}

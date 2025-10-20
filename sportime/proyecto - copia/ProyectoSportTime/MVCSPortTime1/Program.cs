@@ -9,16 +9,19 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddHttpClient(); // <-- Agrega esta línea
-//builder.Services.AddScoped<IClientes, ClientesLogic>();
-//builder.Services.AddScoped<IClienteRepository, ClientesRepository>();
-//builder.Services.AddScoped<ICanchas, CanchasLogic>();
-//builder.Services.AddScoped<IDeportes, DeportesLogic>();
-//builder.Services.AddScoped<ICanchasRepository, CanchasRepository>();
-//builder.Services.AddScoped<IDeportesRepository, DeportesRepository>();
+builder.Services.AddRazorPages();
+builder.Services.AddHttpClient();
+
+// EF Core
 builder.Services.AddDbContext<DataContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-builder.Services.AddHttpClient();
+
+// Repositorios y Lógica de Negocio
+builder.Services.AddScoped<IProveedoresRepository, ProveedoresRepository>();
+builder.Services.AddScoped<IProveedores, ProveedoresLogic>();
+
+builder.Services.AddScoped<IProductoRepository, ProductosRepository>();
+builder.Services.AddScoped<IProductos, ProductosLogic>();
 
 WebApplication app = builder.Build();   
 
@@ -26,10 +29,8 @@ WebApplication app = builder.Build();
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
-
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
@@ -38,9 +39,12 @@ app.UseRouting();
 
 app.UseAuthorization();
 
+// Razor Pages endpoints
+app.MapRazorPages();
+
+// MVC default route (kept for compatibility)
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
-
 
 app.Run();

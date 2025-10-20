@@ -1,0 +1,14 @@
+@* Feedback banner and validation summary for Razor Pages *@
+@{
+    var success = TempData["SuccessMessage"] as string;
+    var error = TempData["ErrorMessage"] as string;
+}
+@if (!string.IsNullOrEmpty(success))
+{
+    <div class="alert alert-success" role="alert">@success</div>
+}
+@if (!string.IsNullOrEmpty(error))
+{
+    <div class="alert alert-error" role="alert">@error</div>
+}
+<div asp-validation-summary="ModelOnly" class="validation-summary" role="alert"></div>

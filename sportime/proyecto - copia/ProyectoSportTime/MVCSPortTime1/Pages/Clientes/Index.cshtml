@@ -1,0 +1,72 @@
+@page
+@model MVCSPortTime1.Pages.Clientes.IndexModel
+@{
+    ViewData["Title"] = "Clientes";
+    ViewData["BodyId"] = "clientes-page";
+}
+
+<div class="section-header">
+    <span>Clientes</span>
+    <a asp-page="/Index" aria-label="Volver al menú principal">
+        <img src="~/img/atras.png" alt="Volver al Menú" class="icono-volver" />
+    </a>
+</div>
+
+<partial name="Shared/_Feedback" />
+
+<div class="two-col-shell">
+  <section class="card form-card">
+    <h2>Nuevo Cliente</h2>
+    <form class="formulario" method="post">
+      <label asp-for="Input.Nombre"></label>
+      <input asp-for="Input.Nombre" />
+      <span asp-validation-for="Input.Nombre" class="field-error"></span>
+
+      <label asp-for="Input.Telefono"></label>
+      <input asp-for="Input.Telefono" />
+      <span asp-validation-for="Input.Telefono" class="field-error"></span>
+
+      <label asp-for="Input.Email"></label>
+      <input asp-for="Input.Email" placeholder="cliente@mail.com" />
+      <span asp-validation-for="Input.Email" class="field-error"></span>
+
+      <div class="form-actions">
+        <button type="submit" asp-page-handler="Guardar" class="btn btn-primary">Guardar</button>
+        <button type="reset" class="btn btn-ghost">Limpiar</button>
+      </div>
+    </form>
+  </section>
+
+  <section class="card list-card">
+    <div class="list-header">
+      <h2>Clientes Registrados</h2>
+      <div class="toolbar">
+        <input type="text" placeholder="Buscar..." />
+        <button type="button" class="btn btn-secondary">Buscar</button>
+      </div>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Teléfono</th>
+            <th>Email</th>
+            <th style="width:110px">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td colspan="5" style="text-align:center;">No hay clientes cargados.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</div>
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}

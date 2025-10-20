@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 using MVCSPortTime1.ViewModels;
+using Shared.Dtos;
 
 public class ProveedoresController : Controller
 {

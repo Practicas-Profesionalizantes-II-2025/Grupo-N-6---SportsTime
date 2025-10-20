@@ -1,0 +1,1 @@
+Place your images (SportTime.png, turnos.png, canchas.png, productos.png, clientes.png, atras.png) in this folder. Paths in views reference ~/img/<name>.

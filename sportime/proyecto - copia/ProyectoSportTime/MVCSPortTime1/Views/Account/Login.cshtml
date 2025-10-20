@@ -1,0 +1,128 @@
+@{
+    ViewData["Title"] = "Iniciar sesión";
+    ViewData["BodyClass"] = "login-body"; // para el fondo definido en style.css
+}
+
+@section Styles {
+    <link rel="icon" type="image/png" href="~/img/SportTime.png">
+}
+
+<main class="login-wrapper" aria-labelledby="login-title">
+    <form asp-controller="Account" asp-action="Login" method="post" class="login-form login-form--solo" novalidate>
+      <h1 id="login-title" class="login-form-title">Sistema de Turnos Deportivos</h1>
+      <div class="form-group">
+        <label for="username">Usuario o Email</label>
+        <input id="username" name="usuario" type="text" placeholder="tu.usuario" autocomplete="username" required aria-required="true">
+        <small class="field-hint" id="username-hint">Ej: juan.perez o correo@dominio.com</small>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Contraseña</label>
+        <div class="password-wrapper">
+          <input id="password" name="password" type="password" placeholder="********" autocomplete="current-password" required aria-required="true">
+          <button type="button" class="btn-toggle-pass" aria-label="Mantener presionado para ver la contraseña" title="Mantener para ver">??</button>
+        </div>
+        <small class="field-hint"> • Mínimo 6 caracteres</small>
+      </div>
+
+      <div class="login-options">
+        <label class="remember-me">
+          <input type="checkbox" id="rememberUser"> <span>Recordar usuario</span>
+        </label>
+        <a href="#" class="link-forgot" aria-label="Recuperar contraseña (no implementado)">¿Olvidaste tu contraseña?</a>
+      </div>
+
+      <div class="form-messages" role="alert" aria-live="polite"></div>
+
+      <button type="submit" class="btn-login" disabled>
+        <span class="btn-text">Ingresar</span>
+        <span class="spinner" aria-hidden="true"></span>
+      </button>
+
+      <div class="divider" role="separator" aria-hidden="true"><span>o</span></div>
+
+      <div class="register-box">
+        <p>¿No tenés cuenta? <a href="#" class="link-register" aria-label="Crear cuenta (no implementado)">Crear cuenta</a></p>
+      </div>
+    </form>
+
+    <footer class="login-footer">
+      <small>&copy; @DateTime.Now.Year Sport Time</small>
+    </footer>
+  </main>
+
+@section Scripts {
+<script>
+  const $ = s => document.querySelector(s);
+  const usernameInput = $('#username');
+  const passwordInput = $('#password');
+  const rememberCb = $('#rememberUser');
+  const form = document.querySelector('.login-form');
+  const btnLogin = document.querySelector('.btn-login');
+  const messages = document.querySelector('.form-messages');
+  const togglePassBtn = document.querySelector('.btn-toggle-pass');
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const yearSpan = document.getElementById('year');
+    if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+  });
+
+  const LS_KEY = 'st_usuario';
+  const storedUser = localStorage.getItem(LS_KEY);
+  if (storedUser) { usernameInput.value = storedUser; rememberCb.checked = true; }
+
+  rememberCb.addEventListener('change', () => {
+    if (rememberCb.checked && usernameInput.value.trim()) {
+      localStorage.setItem(LS_KEY, usernameInput.value.trim());
+    } else {
+      localStorage.removeItem(LS_KEY);
+    }
+  });
+
+  usernameInput.addEventListener('input', () => {
+    if (rememberCb.checked) {
+      localStorage.setItem(LS_KEY, usernameInput.value.trim());
+    }
+    validateForm();
+  });
+  passwordInput.addEventListener('input', validateForm);
+
+  togglePassBtn.addEventListener('click', () => {
+    const showing = passwordInput.type === 'text';
+    passwordInput.type = showing ? 'password' : 'text';
+    togglePassBtn.textContent = showing ? '??' : '??';
+  });
+
+  function validateForm() {
+    const userOk = usernameInput.value.trim().length >= 3;
+    const passOk = passwordInput.value.trim().length >= 6;
+    btnLogin.disabled = !(userOk && passOk);
+  }
+  validateForm();
+
+  form.addEventListener('submit', (e) => {
+    const user = usernameInput.value.trim();
+    const pass = passwordInput.value.trim();
+    messages.textContent = '';
+    if (user.length < 3) {
+      e.preventDefault();
+      showMessage('El usuario debe tener al menos 3 caracteres');
+      usernameInput.focus();
+      return;
+    }
+    if (pass.length < 6) {
+      e.preventDefault();
+      showMessage('La contraseña debe tener al menos 6 caracteres');
+      passwordInput.focus();
+      return;
+    }
+    btnLogin.classList.add('loading');
+  });
+
+  function showMessage(msg) {
+    messages.textContent = msg;
+    messages.classList.add('visible');
+    setTimeout(()=> messages.classList.remove('visible'), 4000);
+  }
+</script>
+}

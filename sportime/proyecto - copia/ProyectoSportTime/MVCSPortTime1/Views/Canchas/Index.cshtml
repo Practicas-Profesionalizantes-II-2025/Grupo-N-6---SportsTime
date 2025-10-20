@@ -1,1 +1,58 @@
-﻿
+﻿@{
+    ViewData["Title"] = "Gestión de Canchas";
+    ViewData["BodyId"] = "canchas-page";
+}
+
+<div class="section-header">
+  <span>Canchas</span>
+  <a asp-controller="Home" asp-action="Index">
+    <img src="~/img/atras.png" alt="Volver al Menú" class="icono-volver" />
+  </a>
+</div>
+
+<!-- CUADRADO TRANSPARENTE -->
+<div class="contenedor-principal">
+
+  <!-- Sección Formulario -->
+  <div class="form-section">
+    <h2>Nueva Cancha</h2>
+
+    <label for="id-cancha">ID:</label>
+    <input type="text" id="id-cancha" placeholder="Ej: C001">
+
+    <label for="tipo-cancha">Tipo:</label>
+    <input type="text" id="tipo-cancha" placeholder="Ej: Techada, Abierta">
+
+    <label for="deporte">Deporte:</label>
+    <input type="text" id="deporte" placeholder="Ej: Fútbol, Básquet">
+
+    <label for="acciones">Acciones:</label>
+    <input type="text" id="acciones" placeholder="Ej: Alquiler, Entrenamiento">
+
+    <div class="botones">
+      <button>Guardar</button>
+      <button>Eliminar</button>
+    </div>
+  </div>
+
+  <!-- Sección Lista -->
+  <div class="list-section">
+    <h2>Canchas Registradas</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Tipo</th>
+          <th>Deporte</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="4">No hay canchas registradas.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>

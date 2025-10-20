@@ -1,0 +1,101 @@
+@page
+@model MVCSPortTime1.Pages.Proveedores.IndexModel
+@{
+    ViewData["Title"] = "Proveedores";
+    ViewData["BodyId"] = "proveedores-page";
+}
+
+<div class="section-header">
+  <span>Proveedores</span>
+  <a asp-page="/Index" aria-label="Volver al menú principal">
+    <img src="~/img/atras.png" alt="Volver al Menú" class="icono-volver" />
+  </a>
+</div>
+
+<partial name="Shared/_Feedback" />
+
+<div class="two-col-shell">
+  <section class="card form-card">
+    <h2>Nuevo Proveedor</h2>
+    <form class="formulario" method="post">
+      <label asp-for="Input.Razon"></label>
+      <input asp-for="Input.Razon" placeholder="Proveedor S.A." />
+      <span asp-validation-for="Input.Razon" class="field-error"></span>
+
+      <label asp-for="Input.Direccion"></label>
+      <input asp-for="Input.Direccion" placeholder="Dirección" />
+
+      <label asp-for="Input.Telefono"></label>
+      <input asp-for="Input.Telefono" placeholder="1123456789" />
+      <span asp-validation-for="Input.Telefono" class="field-error"></span>
+
+      <label asp-for="Input.Email"></label>
+      <input asp-for="Input.Email" placeholder="contacto@proveedor.com" />
+      <span asp-validation-for="Input.Email" class="field-error"></span>
+
+      <div class="form-actions">
+        <button type="submit" asp-page-handler="Guardar" class="btn btn-primary">Guardar</button>
+        <button type="reset" class="btn btn-ghost">Limpiar</button>
+      </div>
+    </form>
+  </section>
+
+  <section class="card list-card">
+    <div class="list-header">
+      <h2>Proveedores Registrados</h2>
+      <div class="toolbar">
+        <input type="text" id="buscarProv" placeholder="Buscar..." oninput="filtrarProveedores()" />
+      </div>
+    </div>
+
+    <div class="table-wrap">
+      <table id="tablaProveedores">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Razón social</th>
+            <th>Dirección</th>
+            <th>Teléfono</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody>
+        @if (Model.Proveedores?.Count > 0)
+        {
+            foreach (var p in Model.Proveedores)
+            {
+                <tr>
+                    <td>@p.Proveedor_ID</td>
+                    <td>@p.Nombre</td>
+                    <td>@p.Direccion</td>
+                    <td>@p.Telefono</td>
+                    <td>@p.Email</td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+              <td colspan="5" style="text-align:center;">No hay proveedores registrados.</td>
+            </tr>
+        }
+        </tbody>
+      </table>
+    </div>
+  </section>
+</div>
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+    function filtrarProveedores(){
+      const input = document.getElementById('buscarProv');
+      const filter = (input?.value || '').toLowerCase();
+      const rows = document.querySelectorAll('#tablaProveedores tbody tr');
+      rows.forEach(r => {
+        const text = r.innerText.toLowerCase();
+        r.style.display = text.indexOf(filter) > -1 ? '' : 'none';
+      });
+    }
+    </script>
+}

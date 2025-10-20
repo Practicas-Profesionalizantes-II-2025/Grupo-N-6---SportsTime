@@ -1,0 +1,69 @@
+@page
+@model MVCSPortTime1.Pages.Canchas.IndexModel
+@{
+    ViewData["Title"] = "Canchas";
+    ViewData["BodyId"] = "canchas-page";
+}
+
+<div class="section-header">
+  <span>Canchas</span>
+  <a asp-page="/Index" aria-label="Volver al menú principal">
+    <img src="~/img/atras.png" alt="Volver al Menú" class="icono-volver" />
+  </a>
+</div>
+
+<div class="two-col-shell">
+  <section class="card form-card">
+    <h2>Nueva Cancha</h2>
+
+    <form class="formulario">
+      <label for="nombre-cancha">Nombre</label>
+      <input type="text" id="nombre-cancha" placeholder="Ej: Cancha 1" />
+
+      <label for="tipo-cancha">Tipo</label>
+      <input type="text" id="tipo-cancha" placeholder="Ej: Techada, Abierta" />
+
+      <label for="deporte">Deporte</label>
+      <input type="text" id="deporte" placeholder="Ej: Fútbol, Básquet" />
+
+      <label for="precio-hora">Precio por hora</label>
+      <input type="number" id="precio-hora" min="0" step="50" placeholder="Ej: 12000" />
+
+      <div class="form-actions">
+        <button type="button" class="btn btn-primary">Guardar</button>
+        <button type="reset" class="btn btn-ghost">Limpiar</button>
+        <!-- Solo flecha para volver -->
+      </div>
+    </form>
+  </section>
+
+  <section class="card list-card">
+    <div class="list-header">
+      <h2>Canchas Registradas</h2>
+      <div class="toolbar">
+        <input type="text" placeholder="Buscar..." />
+        <button type="button" class="btn btn-secondary">Buscar</button>
+      </div>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Tipo</th>
+            <th>Deporte</th>
+            <th>Precio/h</th>
+            <th style="width:110px">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td colspan="6" style="text-align:center;">No hay canchas registradas.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</div>
