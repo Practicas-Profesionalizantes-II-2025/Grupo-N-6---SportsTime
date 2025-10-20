@@ -9,11 +9,11 @@ namespace CNegocio.Contracts
 {
     public interface IDeportes
     {
-        //Task AltaDeporte(DeporteDTO nuevoDeporte);
-        //Task ModificarDeporte(int deporteID, DeporteDTO deporteModificado);
-        //Task BajaDeporte(int deporteID);
-        //Task<List<DeporteDTO>> ObtenerTodosLosDeportes();
-        //Task<DeporteDTO?> ObtenerDeportePorId(int id);
+        Task<List<DeporteDTO>> ObtenerTodos();
+        Task<DeporteDTO?> ObtenerPorId(int id);
+        Task<DeporteDTO> Crear(DeporteDTO dto);
+        Task<DeporteDTO> Modificar(DeporteDTO dto);
+        Task Eliminar(int id);
 
     }
 }

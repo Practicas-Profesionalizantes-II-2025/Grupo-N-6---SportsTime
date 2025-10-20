@@ -9,7 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddHttpClient(); // <-- Agrega esta línea
+builder.Services.AddHttpClient(); 
 //builder.Services.AddScoped<IClientes, ClientesLogic>();
 //builder.Services.AddScoped<IClienteRepository, ClientesRepository>();
 //builder.Services.AddScoped<ICanchas, CanchasLogic>();
@@ -18,7 +18,7 @@ builder.Services.AddHttpClient(); // <-- Agrega esta línea
 //builder.Services.AddScoped<IDeportesRepository, DeportesRepository>();
 builder.Services.AddDbContext<DataContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-builder.Services.AddHttpClient();
+
 
 WebApplication app = builder.Build();   
 

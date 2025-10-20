@@ -11,5 +11,6 @@ namespace Shared.Dtos
     {
         public int Cancha_ID { get; set; }
         public int Deporte_ID { get; set; }
+        public bool Activa { get; set; } = true;
     }
 }

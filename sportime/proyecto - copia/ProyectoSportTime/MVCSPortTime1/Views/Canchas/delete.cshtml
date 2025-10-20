@@ -1,0 +1,23 @@
+﻿@model MVCSPortTime1.Models.Dtos.CanchaDTO
+@{
+    ViewData["Title"] = "Eliminar Cancha";
+}
+<link rel="stylesheet" href="~/css/site.css" />
+
+<div class="main-card" style="max-width:700px; margin:40px auto;">
+    <h2>Eliminar Cancha</h2>
+    <p>¿Estás seguro que querés eliminar la cancha <strong>@Model.Cancha_ID</strong>?</p>
+    <dl>
+        <dt>Deporte</dt>
+        <dd>@Model.Deporte_ID - @Model.DeporteNombre</dd>
+        <dt>Activa</dt>
+        <dd>@(Model.Activa ? "Sí" : "No")</dd>
+    </dl>
+
+    <form asp-action="Delete" method="post">
+        @Html.AntiForgeryToken()
+        <input type="hidden" asp-for="Cancha_ID" />
+        <button type="submit" class="btn-eliminar">Eliminar</button>
+        <a asp-action="Index" class="btn-volver">Cancelar</a>
+    </form>
+</div>

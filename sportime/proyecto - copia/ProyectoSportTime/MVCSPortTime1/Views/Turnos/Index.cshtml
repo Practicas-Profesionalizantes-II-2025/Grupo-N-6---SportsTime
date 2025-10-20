@@ -1,179 +1,300 @@
-﻿@{
-    ViewData["Title"] = "Turnos";
-}
+﻿@using MVCSPortTime1.Models
+@model MVCSPortTime1.ViewModels.TurnoIndexViewModel
+
 <style>
     body {
-        background: linear-gradient(135deg, #00e6e6 0%, #00bfae 100%);
-        min-height: 100vh;
-        margin: 0;
-        font-family: 'Segoe UI', Arial, sans-serif;
+        background: #16a085;
+        font-family: 'Segoe UI', sans-serif;
     }
 
-    .turnos-container {
-        max-width: 1100px;
-        margin: 40px auto;
+    .main-card {
         background: #fff;
-        border-radius: 18px;
+        border-radius: 24px;
         box-shadow: 0 8px 32px rgba(0,0,0,0.18);
-        padding: 32px 40px 32px 40px;
+        padding: 24px;
+        max-width: 1000px;
+        margin: 40px auto;
     }
 
-    .turnos-title {
-        font-size: 2.8rem;
-        font-weight: 700;
-        color: #009688;
-        margin-bottom: 24px;
-        text-align: center;
-        letter-spacing: 1px;
+        .main-card h2 {
+            font-size: 2.4rem;
+            color: #009688;
+            margin-bottom: 18px;
+        }
+
+    .validation-summary-errors, .text-danger {
+        color: #e53935;
+        margin-bottom: 8px;
     }
 
-    .turnos-flex {
+    .form-row {
         display: flex;
-        gap: 24px;
-        flex-wrap: wrap;
-    }
-
-    .turnos-list {
-        flex: 2;
-        min-width: 400px;
-        min-height: 320px;
-        background: #e0e0e0;
-        border-radius: 10px;
-        padding: 18px;
-        margin-bottom: 16px;
-        overflow-y: auto;
-    }
-
-    .turnos-sidebar {
-        flex: 1;
-        min-width: 220px;
-        display: flex;
-        flex-direction: column;
         gap: 12px;
+        flex-wrap: wrap;
+        margin-bottom: 12px;
+        align-items: center;
     }
 
-        .turnos-sidebar input[type="text"] {
+    .inline-cols {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+        .inline-cols .col {
+            flex: 1 1 0;
+            min-width: 130px;
+        }
+
+    .date-row {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-bottom: 12px;
+    }
+
+        .date-row .col {
+            flex: 1 1 0;
+            min-width: 160px;
+        }
+
+        .form-row input, .form-row select, .inline-cols select, .date-row input {
+            padding: 10px;
+            border: 2px solid #009688;
+            border-radius: 8px;
+            background: #f8f8f8;
+            font-size: 1rem;
             width: 100%;
-            padding: 8px 10px;
-            border-radius: 6px;
-            border: 1px solid #bdbdbd;
-            font-size: 1rem;
+            box-sizing: border-box;
         }
 
-        .turnos-sidebar button {
-            background: #009688;
-            color: #fff;
-            border: none;
-            border-radius: 6px;
-            padding: 10px 0;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-
-            .turnos-sidebar button:hover {
-                background: #00796b;
-            }
-
-    .turnos-form-row {
-        display: flex;
-        gap: 18px;
-        margin-bottom: 14px;
-        flex-wrap: wrap;
+    .btn-guardar {
+        background: #009688;
+        color: #fff;
+        padding: 10px 22px;
+        border-radius: 8px;
+        font-weight: 700;
+        border: none;
+        cursor: pointer;
     }
 
-        .turnos-form-row label {
-            font-weight: 500;
-            margin-bottom: 4px;
-            display: block;
+        .btn-guardar:hover {
+            background: #00796b;
         }
 
-        .turnos-form-row select,
-        .turnos-form-row input[type="text"],
-        .turnos-form-row input[type="number"],
-        .turnos-form-row input[type="time"] {
-            padding: 7px 10px;
-            border-radius: 6px;
-            border: 1px solid #bdbdbd;
-            font-size: 1rem;
-            min-width: 120px;
-        }
-
-    .turnos-actions {
-        display: flex;
-        gap: 12px;
-        flex-wrap: wrap;
-        margin-top: 10px;
+    .tabla-scroll {
+        max-height: 300px;
+        overflow-y: auto;
+        margin-top: 12px;
+        background: #fff;
+        border-radius: 12px;
     }
 
-        .turnos-actions button {
-            background: #009688;
+    .table-turnos {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 900px;
+    }
+
+        .table-turnos th {
+            background: #00796b;
             color: #fff;
-            border: none;
-            border-radius: 6px;
-            padding: 10px 18px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.2s;
+            padding: 12px;
+            position: sticky;
+            top: 0;
+            z-index: 2;
         }
 
-    .turnos-actions button:hover {
-        background: #00796b;    .turnos-actions button:hover {
-        background: #00796b;
+        .table-turnos td {
+            padding: 12px;
+            border-bottom: 1px solid #eee;
+        }
+
+    .btn-modificar {
+        background: #ffb300;
+        color: #fff;
+        padding: 6px 12px;
+        border-radius: 6px;
+        text-decoration: none;
+    }
+
+    .btn-eliminar {
+        background: #e53935;
+        color: #fff;
+        padding: 6px 12px;
+        border-radius: 6px;
+        text-decoration: none;
+    }
+    @@media (max-width: 700px) {
+        .inline-cols .col, .date-row .col
+
+    {
+        min-width: 100%;
+    }
+
+    .form-row {
+        gap: 8px;
+    }
+
     }
 </style>
 
-<div class="turnos-container">
-    <div class="turnos-title">Turnos</div>
-    <div class="turnos-flex">
-        <div class="turnos-list">
-            <!-- Aquí iría la lista de turnos (tabla o cards) -->
-            <p style="color:#757575;text-align:center;">No hay turnos cargados.</p>
+<div class="main-card">
+    <h2>Turnos</h2>
+
+    @if (TempData["Error"] != null)
+    {
+        <div class="validation-summary-errors">@TempData["Error"]</div>
+    }
+
+    <form asp-action="Create" method="post" autocomplete="off">
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, "", new { @class = "validation-summary-errors" })
+
+        <!-- Primera fila: Usuario | Deporte | Cancha | Estado -->
+        <div class="form-row">
+            <div class="inline-cols" style="width:100%;">
+                <div class="col">
+                    <select asp-for="NuevoTurno.Usuario_ID" class="form-control" id="select-usuario">
+                        <option value="">Seleccionar usuario</option>
+                        @foreach (var u in Model.Usuarios)
+                        {
+                            <option value="@u.Id">@u.Text</option>
+                        }
+                    </select>
+                </div>
+
+                <div class="col">
+                    <select id="select-deporte" class="form-control">
+                        <option value="">Seleccionar deporte</option>
+                        @foreach (var d in Model.Deportes)
+                        {
+                            <option value="@d.Id">@d.Text</option>
+                        }
+                    </select>
+                </div>
+
+                <div class="col">
+                    <select asp-for="NuevoTurno.Cancha_ID" class="form-control" id="select-deporte-cancha">
+                        <option value="">Seleccionar cancha</option>
+                        @foreach (var c in Model.Canchas)
+                        {
+                            // añadimos data-deporte para filtrar en cliente
+                            <option value="@c.Id" data-deporte="@(c.ParentId?.ToString() ?? "")">@c.Text</option>
+                        }
+                    </select>
+                </div>
+
+                <div class="col">
+                    <select asp-for="NuevoTurno.Estado" class="form-control">
+                        <option value="Pendiente">Pendiente</option>
+                        <option value="Confirmado">Confirmado</option>
+                        <option value="Cancelado">Cancelado</option>
+                    </select>
+                </div>
+            </div>
         </div>
-        <div class="turnos-sidebar">
-            <label for="buscar">Buscar</label>
-            <input type="text" id="buscar" placeholder="Buscar...">
-            <button>Estadísticas</button>
-        </div>
-    </div>
-    <form>
-        <div class="turnos-form-row">
-            <div>
-                <label for="cliente">Cliente</label>
-                <select id="cliente"><option>Seleccionar</option></select>
+
+        <!-- Segunda fila: HoraInicio | HoraFin | Guardar -->
+        <div class="form-row date-row">
+            <div class="col">
+                <input asp-for="NuevoTurno.HoraInicio" type="datetime-local" />
             </div>
-            <div>
-                <label for="cancha">Cancha</label>
-                <select id="cancha"><option>Seleccionar</option></select>
+
+            <div class="col">
+                <input asp-for="NuevoTurno.HoraFin" type="datetime-local" />
             </div>
-            <div>
-                <label for="producto">Producto</label>
-                <select id="producto"><option>Seleccionar</option></select>
+
+            <div style="min-width:140px; display:flex; align-items:center;">
+                <button type="submit" class="btn-guardar">Guardar</button>
             </div>
-            <div>
-                <label for="cantidad">Cantidad</label>
-                <input type="number" id="cantidad" min="1" value="1">
-            </div>
-            <div>
-                <label for="inicio">Inicio</label>
-                <input type="time" id="inicio" value="21:00">
-            </div>
-            <div>
-                <label for="fin">Fin</label>
-                <input type="time" id="fin" value="21:00">
-            </div>
-        </div>
-        <div class="turnos-actions">
-            <button type="submit">Guardar</button>
-            <button type="button">Modificar</button>
-            <button type="button">Eliminar</button>
-            <button type="button">Agregar</button>
-            <button type="button">Quitar</button>
-            <button type="button">Mostrar</button>
-            <button type="reset">Limpiar</button>
-            <button type="button" onclick="window.location.href='@Url.Action("Index", "Home")'">Volver</button>
         </div>
     </form>
-</div>  
+
+    <div class="tabla-scroll">
+        <table class="table-turnos">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Usuario</th>
+                    <th>Cancha</th>
+                    <th>Estado</th>
+                    <th>Inicio</th>
+                    <th>Fin</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.Turnos != null && Model.Turnos.Count > 0)
+                {
+                    foreach (var t in Model.Turnos)
+                    {
+                        <tr>
+                            <td>@t.Turno_ID</td>
+                            <td>@t.Usuario_ID</td>
+                            <td>@t.Cancha_ID</td>
+                            <td>@t.Estado</td>
+                            <td>@(t.HoraInicio.ToString("g"))</td>
+                            <td>@(t.HoraFin.ToString("g"))</td>
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@t.Turno_ID" class="btn-modificar">Modificar</a>
+                                <a asp-action="Delete" asp-route-id="@t.Turno_ID" class="btn-eliminar">Eliminar</a>
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="7">No hay turnos registrados.</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const deporteSelect = document.getElementById('select-deporte');
+        const canchaSelect = document.getElementById('select-deporte-cancha');
+
+        function filterCanchas() {
+            const deporteId = deporteSelect.value;
+            // recorrer opciones y mostrar/ocultar según data-deporte
+            Array.from(canchaSelect.options).forEach(opt => {
+                const optDeporte = opt.getAttribute('data-deporte');
+                if (!deporteId) {
+                    // mostrar todas
+                    opt.hidden = false;
+                    opt.disabled = false;
+                } else {
+                    if (!optDeporte || optDeporte === '') {
+                        opt.hidden = true;
+                        opt.disabled = true;
+                    } else if (optDeporte === deporteId) {
+                        opt.hidden = false;
+                        opt.disabled = false;
+                    } else {
+                        opt.hidden = true;
+                        opt.disabled = true;
+                    }
+                }
+            });
+
+            // Si la opción seleccionada quedó oculta, limpiar selección
+            if (canchaSelect.value) {
+                const selOpt = canchaSelect.selectedOptions[0];
+                if (selOpt && selOpt.hidden) canchaSelect.value = '';
+            }
+        }
+
+        if (deporteSelect && canchaSelect) {
+            deporteSelect.addEventListener('change', filterCanchas);
+            // aplicar filtro al cargar
+            filterCanchas();
+        }
+    });
+</script>

@@ -45,10 +45,10 @@ namespace CDatos.Data
 
             // Canchas
             modelBuilder.Entity<Canchas>().HasData(
-                new Canchas { Cancha_ID = 1, Deporte_ID = 1 },
-                new Canchas { Cancha_ID = 2, Deporte_ID = 2 },
-                new Canchas { Cancha_ID = 3, Deporte_ID = 3 },
-                new Canchas { Cancha_ID = 4, Deporte_ID = 4 }
+                new Canchas { Cancha_ID = 1, Deporte_ID = 1, Activa = true },
+                new Canchas { Cancha_ID = 2, Deporte_ID = 2, Activa = true },
+                new Canchas { Cancha_ID = 3, Deporte_ID = 3, Activa = true },
+                new Canchas { Cancha_ID = 4, Deporte_ID = 4, Activa = true }
             );
 
 

@@ -1,134 +1,85 @@
-﻿//using CDatos.Data;
-//using Shared.Dtos;
-//using Shared.Entidades;
-//using Microsoft.EntityFrameworkCore;
-//using CDatos.Repositorys.IRepositorys;
-//using System;
-//using System.Collections.Generic;
-//using System.Linq;
-//using System.Text;
-//using System.Threading.Tasks;
+﻿using CDatos.Data;
+using CDatos.Repositorys.IRepositorys;
+using Microsoft.EntityFrameworkCore;
+using Shared.Entidades;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
-//namespace CNegocio.Repositorys
-//{
-//    public class CanchasRepository : ICanchasRepository
-//    {
-//        //private readonly DataContext _context;
+namespace CDatos.Repositorys
+{
+    public class CanchasRepository : ICanchasRepository
+    {
+        private readonly DataContext _context;
+        public CanchasRepository(DataContext context)
+        {
+            _context = context;
+        }
 
-//        //public CanchasRepository(DataContext context)
-//        //{
-//        //    _context = context;
-//        //}
-//        //// Crear una nueva cancha
-//        //public async Task CreateCancha(CanchaDTO cancha)
-//        //{
-//        //    ArgumentNullException.ThrowIfNull(cancha);
+        public async Task<Canchas> CrearCancha(Canchas cancha)
+        {
+            if (cancha == null) throw new ArgumentNullException(nameof(cancha));
+            _context.Canchas.Add(cancha);
+            await _context.SaveChangesAsync();
+            return cancha;
+        }
 
-//        //    var nuevaCancha = new Canchas
-//        //    {
-//        //        Deporte_ID = cancha.Deporte_ID
-//        //    };
+        public async Task<Canchas> ModificarCancha(Canchas cancha)
+        {
+            if (cancha == null) throw new ArgumentNullException(nameof(cancha));
+            var existente = await _context.Canchas.FindAsync(cancha.Cancha_ID);
+            if (existente == null) throw new Exception("Cancha no encontrada.");
 
-//        //    _context.Canchas.Add(nuevaCancha);
-//        //    await _context.SaveChangesAsync();
+            existente.Deporte_ID = cancha.Deporte_ID;
+            existente.Activa = cancha.Activa;
+            await _context.SaveChangesAsync();
+            return existente;
+        }
 
-//        //    /* var client = ApiServer.ObtenerClientHttp();
-//        //     var url = ApiServer.ObtenerUrlEndPoint("/api/canchas/");
-//        //     var content = new StringContent(JsonConvert.SerializeObject(new { Deporte_ID = cancha.Deporte_ID }), Encoding.UTF8, "application/json");
+        public async Task EliminarCancha(int canchaId)
+        {
+            var cancha = await _context.Canchas.FindAsync(canchaId);
+            if (cancha != null)
+            {
+                _context.Canchas.Remove(cancha);
+                await _context.SaveChangesAsync();
+            }
+        }
 
-//        //     var response = await client.PostAsync(url, content);
-//        //     response.EnsureSuccessStatusCode();
-//        //    */
-//        //}
+        public async Task<List<Canchas>> ObtenerTodasLasCanchas()
+        {
+            return await _context.Canchas.ToListAsync();
+        }
 
+        public async Task<Canchas?> ObtenerCanchaPorId(int id)
+        {
+            return await _context.Canchas.FindAsync(id);
+        }
 
-//        //// Actualizar una cancha existente
-//        //public async Task UpdateCancha(int canchaID, CanchaDTO canchaModificada)
-//        //{
-//        //    ArgumentNullException.ThrowIfNull(canchaModificada);
+        public async Task<List<Canchas>> ObtenerCanchasPorDeporte(int deporteId)
+        {
+            return await _context.Canchas
+                .Where(c => c.Deporte_ID == deporteId)
+                .ToListAsync();
+        }
 
-//        //    var cancha = await _context.Canchas.FindAsync(canchaID);
-//        //    if (cancha == null)
-//        //        throw new KeyNotFoundException("Cancha no encontrada.");
+        public async Task<List<Canchas>> ObtenerCanchasActivas()
+        {
+            return await _context.Canchas
+                .Where(c => c.Activa)
+                .ToListAsync();
+        }
 
-//        //    cancha.Deporte_ID = canchaModificada.Deporte_ID;
-//        //    await _context.SaveChangesAsync();
+        public async Task<bool> ExisteCanchaPorId(int canchaId)
+        {
+            return await _context.Canchas.AnyAsync(c => c.Cancha_ID == canchaId);
+        }
 
-//        //    /*  var client = ApiServer.ObtenerClientHttp();
-//        //      var url = ApiServer.ObtenerUrlEndPoint($"/api/canchas/{canchaID}");
-//        //      var content = new StringContent(JsonConvert.SerializeObject(new { Deporte_ID = canchaModificada.Deporte_ID }), Encoding.UTF8, "application/json");
-
-//        //      var response = await client.PutAsync(url, content);
-//        //      response.EnsureSuccessStatusCode();
-//        //    */
-//        //}
-
-
-//        //// Eliminar una cancha
-//        //public async Task DeleteCancha(int canchaID)
-//        //{
-//        //    var cancha = await _context.Canchas.FindAsync(canchaID);
-//        //    if (cancha == null)
-//        //        throw new KeyNotFoundException("Cancha no encontrada.");
-//        //    _context.Canchas.Remove(cancha);
-//        //    await _context.SaveChangesAsync();
-
-//        //    /* var client = ApiServer.ObtenerClientHttp();
-//        //     var url = ApiServer.ObtenerUrlEndPoint($"/api/canchas/{canchaID}");
-
-//        //     var response = await client.DeleteAsync(url);
-//        //     response.EnsureSuccessStatusCode();
-//        //    */
-//        //}
-
-//        //// Obtener todas las canchas
-//        //public async Task<List<CanchaDTO>> GetAllCanchas()
-//        //{
-//        //    return await _context.Canchas
-//        //        .Include(c => c.Deporte_ID)
-//        //        .Select(c => new CanchaDTO
-//        //        {
-//        //            Cancha_ID = c.Cancha_ID,
-//        //            Deporte_ID = c.Deporte_ID,
-                    
-//        //        })
-//        //        .ToListAsync();
-//        //    /* var client = ApiServer.ObtenerClientHttp();
-//        //     var url = ApiServer.ObtenerUrlEndPoint("/api/canchas");
-
-//        //     var response = await client.GetAsync(url);
-//        //     response.EnsureSuccessStatusCode();
-
-//        //     var result = await response.Content.ReadAsStringAsync();
-//        //     return JsonConvert.DeserializeObject<List<CanchaDTO>>(result);
-//        //       */
-//        //}
-
-//        //// Obtener una cancha por ID
-//        //public async Task<CanchaDTO?> GetCanchaById(int id)
-//        //{
-//        //    var cancha = await _context.Canchas
-//        //        .Include(c => c.Deporte_ID)
-//        //        .FirstOrDefaultAsync(c => c.Cancha_ID == id);
-
-//        //    if (cancha == null) return null;
-
-//        //    return new CanchaDTO
-//        //    {
-//        //        Cancha_ID = cancha.Cancha_ID,
-//        //        Deporte_ID = cancha.Deporte_ID,
-                
-//        //    };
-
-//            /* var client = ApiServer.ObtenerClientHttp();
-//            var url = ApiServer.ObtenerUrlEndPoint($"/api/canchas/{id}");
-
-//            var response = await client.GetAsync(url);
-//            response.EnsureSuccessStatusCode();
-
-//            var result = await response.Content.ReadAsStringAsync();
-//            return JsonConvert.DeserializeObject<CanchaDTO>(result);
-//            */
-//       // }
-//    }
-//}
+        public async Task<bool> ExisteCanchaConMismoDeporte(int deporteId)
+        {
+            // Devuelve true si existe al menos una cancha con ese Deporte_ID
+            return await _context.Canchas.AnyAsync(c => c.Deporte_ID == deporteId);
+        }
+    }
+}

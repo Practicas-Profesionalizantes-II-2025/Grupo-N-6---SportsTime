@@ -1,0 +1,24 @@
+﻿@model MVCSPortTime1.Models.TurnoDTO
+@{
+    ViewData["Title"] = "Detalle Turno";
+}
+<link rel="stylesheet" href="~/css/site.css" />
+
+<div class="main-card" style="max-width:700px; margin:40px auto;">
+    <h2>Detalle Turno</h2>
+    <dl>
+        <dt>ID</dt>
+        <dd>@Model.Turno_ID</dd>
+        <dt>Usuario</dt>
+        <dd>@Model.Usuario_ID</dd>
+        <dt>Cancha</dt>
+        <dd>@Model.Cancha_ID</dd>
+        <dt>Estado</dt>
+        <dd>@Model.Estado</dd>
+        <dt>Hora Inicio</dt>
+        <dd>@Model.HoraInicio</dd>
+        <dt>Hora Fin</dt>
+        <dd>@Model.HoraFin</dd>
+    </dl>
+    <a asp-action="Index" class="btn-volver">Volver</a>
+</div>

@@ -1,0 +1,48 @@
+﻿@model MVCSPortTime1.Models.Dtos.CanchaDTO
+@using MVCSPortTime1.ViewModels
+@{
+    ViewData["Title"] = "Editar Cancha";
+    var deportes = ViewBag.Deportes as List<CanchaLookupItem> ?? new List<CanchaLookupItem>();
+}
+<link rel="stylesheet" href="~/css/site.css" />
+
+<div class="main-card" style="max-width:700px; margin:40px auto;">
+    <h2>Editar Cancha</h2>
+
+    @Html.ValidationSummary(true, "", new { @class = "validation-summary-errors" })
+
+    <form asp-action="Edit" method="post">
+        @Html.AntiForgeryToken()
+        <input type="hidden" asp-for="Cancha_ID" />
+        <div class="form-row">
+            <div style="flex:1 1 0; min-width:160px;">
+                <label>Deporte</label>
+                <select asp-for="Deporte_ID" class="form-control">
+                    <option value="">Seleccionar deporte</option>
+                    @foreach (var d in deportes)
+                    {
+                        <option value="@d.Id" @@(d.Id == Model.Deporte_ID ? "selected" : "")>@d.Text</option>
+                    }
+                </select>
+            </div>
+
+            <div style="max-width:160px; display:flex; align-items:center;">
+                <label style="margin-right:10px;">
+                    <input asp-for="Activa" type="checkbox" /> Activa
+                </label>
+            </div>
+
+            <div style="min-width:140px; display:flex; align-items:center;">
+                <button type="submit" class="btn-guardar">Guardar</button>
+            </div>
+
+            <div style="margin-left:12px;">
+                <a asp-action="Index" class="btn-volver">Volver</a>
+            </div>
+        </div>
+
+        <div style="margin-top:12px;">
+            <strong>Deporte actual:</strong> @Model.Deporte_ID - @Model.DeporteNombre
+        </div>
+    </form>
+</div>

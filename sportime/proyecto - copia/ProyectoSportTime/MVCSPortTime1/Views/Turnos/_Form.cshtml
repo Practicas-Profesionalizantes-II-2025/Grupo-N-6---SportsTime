@@ -1,0 +1,26 @@
+﻿@model MVCSPortTime1.Models.TurnoDTO
+
+<form asp-action="@ViewContext.RouteData.Values["action"]" method="post" autocomplete="off">
+    @Html.AntiForgeryToken()
+    <div class="form-row">
+        <select asp-for="Usuario_ID" class="form-control">
+            <option value="">Seleccionar usuario</option>
+            <!-- opciones dinámicas deben venir del viewmodel (si se usa partial, pasalas via ViewData or ViewBag) -->
+        </select>
+
+        <select asp-for="Cancha_ID" class="form-control">
+            <option value="">Seleccionar cancha</option>
+        </select>
+
+        <input asp-for="HoraInicio" type="datetime-local" />
+        <input asp-for="HoraFin" type="datetime-local" />
+
+        <select asp-for="Estado" class="form-control">
+            <option value="Pendiente">Pendiente</option>
+            <option value="Confirmado">Confirmado</option>
+            <option value="Cancelado">Cancelado</option>
+        </select>
+
+        <button type="submit" class="btn-guardar">Guardar</button>
+    </div>
+</form>

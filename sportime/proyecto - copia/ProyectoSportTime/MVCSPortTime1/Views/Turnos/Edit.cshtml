@@ -1,0 +1,29 @@
+﻿@model MVCSPortTime1.Models.TurnoDTO
+@{
+    ViewData["Title"] = "Editar Turno";
+}
+<link rel="stylesheet" href="~/css/site.css" />
+
+<div class="main-card" style="max-width:800px; margin:40px auto;">
+    <h2>Editar Turno</h2>
+
+    @Html.ValidationSummary(true, "", new { @class = "validation-summary-errors" })
+
+    <form asp-action="Edit" method="post">
+        @Html.AntiForgeryToken()
+        <input type="hidden" asp-for="Turno_ID" />
+        <div class="form-row">
+            <input asp-for="Usuario_ID" placeholder="Usuario ID" />
+            <input asp-for="Cancha_ID" placeholder="Cancha ID" />
+            <input asp-for="HoraInicio" type="datetime-local" />
+            <input asp-for="HoraFin" type="datetime-local" />
+            <select asp-for="Estado">
+                <option value="Pendiente">Pendiente</option>
+                <option value="Confirmado">Confirmado</option>
+                <option value="Cancelado">Cancelado</option>
+            </select>
+            <button type="submit" class="btn-guardar">Guardar</button>
+            <a asp-action="Index" class="btn-volver">Volver</a>
+        </div>
+    </form>
+</div>

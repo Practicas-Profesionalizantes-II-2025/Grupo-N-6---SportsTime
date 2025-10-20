@@ -1,78 +1,254 @@
-﻿@model List<Shared.Dtos.CanchaDTO>
-@{
-    ViewData["Title"] = "Canchas";
-    var deportes = ViewBag.Deportes as List<Shared.Entidades.Deportes>;
-    var search = ViewBag.Search as string;
-}
+﻿@using Azure.Core
+@using MVCSPortTime1.Models
+@using System.Linq
+@model MVCSPortTime1.ViewModels.CanchaIndexViewModel
+
 <style>
-    body { background: linear-gradient(135deg, #00e6e6 0%, #00bfae 100%); min-height: 100vh; margin: 0; font-family: 'Segoe UI', Arial, sans-serif; }
-    .canchas-container { max-width: 1000px; margin: 40px auto; background: #fff; border-radius: 18px; box-shadow: 0 8px 32px rgba(0,0,0,0.18); padding: 32px 40px; }
-    .canchas-title { font-size: 2.5rem; font-weight: 700; color: #009688; margin-bottom: 24px; text-align: center; }
-    .canchas-form-row { display: flex; gap: 18px; margin-bottom: 18px; flex-wrap: wrap; }
-    .canchas-form-row label { font-weight: 500; margin-bottom: 4px; display: block; }
-    .canchas-form-row select, .canchas-form-row input[type="text"], .canchas-form-row input[type="number"] { padding: 7px 10px; border-radius: 6px; border: 1px solid #bdbdbd; font-size: 1rem; min-width: 120px; }
-    .canchas-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 10px; }
-    .canchas-actions button { background: #009688; color: #fff; border: none; border-radius: 6px; padding: 10px 18px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: background 0.2s; }
-    .canchas-actions button:hover { background: #00796b; }
-    .canchas-table { width: 100%; border-collapse: collapse; margin-bottom: 18px; }
-    .canchas-table th, .canchas-table td { border: 1px solid #bdbdbd; padding: 10px; text-align: center; }
-    .canchas-table th { background: #009688; color: #fff; }
-    .search-box { float: right; margin-bottom: 10px; }
-    .search-box input { padding: 6px 10px; border-radius: 6px; border: 1px solid #bdbdbd; }
+    body {
+        background: #16a085;
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    .main-card {
+        background: #fff;
+        border-radius: 24px;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+        padding: 24px;
+        max-width: 900px;
+        margin: 40px auto;
+    }
+
+        .main-card h2 {
+            font-size: 2.4rem;
+            color: #009688;
+            margin-bottom: 18px;
+        }
+
+    .form-row {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-bottom: 12px;
+        align-items: center;
+    }
+
+    .inline-cols {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+        .inline-cols .col {
+            flex: 1 1 0;
+            min-width: 160px;
+        }
+
+    .form-row input, .form-row select {
+        padding: 10px;
+        border: 2px solid #009688;
+        border-radius: 8px;
+        background: #f8f8f8;
+        font-size: 1rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .btn-guardar {
+        background: #009688;
+        color: #fff;
+        padding: 10px 22px;
+        border-radius: 8px;
+        font-weight: 700;
+        border: none;
+        cursor: pointer;
+    }
+
+    .btn-crear {
+        background: #00695c;
+        color: #fff;
+        padding: 8px 18px;
+        border-radius: 8px;
+        font-weight: 700;
+        border: none;
+        cursor: pointer;
+    }
+
+    .btn-buscar {
+        background: #00796b;
+        color: #fff;
+        padding: 8px 14px;
+        border-radius: 8px;
+        font-weight: 600;
+        border: none;
+        cursor: pointer;
+    }
+
+    .tabla-scroll {
+        max-height: 300px;
+        overflow-y: auto;
+        margin-top: 12px;
+        background: #fff;
+        border-radius: 12px;
+    }
+
+    .table-canchas {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 600px;
+    }
+
+        .table-canchas th {
+            background: #00796b;
+            color: #fff;
+            padding: 12px;
+            position: sticky;
+            top: 0;
+            z-index: 2;
+        }
+
+        .table-canchas td {
+            padding: 12px;
+            border-bottom: 1px solid #eee;
+        }
+
+    .btn-modificar {
+        background: #ffb300;
+        color: #fff;
+        padding: 6px 12px;
+        border-radius: 6px;
+        text-decoration: none;
+    }
+
+    .btn-eliminar {
+        background: #e53935;
+        color: #fff;
+        padding: 6px 12px;
+        border-radius: 6px;
+        text-decoration: none;
+    }
+
+    .search-row {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        margin-bottom: 14px;
+    }
+
+        .search-row input {
+            padding: 10px;
+            border: 2px solid #009688;
+            border-radius: 8px;
+            width: 100%;
+        }
+
+    .label-inside {
+        position: absolute;
+        left: 18px;
+        top: 8px;
+        pointer-events: none;
+        color: #888;
+        font-size: 0.95rem;
+    }
+
+    .search-wrap {
+        position: relative;
+        flex: 1 1 0;
+        min-width: 180px;
+    }
 </style>
 
-<div class="canchas-container">
-    <div class="canchas-title">Canchas</div>
-    <form method="get" asp-action="Index" class="search-box">
-        <input type="text" name="search" value="@search" placeholder="Buscar...">
-        <button type="submit">Buscar</button>
-    </form>
-    <table class="canchas-table">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Deporte</th>
-                <th>Tipo</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-            
-     @*    @foreach (var cancha in Model)
-        {
-            <tr>
-                <td>@cancha.Cancha_ID</td>
-                    <td>@(cancha.Deporte_ID?.Nombre ?? deportes?.FirstOrDefault(d => d.Deporte_ID == cancha.Deporte_ID)?.Nombre)</td>
-                <td>@cancha.Nombre</td>
-                <td>
-                    <form method="post" asp-action="Eliminar" style="display:inline;">
-                        <input type="hidden" name="canchaId" value="@cancha.Cancha_ID" />
-                        <button type="submit" onclick="return confirm('¿Eliminar cancha?')">Eliminar</button>
-                    </form>
-                </td>
-            </tr>
-        } *@
-        
-        </tbody>
-    </table>
-    <form method="post" asp-action="Guardar">
-        <div class="canchas-form-row">
-            <div>
-                <label for="deporteId">Deporte</label>
-                <select id="deporteId" name="deporteId" required>
-                    <option value="">Seleccionar</option>
-                    @if (deportes != null)
-                    {
-                        foreach (var d in deportes)
+<div class="main-card">
+    <h2>Canchas</h2>
+   
+
+    @if (TempData["Error"] != null)
+    {
+        <div class="validation-summary-errors">@TempData["Error"]</div>
+    }
+    @if (TempData["Info"] != null)
+    {
+        <div class="validation-summary-errors">@TempData["Info"]</div>
+    }
+
+    <!-- Row: Crear nueva cancha (botón) + búsqueda -->
+    <div class="form-row" style="align-items:center; margin-bottom:18px;">
+        <div style="flex:0 0 auto;">
+            <a asp-action="Create" class="btn-crear">Crear nueva cancha</a>
+        </div>
+
+        <div style="flex:1 1 0;">
+            <form asp-action="Index" method="get" class="search-row" role="search">
+                <div class="search-wrap">
+                    <!-- Placeholder visible dentro del input -->
+                    <input name="search" value="@(ViewContext.HttpContext.Request.Query["search"].ToString() ?? "")" placeholder="Buscar canchas..." />
+                </div>
+                <button type="submit" class="btn-buscar">Buscar</button>
+            </form>
+        </div>
+    </div>
+
+
+    <form asp-action="Create" method="post" autocomplete="off">
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, "", new { @class = "validation-summary-errors" })
+
+        <div class="form-row">
+            <div class="inline-cols" style="width:100%;">
+                <div class="col">
+                    <select asp-for="NuevoCancha.Deporte_ID" class="form-control">
+                        <option value="">Seleccionar deporte</option>
+                        @foreach (var d in Model.Deportes)
                         {
-                            <option value="@d.Deporte_ID">@d.Nombre</option>
+                            <option value="@d.Id">@d.Text</option>
                         }
-                    }
-                </select>
+                    </select>
+                </div>
+
+                <div class="col" style="max-width:160px; display:flex; align-items:center;">
+                    <label style="margin-right:10px;">
+                        <input asp-for="NuevoCancha.Activa" type="checkbox" /> Activa
+                    </label>
+                </div>
+
+                <div style="min-width:140px; display:flex; align-items:center;">
+                    <button type="submit" class="btn-guardar">Guardar</button>
+                </div>
             </div>
         </div>
-        <div class="canchas-actions">
-            <button type="submit">Guardar</button>
-        </div>
     </form>
+
+    <div class="tabla-scroll">
+        <table class="table-canchas">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Deporte</th>
+                    <th>Activa</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.Canchas != null && Model.Canchas.Count > 0)
+                {
+                    foreach (var c in Model.Canchas)
+                    {
+                        <tr>
+                            <td>@c.Cancha_ID</td>
+                            <td>@c.DeporteNombre</td>
+                            <td>@(c.Activa ? "Sí" : "No")</td>
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@c.Cancha_ID" class="btn-modificar">Modificar</a>
+                                <a asp-action="Delete" asp-route-id="@c.Cancha_ID" class="btn-eliminar">Eliminar</a>
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr><td colspan="4">No hay canchas registradas.</td></tr>
+                }
+            </tbody>
+        </table>
+    </div>
 </div>
