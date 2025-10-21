@@ -1,0 +1,176 @@
+﻿/* Layout Turnos: versión sin paginación, scroll dentro de la grilla */
+
+/* Hero */
+.turnos-hero {
+    padding: 8px 20px;
+}
+
+.turnos-hero-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.turnos-hero-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(90deg,#1486b3 0%, #11c1a9 100%);
+    color: #fff;
+    padding: 14px 22px;
+    border-radius: 12px;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+}
+
+    .turnos-hero-title h1 {
+        margin: 0;
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+
+    .turnos-hero-title .back-btn {
+        color: #fff;
+        font-size: 1.6rem;
+        text-decoration: none;
+        padding: 6px 10px;
+        border-radius: 8px;
+    }
+
+/* Contenedor principal: fija la altura disponible en viewport y coloca columnas */
+.turnos-wrapper {
+    --offset: 140px; /* fallback */
+    display: flex;
+    gap: 28px;
+    max-width: 1400px;
+    margin: 18px auto;
+    padding: 8px;
+    align-items: flex-start;
+    min-height: calc(100vh - var(--header-offset, 140px));
+    box-sizing: border-box;
+}
+
+/* columnas */
+.turnos-left,
+.turnos-right {
+    box-sizing: border-box;
+}
+
+/* izquierda: formulario (más angosto) */
+.turnos-left {
+    flex: 0 0 34%;
+    max-width: 440px;
+}
+
+.form-card {
+    border-radius: 12px;
+    box-shadow: 0 10px 26px rgba(0,0,0,0.06);
+    background: #fff;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 8px;
+}
+
+/* derecha: grid (más ancha) */
+.turnos-right {
+    flex: 1 1 64%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* grid card y wrapper con scroll interno */
+.grid-card {
+    border-radius: 12px;
+    box-shadow: 0 10px 26px rgba(0,0,0,0.06);
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+    .grid-card .card-body {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 0;
+        height: 100%;
+    }
+
+/* search row */
+.search-row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+/* grid wrapper: ocupa el resto del espacio dentro del card y hace scroll autonómico */
+.grid-wrapper {
+    flex: 1 1 auto;
+    overflow-y: auto;
+    padding-right: 8px; /* espacio para scrollbar */
+    margin-top: 6px;
+    max-height: calc(100vh - var(--header-offset, 140px) - 220px);
+}
+
+    /* sticky header for table */
+    .grid-wrapper table thead th {
+        position: sticky;
+        top: 0;
+        background: #fff;
+        z-index: 5;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+
+/* table header style */
+.table-header th {
+    font-weight: 700;
+    color: #1b4250;
+}
+
+/* style rows */
+.table > tbody > tr > td {
+    vertical-align: middle;
+}
+
+/* adjust wide columns */
+.table th:first-child,
+.table td:first-child {
+    width: 20%;
+}
+
+/* small responsive adjustments */
+@media (max-width: 1200px) {
+    .turnos-wrapper {
+        gap: 20px;
+    }
+
+    .turnos-left {
+        flex: 0 0 38%;
+        max-width: 420px;
+    }
+
+    .turnos-right {
+        flex: 1 1 62%;
+    }
+
+    .grid-wrapper {
+        max-height: 420px;
+    }
+}
+
+@media (max-width: 900px) {
+    .turnos-wrapper {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .turnos-left, .turnos-right {
+        flex: 1 1 100%;
+        width: 100%;
+    }
+
+    .grid-wrapper {
+        max-height: 360px;
+    }
+}

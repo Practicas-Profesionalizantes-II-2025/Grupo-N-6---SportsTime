@@ -1,300 +1,189 @@
-﻿@using MVCSPortTime1.Models
-@model MVCSPortTime1.ViewModels.TurnoIndexViewModel
-
-<style>
-    body {
-        background: #16a085;
-        font-family: 'Segoe UI', sans-serif;
-    }
-
-    .main-card {
-        background: #fff;
-        border-radius: 24px;
-        box-shadow: 0 8px 32px rgba(0,0,0,0.18);
-        padding: 24px;
-        max-width: 1000px;
-        margin: 40px auto;
-    }
-
-        .main-card h2 {
-            font-size: 2.4rem;
-            color: #009688;
-            margin-bottom: 18px;
-        }
-
-    .validation-summary-errors, .text-danger {
-        color: #e53935;
-        margin-bottom: 8px;
-    }
-
-    .form-row {
-        display: flex;
-        gap: 12px;
-        flex-wrap: wrap;
-        margin-bottom: 12px;
-        align-items: center;
-    }
-
-    .inline-cols {
-        display: flex;
-        gap: 12px;
-        flex-wrap: wrap;
-        width: 100%;
-    }
-
-        .inline-cols .col {
-            flex: 1 1 0;
-            min-width: 130px;
-        }
-
-    .date-row {
-        display: flex;
-        gap: 12px;
-        align-items: center;
-        flex-wrap: wrap;
-        margin-bottom: 12px;
-    }
-
-        .date-row .col {
-            flex: 1 1 0;
-            min-width: 160px;
-        }
-
-        .form-row input, .form-row select, .inline-cols select, .date-row input {
-            padding: 10px;
-            border: 2px solid #009688;
-            border-radius: 8px;
-            background: #f8f8f8;
-            font-size: 1rem;
-            width: 100%;
-            box-sizing: border-box;
-        }
-
-    .btn-guardar {
-        background: #009688;
-        color: #fff;
-        padding: 10px 22px;
-        border-radius: 8px;
-        font-weight: 700;
-        border: none;
-        cursor: pointer;
-    }
-
-        .btn-guardar:hover {
-            background: #00796b;
-        }
-
-    .tabla-scroll {
-        max-height: 300px;
-        overflow-y: auto;
-        margin-top: 12px;
-        background: #fff;
-        border-radius: 12px;
-    }
-
-    .table-turnos {
-        width: 100%;
-        border-collapse: collapse;
-        min-width: 900px;
-    }
-
-        .table-turnos th {
-            background: #00796b;
-            color: #fff;
-            padding: 12px;
-            position: sticky;
-            top: 0;
-            z-index: 2;
-        }
-
-        .table-turnos td {
-            padding: 12px;
-            border-bottom: 1px solid #eee;
-        }
-
-    .btn-modificar {
-        background: #ffb300;
-        color: #fff;
-        padding: 6px 12px;
-        border-radius: 6px;
-        text-decoration: none;
-    }
-
-    .btn-eliminar {
-        background: #e53935;
-        color: #fff;
-        padding: 6px 12px;
-        border-radius: 6px;
-        text-decoration: none;
-    }
-    @@media (max-width: 700px) {
-        .inline-cols .col, .date-row .col
-
+﻿@model MVCSPortTime1.ViewModels.TurnoIndexViewModel
+@{
+    ViewData["Title"] = "Turnos";
+    var headerOffset = 140;
+    string FormatDateTime(DateTime dt)
     {
-        min-width: 100%;
+        if (dt == default) return "";
+        return dt.ToString("dd/MM/yyyy HH:mm");
     }
+}
 
-    .form-row {
-        gap: 8px;
-    }
+<link rel="stylesheet" href="~/css/turnos.css" />
 
-    }
-</style>
-
-<div class="main-card">
-    <h2>Turnos</h2>
-
-    @if (TempData["Error"] != null)
-    {
-        <div class="validation-summary-errors">@TempData["Error"]</div>
-    }
-
-    <form asp-action="Create" method="post" autocomplete="off">
-        @Html.AntiForgeryToken()
-        @Html.ValidationSummary(true, "", new { @class = "validation-summary-errors" })
-
-        <!-- Primera fila: Usuario | Deporte | Cancha | Estado -->
-        <div class="form-row">
-            <div class="inline-cols" style="width:100%;">
-                <div class="col">
-                    <select asp-for="NuevoTurno.Usuario_ID" class="form-control" id="select-usuario">
-                        <option value="">Seleccionar usuario</option>
-                        @foreach (var u in Model.Usuarios)
-                        {
-                            <option value="@u.Id">@u.Text</option>
-                        }
-                    </select>
-                </div>
-
-                <div class="col">
-                    <select id="select-deporte" class="form-control">
-                        <option value="">Seleccionar deporte</option>
-                        @foreach (var d in Model.Deportes)
-                        {
-                            <option value="@d.Id">@d.Text</option>
-                        }
-                    </select>
-                </div>
-
-                <div class="col">
-                    <select asp-for="NuevoTurno.Cancha_ID" class="form-control" id="select-deporte-cancha">
-                        <option value="">Seleccionar cancha</option>
-                        @foreach (var c in Model.Canchas)
-                        {
-                            // añadimos data-deporte para filtrar en cliente
-                            <option value="@c.Id" data-deporte="@(c.ParentId?.ToString() ?? "")">@c.Text</option>
-                        }
-                    </select>
-                </div>
-
-                <div class="col">
-                    <select asp-for="NuevoTurno.Estado" class="form-control">
-                        <option value="Pendiente">Pendiente</option>
-                        <option value="Confirmado">Confirmado</option>
-                        <option value="Cancelado">Cancelado</option>
-                    </select>
-                </div>
-            </div>
+<section class="turnos-hero">
+    <div class="turnos-hero-inner">
+        <div class="turnos-hero-title">
+            <h1>Turnos</h1>
+            <a class="back-btn" href="@Url.Action("Index", "Home")" title="Volver">←</a>
         </div>
-
-        <!-- Segunda fila: HoraInicio | HoraFin | Guardar -->
-        <div class="form-row date-row">
-            <div class="col">
-                <input asp-for="NuevoTurno.HoraInicio" type="datetime-local" />
-            </div>
-
-            <div class="col">
-                <input asp-for="NuevoTurno.HoraFin" type="datetime-local" />
-            </div>
-
-            <div style="min-width:140px; display:flex; align-items:center;">
-                <button type="submit" class="btn-guardar">Guardar</button>
-            </div>
-        </div>
-    </form>
-
-    <div class="tabla-scroll">
-        <table class="table-turnos">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Usuario</th>
-                    <th>Cancha</th>
-                    <th>Estado</th>
-                    <th>Inicio</th>
-                    <th>Fin</th>
-                    <th>Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                @if (Model.Turnos != null && Model.Turnos.Count > 0)
-                {
-                    foreach (var t in Model.Turnos)
-                    {
-                        <tr>
-                            <td>@t.Turno_ID</td>
-                            <td>@t.Usuario_ID</td>
-                            <td>@t.Cancha_ID</td>
-                            <td>@t.Estado</td>
-                            <td>@(t.HoraInicio.ToString("g"))</td>
-                            <td>@(t.HoraFin.ToString("g"))</td>
-                            <td>
-                                <a asp-action="Edit" asp-route-id="@t.Turno_ID" class="btn-modificar">Modificar</a>
-                                <a asp-action="Delete" asp-route-id="@t.Turno_ID" class="btn-eliminar">Eliminar</a>
-                            </td>
-                        </tr>
-                    }
-                }
-                else
-                {
-                    <tr>
-                        <td colspan="7">No hay turnos registrados.</td>
-                    </tr>
-                }
-            </tbody>
-        </table>
     </div>
-</div>
+</section>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const deporteSelect = document.getElementById('select-deporte');
-        const canchaSelect = document.getElementById('select-deporte-cancha');
+<section class="turnos-wrapper" style="--header-offset:@(headerOffset)px;">
+    <div class="turnos-left">
+        <div class="card form-card">
+            <div class="card-body">
+                <h2 class="card-title">Nuevo Turno</h2>
 
-        function filterCanchas() {
-            const deporteId = deporteSelect.value;
-            // recorrer opciones y mostrar/ocultar según data-deporte
-            Array.from(canchaSelect.options).forEach(opt => {
-                const optDeporte = opt.getAttribute('data-deporte');
-                if (!deporteId) {
-                    // mostrar todas
-                    opt.hidden = false;
-                    opt.disabled = false;
-                } else {
-                    if (!optDeporte || optDeporte === '') {
-                        opt.hidden = true;
-                        opt.disabled = true;
-                    } else if (optDeporte === deporteId) {
-                        opt.hidden = false;
-                        opt.disabled = false;
-                    } else {
-                        opt.hidden = true;
-                        opt.disabled = true;
+                <form asp-action="Create" method="post">
+                    <div class="mb-3">
+                        <label class="form-label">Cliente</label>
+                        <select asp-for="NuevoTurno.Usuario_ID" class="form-select">
+                            <option value="">Seleccionar cliente</option>
+                            @foreach (var u in Model.Usuarios ?? new List<MVCSPortTime1.ViewModels.TurnoLookupItem>())
+                            {
+                                <option value="@u.Id">@u.Text</option>
+                            }
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Cancha</label>
+                        <select asp-for="NuevoTurno.Cancha_ID" class="form-select">
+                            <option value="">Seleccionar cancha</option>
+                            @foreach (var c in Model.Canchas ?? new List<MVCSPortTime1.ViewModels.TurnoLookupItem>())
+                            {
+                                <option value="@c.Id">@c.Text</option>
+                            }
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Producto</label>
+                        <select asp-for="NuevoTurno.Producto_ID" class="form-select">
+                            <option value="">Seleccionar producto</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Cantidad</label>
+                        <input asp-for="NuevoTurno.Cantidad" class="form-control" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Hora de inicio</label>
+                        <input asp-for="NuevoTurno.Inicio" class="form-control" type="datetime-local" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Hora de fin</label>
+                        <input asp-for="NuevoTurno.Fin" class="form-control" type="datetime-local" />
+                    </div>
+
+                    <div class="d-flex gap-2">
+                        <button type="submit" class="btn btn-primary">Crear turno</button>
+                        <button type="reset" class="btn btn-outline-secondary">Limpiar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="turnos-right">
+        <div class="card grid-card">
+            <div class="card-body">
+                <h2 class="card-title">Turnos Cargados</h2>
+
+                <div class="search-row mb-2">
+                    <input id="turno-search" class="form-control search-input" placeholder="Buscar turno..." />
+                    <button id="turno-search-btn" class="btn btn-secondary ms-2">Buscar</button>
+                </div>
+
+                <div class="grid-wrapper" id="turnos-grid">
+                    <table class="table table-borderless table-sm mb-0">
+                        <thead>
+                            <tr class="table-header">
+                                <th>Cliente</th>
+                                <th>Cancha</th>
+                                <th>Producto</th>
+                                <th>Cantidad</th>
+                                <th>Inicio</th>
+                                <th>Fin</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="turnos-tbody">
+                            @if (Model?.Turnos != null && Model.Turnos.Count > 0)
+                            {
+                                foreach (var t in Model.Turnos)
+                                {
+                                    <tr data-turno-id="@t.Turno_ID">
+                                        <td>@(!string.IsNullOrWhiteSpace(t.UsuarioNombre) ? t.UsuarioNombre : t.Usuario_ID.ToString())</td>
+                                        <td>@(!string.IsNullOrWhiteSpace(t.CanchaNombre) ? t.CanchaNombre : t.Cancha_ID.ToString())</td>
+                                        <td>@(string.IsNullOrWhiteSpace(t.ProductoNombre) ? "" : t.ProductoNombre)</td>
+                                        <td>@(t.Cantidad)</td>
+                                        <td>@(FormatDateTime(t.Inicio))</td>
+                                        <td>@(FormatDateTime(t.Fin))</td>
+                                        <td>
+                                            <a href="@Url.Action("Edit", "Turnos", new { id = t.Turno_ID })" class="btn btn-sm btn-warning btn-edit">Modificar</a>
+                                            <a href="@Url.Action("Delete", "Turnos", new { id = t.Turno_ID })" class="btn btn-sm btn-danger btn-delete">Eliminar</a>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                            else
+                            {
+                                <tr class="text-muted"><td colspan="7" class="text-center">No hay turnos cargados.</td></tr>
+                            }
+                        </tbody>
+                    </table>
+                </div> <!-- grid-wrapper -->
+
+            </div>
+        </div>
+    </div>
+</section>
+
+@* Contenedor donde se inyectan los partials modales cargados por AJAX *@
+<div id="modal-container"></div>
+
+@section Scripts {
+    <script src="~/js/turnos-modals.js"></script>
+    <script>
+        // keep the simple search functionality
+        (function () {
+            const searchInput = document.getElementById('turno-search');
+            const searchBtn = document.getElementById('turno-search-btn');
+            const tbody = document.getElementById('turnos-tbody');
+
+            function filterRows(term) {
+                term = (term || '').toLowerCase().trim();
+                Array.from(tbody.querySelectorAll('tr')).forEach(function (r) {
+                    if (r.classList.contains('text-muted')) {
+                        r.style.display = 'none';
+                        return;
                     }
+                    const text = r.innerText.toLowerCase();
+                    r.style.display = text.indexOf(term) === -1 ? 'none' : '';
+                });
+
+                const anyVisible = Array.from(tbody.querySelectorAll('tr')).some(r => r.style.display !== 'none');
+                const existingFallback = tbody.querySelector('tr.text-muted');
+                if (!anyVisible) {
+                    if (!existingFallback) {
+                        const tr = document.createElement('tr');
+                        tr.className = 'text-muted';
+                        tr.innerHTML = '<td colspan="7" class="text-center">No hay turnos cargados.</td>';
+                        tbody.appendChild(tr);
+                    } else {
+                        existingFallback.style.display = '';
+                    }
+                } else if (existingFallback) {
+                    existingFallback.style.display = 'none';
                 }
+            }
+
+            searchInput.addEventListener('input', (e) => {
+                filterRows(e.target.value);
             });
 
-            // Si la opción seleccionada quedó oculta, limpiar selección
-            if (canchaSelect.value) {
-                const selOpt = canchaSelect.selectedOptions[0];
-                if (selOpt && selOpt.hidden) canchaSelect.value = '';
-            }
-        }
+            searchBtn.addEventListener('click', () => {
+                filterRows(searchInput.value);
+            });
 
-        if (deporteSelect && canchaSelect) {
-            deporteSelect.addEventListener('change', filterCanchas);
-            // aplicar filtro al cargar
-            filterCanchas();
-        }
-    });
-</script>
+            // Inicial: no filtro
+            filterRows('');
+        })();
+    </script>
+}

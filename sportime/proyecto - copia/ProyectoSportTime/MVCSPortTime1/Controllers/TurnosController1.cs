@@ -54,7 +54,7 @@ namespace MVCSPortTime1.Controllers
                 TempData["Error"] = $"Exception cargando turnos: {ex.Message}";
             }
 
-            // 2) Poblar lookups (deportes, canchas, usuarios)
+            // 2) Poblar lookups (deportes, canchas, usuarios, productos)
             await PopulateLookupsAsync(vm);
 
             // 3) Mapear nombres: CanchaNombre y UsuarioNombre
@@ -62,6 +62,9 @@ namespace MVCSPortTime1.Controllers
             {
                 t.CanchaNombre = vm.Canchas.FirstOrDefault(c => c.Id == t.Cancha_ID)?.Text ?? $"Cancha {t.Cancha_ID}";
                 t.UsuarioNombre = vm.Usuarios.FirstOrDefault(u => u.Id == t.Usuario_ID)?.Text ?? $"Usuario {t.Usuario_ID}";
+
+                // Si tenemos Productos en el lookup, mapear nombre
+                t.ProductoNombre = vm.Productos?.FirstOrDefault(p => p.Id == (t.Producto_ID ?? 0))?.Text ?? t.ProductoNombre;
             }
 
             // 4) Aplicar búsqueda (por id turno, id cancha, nombre cancha, o nombre usuario)
@@ -153,6 +156,7 @@ namespace MVCSPortTime1.Controllers
         }
 
         // GET: /Turnos/Edit/5
+        [HttpGet]
         public async Task<IActionResult> Edit(int id)
         {
             try
@@ -167,14 +171,20 @@ namespace MVCSPortTime1.Controllers
                 var vm = new TurnoIndexViewModel { NuevoTurno = turno, Turnos = new List<TurnoDTO>() };
                 await PopulateLookupsAsync(vm);
 
-                // pasar lookups a la vista (sin usar ViewBag en lo posible; la vista Edit puede aceptar TurnoIndexViewModel o TurnoDTO + ViewBag)
+                // pasar lookups a la vista
                 ViewBag.Canchas = vm.Canchas;
                 ViewBag.Usuarios = vm.Usuarios;
+                ViewBag.Productos = vm.Productos;
                 ViewBag.Estados = vm.Estados;
 
                 turno.CanchaNombre = vm.Canchas.FirstOrDefault(c => c.Id == turno.Cancha_ID)?.Text ?? $"Cancha {turno.Cancha_ID}";
                 turno.UsuarioNombre = vm.Usuarios.FirstOrDefault(u => u.Id == turno.Usuario_ID)?.Text ?? $"Usuario {turno.Usuario_ID}";
 
+                // Si la petición es AJAX, devolver partial para modal
+                var isAjax = Request.Headers["X-Requested-With"] == "XMLHttpRequest";
+                if (isAjax) return PartialView("_EditModal", turno);
+
+                // si no, devolver la vista completa (compatibilidad)
                 return View(turno);
             }
             catch (Exception ex)
@@ -189,14 +199,24 @@ namespace MVCSPortTime1.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(TurnoDTO turno)
         {
+            var isAjax = Request.Headers["X-Requested-With"] == "XMLHttpRequest";
+
             if (!ModelState.IsValid)
             {
-                // recargar lookups y volver a la vista
+                // recargar lookups y volver a la vista o devolver error en JSON para el modal
                 var vm = new TurnoIndexViewModel { NuevoTurno = turno };
                 await PopulateLookupsAsync(vm);
                 ViewBag.Canchas = vm.Canchas;
                 ViewBag.Usuarios = vm.Usuarios;
+                ViewBag.Productos = vm.Productos;
                 ViewBag.Estados = vm.Estados;
+
+                if (isAjax)
+                {
+                    // devolver errores mínimos para el modal; el cliente puede mostrar un alert o re-renderizar HTML
+                    return Json(new { success = false, message = "Datos inválidos en el formulario." });
+                }
+
                 return View(turno);
             }
 
@@ -205,7 +225,11 @@ namespace MVCSPortTime1.Controllers
                 var json = JsonConvert.SerializeObject(turno);
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
                 var resp = await _httpClient.PutAsync($"/api/turnos/{turno.Turno_ID}", content);
-                if (resp.IsSuccessStatusCode) return RedirectToAction(nameof(Index));
+                if (resp.IsSuccessStatusCode)
+                {
+                    if (isAjax) return Json(new { success = true });
+                    return RedirectToAction(nameof(Index));
+                }
 
                 var body = await resp.Content.ReadAsStringAsync();
                 ModelState.AddModelError("", $"Error actualizando turno: {resp.StatusCode} {body}");
@@ -214,7 +238,11 @@ namespace MVCSPortTime1.Controllers
                 await PopulateLookupsAsync(vm);
                 ViewBag.Canchas = vm.Canchas;
                 ViewBag.Usuarios = vm.Usuarios;
+                ViewBag.Productos = vm.Productos;
                 ViewBag.Estados = vm.Estados;
+
+                if (isAjax) return Json(new { success = false, message = $"Error actualizando turno: {resp.StatusCode}" });
+
                 return View(turno);
             }
             catch (Exception ex)
@@ -224,12 +252,17 @@ namespace MVCSPortTime1.Controllers
                 await PopulateLookupsAsync(vm);
                 ViewBag.Canchas = vm.Canchas;
                 ViewBag.Usuarios = vm.Usuarios;
+                ViewBag.Productos = vm.Productos;
                 ViewBag.Estados = vm.Estados;
+
+                if (isAjax) return Json(new { success = false, message = $"Exception: {ex.Message}" });
+
                 return View(turno);
             }
         }
 
         // GET: /Turnos/Delete/5
+        [HttpGet]
         public async Task<IActionResult> Delete(int id)
         {
             try
@@ -246,6 +279,9 @@ namespace MVCSPortTime1.Controllers
                 turno.CanchaNombre = vm.Canchas.FirstOrDefault(c => c.Id == turno.Cancha_ID)?.Text ?? $"Cancha {turno.Cancha_ID}";
                 turno.UsuarioNombre = vm.Usuarios.FirstOrDefault(u => u.Id == turno.Usuario_ID)?.Text ?? $"Usuario {turno.Usuario_ID}";
 
+                var isAjax = Request.Headers["X-Requested-With"] == "XMLHttpRequest";
+                if (isAjax) return PartialView("_DeleteModal", turno);
+
                 return View(turno);
             }
             catch (Exception ex)
@@ -255,7 +291,7 @@ namespace MVCSPortTime1.Controllers
             }
         }
 
-        // POST: /Turnos/Delete
+        // POST: /Turnos/Delete (non-AJAX)
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete(TurnoDTO turno)
@@ -276,7 +312,26 @@ namespace MVCSPortTime1.Controllers
             }
         }
 
-        // Helper para poblar deportes, canchas y usuarios (robusto frente a casing de JSON)
+        // POST: /Turnos/DeleteConfirmed (AJAX) - usado por el modal
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            try
+            {
+                var resp = await _httpClient.DeleteAsync($"/api/turnos/{id}");
+                if (resp.IsSuccessStatusCode) return Json(new { success = true });
+
+                var body = await resp.Content.ReadAsStringAsync();
+                return Json(new { success = false, message = $"Error eliminando turno: {resp.StatusCode} {body}" });
+            }
+            catch (Exception ex)
+            {
+                return Json(new { success = false, message = $"Exception eliminando turno: {ex.Message}" });
+            }
+        }
+
+        // Helper para poblar deportes, canchas, usuarios y productos (robusto frente a casing de JSON)
         private async Task PopulateLookupsAsync(TurnoIndexViewModel vm)
         {
             // Inicializo colecciones
@@ -284,6 +339,7 @@ namespace MVCSPortTime1.Controllers
             vm.Canchas = vm.Canchas ?? new List<TurnoLookupItem>();
             vm.Usuarios = vm.Usuarios ?? new List<TurnoLookupItem>();
             vm.Estados = vm.Estados ?? new List<TurnoLookupItem>();
+            vm.Productos = vm.Productos ?? new List<TurnoLookupItem>();
 
             // 1) Deportes
             try
@@ -383,7 +439,35 @@ namespace MVCSPortTime1.Controllers
                 vm.Usuarios.Add(new TurnoLookupItem { Id = 0, Text = "Sin usuarios disponibles" });
             }
 
-            // 4) Estados (puedes ajustarlos según tu dominio)
+            // 4) Productos (opcional en tu API)
+            try
+            {
+                var resp = await _httpClient.GetAsync("/api/productos");
+                if (resp.IsSuccessStatusCode)
+                {
+                    var j = await resp.Content.ReadAsStringAsync();
+                    var arr = JArray.Parse(j);
+                    vm.Productos.Clear();
+                    foreach (var item in arr)
+                    {
+                        var obj = item as JObject;
+                        if (obj == null) continue;
+                        int? id = obj.Value<int?>("Producto_ID") ?? obj.Value<int?>("producto_ID") ?? obj.Value<int?>("Id") ?? obj.Value<int?>("id");
+                        string name = obj.Value<string>("Nombre") ?? obj.Value<string>("nombre") ?? obj.Value<string>("Descripcion") ?? obj.Value<string>("descripcion");
+                        if (id != null) vm.Productos.Add(new TurnoLookupItem { Id = id.Value, Text = string.IsNullOrWhiteSpace(name) ? $"Producto {id.Value}" : name });
+                    }
+                }
+                else
+                {
+                    vm.Productos.Add(new TurnoLookupItem { Id = 0, Text = "Sin productos" });
+                }
+            }
+            catch
+            {
+                vm.Productos.Add(new TurnoLookupItem { Id = 0, Text = "Sin productos" });
+            }
+
+            // 5) Estados (puedes ajustarlos según tu dominio)
             vm.Estados = new List<TurnoLookupItem>
             {
                 new TurnoLookupItem { Id = 0, Text = "Pendiente" },
@@ -395,6 +479,7 @@ namespace MVCSPortTime1.Controllers
             if (vm.Deportes.Count == 0) vm.Deportes.Add(new TurnoLookupItem { Id = 0, Text = "Sin deportes" });
             if (vm.Canchas.Count == 0) vm.Canchas.Add(new TurnoLookupItem { Id = 0, Text = "Sin canchas" });
             if (vm.Usuarios.Count == 0) vm.Usuarios.Add(new TurnoLookupItem { Id = 0, Text = "Sin usuarios" });
+            if (vm.Productos.Count == 0) vm.Productos.Add(new TurnoLookupItem { Id = 0, Text = "Sin productos" });
         }
     }
 }

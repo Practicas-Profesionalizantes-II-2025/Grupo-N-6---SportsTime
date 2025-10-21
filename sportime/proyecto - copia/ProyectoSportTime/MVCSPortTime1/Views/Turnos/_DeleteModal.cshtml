@@ -1,0 +1,25 @@
+﻿@model MVCSPortTime1.Models.TurnoDTO
+
+<div class="modal fade" id="deleteTurnoModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form id="delete-turno-form" method="post" action="@Url.Action("DeleteConfirmed","Turnos")">
+                @Html.AntiForgeryToken()
+                <div class="modal-header">
+                    <h5 class="modal-title">Eliminar Turno</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" name="id" value="@Model.Turno_ID" />
+                    <p>¿Querés eliminar el turno de <strong>@(string.IsNullOrWhiteSpace(Model.UsuarioNombre) ? Model.Usuario_ID.ToString() : Model.UsuarioNombre)</strong> para la cancha <strong>@Model.CanchaNombre</strong>?</p>
+                    <p class="text-danger">Esta acción no se puede deshacer.</p>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-danger">Eliminar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
