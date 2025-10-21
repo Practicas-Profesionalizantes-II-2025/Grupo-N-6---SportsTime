@@ -19,21 +19,28 @@ namespace CDatos.Data
         public DbSet<Turnos> Turnos { get; set; }
         public DbSet<TurnoProducto> TurnoProductos { get; set; }
         public DbSet<Usuarios> Usuarios { get; set; }
+        public DbSet<Clientes> Clientes { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Data Source=localhost\\SQLEXPRESS;Initial Catalog=SportTime;Integrated Security=True;TrustServerCertificate=true;");
+            // Si ya se configuró en Program.cs, no reconfigurar; si no, usar la misma cadena SQLEXPRESS
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseSqlServer("Data Source=localhost\\SQLEXPRESS;Initial Catalog=SportTime;Integrated Security=True;TrustServerCertificate=true");
+            }
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
-            //Usuarios
-            modelBuilder.Entity<Usuarios>().HasData(
-            new Usuarios { Usuario_ID = 1, Nombre = "Usuario1", Email = "usuario1@test.com", NumeroTelefono = "3493112233", Contraseña = "1111", Rol = "Cliente" },
-            new Usuarios { Usuario_ID = 2, Nombre = "Usuario2", Email = "usuario2@test.com", NumeroTelefono = "3493112244", Contraseña = "2222", Rol = "Administrador" }
-            );
+            // Mapea el PasswordHash a la columna existente "Contraseña"
+            modelBuilder.Entity<Usuarios>()
+                        .Property(u => u.PasswordHash)
+                        .HasColumnName("Contraseña");
+            modelBuilder.Entity<Usuarios>()
+                        .Property(u => u.Apellido)
+                        .HasMaxLength(120);
 
             // Deportes
             modelBuilder.Entity<Deportes>().HasData(
@@ -59,6 +66,7 @@ namespace CDatos.Data
                 new Proveedores { Proveedor_ID = 3, Nombre = "Proveedor3", Direccion = "Buenos aires 512" , Email = "prov3@test.com", Telefono = "3333" },
                 new Proveedores { Proveedor_ID = 4, Nombre = "Proveedor4", Direccion = "Buenos aires 513" , Email = "prov4@test.com", Telefono = "4444" }
             );
+           
 
             // Productos
             modelBuilder.Entity<Productos>().HasData(
@@ -67,7 +75,7 @@ namespace CDatos.Data
                 new Productos { Producto_ID = 3,  TipoProducto = "Gaseosa", Proveedor_ID = 3, Precio = 700 },
                 new Productos { Producto_ID = 4,  TipoProducto = "Barrita Energética", Proveedor_ID = 4, Precio = 600 }
             );
-           
+          
 
             // Turnos
             modelBuilder.Entity<Turnos>().HasData(

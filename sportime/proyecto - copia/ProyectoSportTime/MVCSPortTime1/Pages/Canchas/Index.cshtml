@@ -1,4 +1,5 @@
 @page
+@using Microsoft.AspNetCore.Mvc.Rendering
 @model MVCSPortTime1.Pages.Canchas.IndexModel
 @{
     ViewData["Title"] = "Canchas";
@@ -12,27 +13,36 @@
   </a>
 </div>
 
+<partial name="Shared/_Feedback" />
+
 <div class="two-col-shell">
   <section class="card form-card">
-    <h2>Nueva Cancha</h2>
+    <h2>@(Model.EditId == null ? "Nueva Cancha" : $"Editar Cancha #{Model.EditId}")</h2>
 
-    <form class="formulario">
-      <label for="nombre-cancha">Nombre</label>
-      <input type="text" id="nombre-cancha" placeholder="Ej: Cancha 1" />
+    <form class="formulario" method="post">
+      <input type="hidden" asp-for="EditId" />
+      <label asp-for="Input.DeporteId">Deporte</label>
+      <select asp-for="Input.DeporteId" class="form-select"
+              asp-items="@(new SelectList(Model.Deportes, "Deporte_ID", "Nombre"))">
+        <option value="">-- Seleccione --</option>
+      </select>
+      <span asp-validation-for="Input.DeporteId" class="field-error"></span>
 
-      <label for="tipo-cancha">Tipo</label>
-      <input type="text" id="tipo-cancha" placeholder="Ej: Techada, Abierta" />
-
-      <label for="deporte">Deporte</label>
-      <input type="text" id="deporte" placeholder="Ej: Fútbol, Básquet" />
-
-      <label for="precio-hora">Precio por hora</label>
-      <input type="number" id="precio-hora" min="0" step="50" placeholder="Ej: 12000" />
+      <label>
+        <input type="checkbox" asp-for="Input.Activa" /> Activa
+      </label>
 
       <div class="form-actions">
-        <button type="button" class="btn btn-primary">Guardar</button>
+        @if (Model.EditId == null)
+        {
+            <button type="submit" asp-page-handler="Guardar" class="btn btn-primary">Guardar</button>
+        }
+        else
+        {
+            <button type="submit" asp-page-handler="Actualizar" class="btn btn-primary">Actualizar</button>
+            <a asp-page="/Canchas/Index" class="btn btn-ghost">Cancelar</a>
+        }
         <button type="reset" class="btn btn-ghost">Limpiar</button>
-        <!-- Solo flecha para volver -->
       </div>
     </form>
   </section>
@@ -40,10 +50,6 @@
   <section class="card list-card">
     <div class="list-header">
       <h2>Canchas Registradas</h2>
-      <div class="toolbar">
-        <input type="text" placeholder="Buscar..." />
-        <button type="button" class="btn btn-secondary">Buscar</button>
-      </div>
     </div>
 
     <div class="table-wrap">
@@ -51,19 +57,43 @@
         <thead>
           <tr>
             <th>ID</th>
-            <th>Nombre</th>
-            <th>Tipo</th>
             <th>Deporte</th>
-            <th>Precio/h</th>
-            <th style="width:110px">Acciones</th>
+            <th>Activa</th>
+            <th>Acciones</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td colspan="6" style="text-align:center;">No hay canchas registradas.</td>
-          </tr>
+          @if (Model.Items?.Count > 0)
+          {
+            foreach (var c in Model.Items)
+            {
+              <tr>
+                <td>@c.Cancha_ID</td>
+                <td>@Model.Deportes.FirstOrDefault(d=> d.Deporte_ID == c.Deporte_ID)?.Nombre</td>
+                <td>@(c.Activa ? "Sí" : "No")</td>
+                <td>
+                  <form method="post" style="display:inline">
+                    <button type="submit" asp-page-handler="Editar" asp-route-id="@c.Cancha_ID" class="btn btn-secondary">Editar</button>
+                  </form>
+                  <form method="post" style="display:inline" onsubmit="return confirm('¿Eliminar cancha #@c.Cancha_ID?');">
+                    <button type="submit" asp-page-handler="Eliminar" asp-route-id="@c.Cancha_ID" class="btn btn-danger">Eliminar</button>
+                  </form>
+                </td>
+              </tr>
+            }
+          }
+          else
+          {
+            <tr>
+              <td colspan="4" style="text-align:center;">No hay canchas registradas.</td>
+            </tr>
+          }
         </tbody>
       </table>
     </div>
   </section>
 </div>
+
+@section Scripts{
+  <partial name="_ValidationScriptsPartial" />
+}

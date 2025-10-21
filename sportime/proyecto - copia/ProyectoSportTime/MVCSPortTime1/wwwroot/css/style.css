@@ -1,43 +1,64 @@
-/* Core tokens (colores Home) */
+/* Core tokens */
 :root{
-  --primary:#0066cc;        /* azul Home */
-  --accent:#00cc99;         /* verde Home */
-  --ink:#0a4a66;            /* títulos */
+  --primary:#0066cc;
+  --accent:#00cc99;
+  --ink:#0a4a66;
   --surface:#ffffff;
+  --bg:#0f3d3a;
+  --bg2:#0a5a67;
   --shadow:0 8px 24px rgba(0,0,0,.18);
 }
 
-/* Que el contenido no toque abajo */
+/* Fondo global: SportTime en todas las pantallas */
+html, body{
+  margin:0; padding:0; min-height:100%;
+  background:url("/img/SportTime.png") no-repeat center 37% fixed;
+  background-size:cover;
+}
+
+/* Contenedor genérico */
 .contenedor { padding:20px; margin-bottom:40px; max-width:900px; margin-left:auto; margin-right:auto; }
 
-/* Campos de formularios: forzar bloque para evitar superposiciones */
+/* Formularios */
 .formulario label{ display:block; font-weight:600; color:var(--ink); margin:10px 0 6px; }
 .formulario input,
 .formulario select,
 .formulario textarea{ display:block; width:100%; max-width:100%; padding:12px 14px; margin:0 0 14px; border-radius:10px; border:1px solid rgba(0,0,0,.12); background:rgba(255,255,255,.96); box-shadow:0 1px 2px rgba(0,0,0,.04) inset; }
 .formulario button{ display:inline-flex; margin-top:6px; }
 
-html, body{ margin:0; padding:0; height:100%; background:#f6f9fc; }
+/* Login: hereda fondo global */
+.login-body{ display:flex; justify-content:center; align-items:center; min-height:100vh; padding:24px; background:transparent !important; }
+.login-container{ position:relative; z-index:1; background:#fff; padding:56px 52px; border-radius:18px; box-shadow:0 18px 40px rgba(0,0,0,.34); text-align:center; animation:slideIn 0.65s ease-out; width:min(700px, 95vw); }
+.login-logo{ width:min(240px, 60%); height:auto; margin:0 auto 14px; display:block; }
+@keyframes slideIn{ from{opacity:0; transform:translateY(-14px);} to{opacity:1; transform:translateY(0);} }
+.login-form-title{ font-size:2rem; margin:2px 0 18px; color:#095bb3; font-weight:700; letter-spacing:.2px; }
+.login-form .form-group{ text-align:left; margin:14px 0; }
+.login-form label{ display:block; font-weight:600; color:#334155; margin:0 0 6px; }
+.login-form input{ display:block; width:100%; padding:12px 14px; border:1px solid #d1d5db; border-radius:12px; font-size:1rem; background:#fafafa; }
+.login-form .field-hint{ display:block; margin-top:6px; color:#6b7280; font-size:.9rem; }
+.password-wrapper{ position:relative; }
+.password-wrapper .btn-toggle-pass{ position:absolute; right:10px; top:50%; transform:translateY(-50%); border:none; background:transparent; font-size:1.1rem; opacity:.7; cursor:pointer; }
+.password-wrapper .btn-toggle-pass:hover{ opacity:1; }
+.login-options{ display:flex; align-items:center; justify-content:space-between; gap:10px; margin:14px 0 4px; }
+.login-options .remember-me{ display:flex; align-items:center; gap:8px; color:#334155; }
+.btn-login{ width:100%; font-size:1.05rem; padding:12px 16px; border-radius:12px; background:linear-gradient(135deg,var(--primary),var(--accent)); color:#fff; border:none; box-shadow:0 8px 18px rgba(0,0,0,.18); }
+.btn-login:disabled{ opacity:.65; }
+.divider{ margin:14px 0; color:#94a3b8; }
+.register-box{ color:#334155; }
+.login-footer{ margin-top:10px; color:#64748b; }
 
-/* Login (sin cambios relevantes) */
-.login-body{ display:flex; justify-content:center; align-items:center; min-height:100vh; background:url("/img/SportTime.png") no-repeat center center; background-size:cover; position:relative; }
-.login-body::before{ content:""; position:absolute; inset:0; background:rgba(0,0,0,0.5); z-index:0; }
-.login-container{ position:relative; z-index:1; background:#fff; padding:40px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,.2); text-align:center; animation:slideIn 1s ease-out; }
-@keyframes slideIn{ from{opacity:0; transform:translateY(-20px);} to{opacity:1; transform:translateY(0);} }
-.login-container h1{ color:var(--primary); margin-bottom:20px; }
-
-/* Menú principal */
-.menu-body{ margin:0; font-family:Arial,sans-serif; background:url("/img/SportTime.png") no-repeat center 37% fixed; background-size:cover; }
+/* Menú principal: hereda fondo global */
+.menu-body{ margin:0; font-family:Arial,sans-serif; background:transparent !important; }
 .menu-header{ text-align:center; padding:40px 20px; background:linear-gradient(135deg,var(--primary),var(--accent)); border-bottom-left-radius:20px; border-bottom-right-radius:20px; box-shadow:0 4px 12px rgba(0,0,0,.3); }
-.menu-header h1{ font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif; font-size:3rem; color:#fff; letter-spacing:2px; text-shadow:2px 2px 8px rgba(0,0,0,.5); margin:0; }
+.menu-header h1{ font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif; font-size:3rem; color:#fff; letter-spacing:2px; text-shadow:2px 2px 8px rgba(0,0,0,.35); margin:0; }
 .menu-shell{ max-width:1000px; margin:26px auto 40px; padding:0 20px; }
 .menu-section-title{ margin:0 0 12px 0; color:var(--ink); }
 .menu-buttons{ display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:20px; padding:20px; }
-.menu-btn{ display:flex; flex-direction:column; align-items:center; justify-content:center; background:rgba(255,255,255,0.9); border-radius:20px; padding:25px; text-decoration:none; color:#000; font-size:1.2rem; font-weight:bold; box-shadow:0 4px 12px rgba(0,0,0,.3); transition:transform .2s, background .3s; }
+.menu-btn{ display:flex; flex-direction:column; align-items:center; justify-content:center; background:rgba(255,255,255,0.9); border-radius:20px; padding:25px; text-decoration:none; color:#000; font-size:1.2rem; font-weight:bold; box-shadow:0 4px 12px rgba(0,0,0,.2); transition:transform .2s, background .3s; }
 .menu-btn img{ width:70px; height:70px; margin-bottom:10px; }
-.menu-btn:hover{ background:rgba(255,255,255,0.25); transform:scale(1.05); }
+.menu-btn:hover{ background:rgba(255,255,255,0.95); transform:scale(1.03); }
 
-/* Encabezado de sección con colores del Home */
+/* Header de sección */
 .section-header{ max-width:1100px; margin:24px auto 12px; background:linear-gradient(135deg, rgba(0,102,204,.85), rgba(0,204,153,.85)); color:#fff; padding:14px 18px; font-size:20px; font-weight:bold; display:flex; justify-content:space-between; align-items:center; border-radius:16px; box-shadow:0 8px 18px rgba(0,0,0,.28); backdrop-filter: blur(4px); }
 .icono-volver{ width:30px; height:30px; cursor:pointer; filter:invert(1) brightness(2); transition:transform .2s ease; }
 .icono-volver:hover{ transform:scale(1.2); }
@@ -47,10 +68,10 @@ html, body{ margin:0; padding:0; height:100%; background:#f6f9fc; }
 .form-card h2, .list-card h2{ margin:0 0 12px 0; color:var(--ink); font-size:2rem; }
 .turnos-shell, .two-col-shell{ max-width:1100px; margin:16px auto 40px; display:grid; grid-template-columns:1fr 1fr; gap:22px; }
 
-/* Diferenciación de páginas pero manteniendo paleta del Home */
-#canchas-page{ background:linear-gradient(180deg, rgba(0,102,204,.08), rgba(0,204,153,.08)); min-height:100vh; padding:12px; }
-#clientes-page{ background:linear-gradient(180deg, rgba(0,102,204,.06), rgba(0,204,153,.06)); min-height:100vh; padding:12px; }
-#productos-page{ background:linear-gradient(180deg, rgba(0,102,204,.07), rgba(0,204,153,.07)); min-height:100vh; padding:12px; }
+/* Páginas: sin gradientes, heredan fondo global */
+#canchas-page, #clientes-page, #productos-page{
+  min-height:100vh; padding:12px; background:transparent !important;
+}
 
 /* Tablas y list header */
 .table-wrap{ max-height:440px; overflow:auto; border-radius:10px; }
@@ -59,14 +80,14 @@ html, body{ margin:0; padding:0; height:100%; background:#f6f9fc; }
 .toolbar input{ width:220px; max-width:100%; }
 .table-actions{ display:flex; gap:8px; justify-content:center; }
 
-/* feedback + validation */
+/* Feedback + validation */
 .alert{ padding:10px 12px; border-radius:10px; margin:10px auto; max-width:1100px; }
 .alert-success{ background:rgba(0,204,153,.15); border:1px solid rgba(0,204,153,.35); color:#064f3b; }
 .alert-error{ background:#ffe8e6; border:1px solid #f5c2bd; color:#9c2f24; }
 .validation-summary{ color:#9c2f24; margin:8px 0 6px; }
 .field-error{ color:#9c2f24; font-size:.85rem; display:block; margin-top:4px; }
 
-/* Variantes de layout para evitar uniformidad */
+/* Variantes layout */
 #canchas-page .two-col-shell{ grid-template-columns:1.15fr 0.85fr; }
 #clientes-page .two-col-shell{ grid-template-columns:1fr; }
 #productos-page .two-col-shell{ grid-template-columns:0.85fr 1.15fr; }

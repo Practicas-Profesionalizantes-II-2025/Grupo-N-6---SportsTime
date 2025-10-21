@@ -1,63 +1,52 @@
 @page
+@using Microsoft.AspNetCore.Mvc.Rendering
 @model MVCSPortTime1.Pages.Turnos.IndexModel
 @{
     ViewData["Title"] = "Turnos";
-    ViewData["BodyClass"] = "turnos-page";
-    ViewData["HideChrome"] = true;
 }
 
-<div class="section-header" style="max-width: 1100px; margin: 24px auto 0 auto;">
+<div class="section-header">
   <span>Turnos</span>
   <a asp-page="/Index" aria-label="Volver al menú principal">
     <img src="~/img/atras.png" alt="Volver al Menú" class="icono-volver" />
   </a>
 </div>
 
-<div class="turnos-shell">
+<partial name="Shared/_Feedback" />
+
+<div class="two-col-shell">
   <section class="card form-card">
-    <h2>Nuevo Turno</h2>
-    <form class="formulario">
-      <label for="cliente">Cliente</label>
-      <select id="cliente" name="cliente" aria-label="Cliente">
-        <option value="">Seleccionar cliente</option>
-        <option value="cliente1">Cliente 1</option>
-        <option value="cliente2">Cliente 2</option>
-      </select>
+    <h2>@(Model.EditId == null ? "Nuevo Turno" : $"Editar Turno #{Model.EditId}")</h2>
+    <form class="formulario" method="post">
+      <input type="hidden" asp-for="EditId" />
 
       <label for="cancha">Cancha</label>
-      <select id="cancha" name="cancha" aria-label="Cancha">
-        <option value="">Seleccionar cancha</option>
-        <option value="cancha1">Cancha 1</option>
-        <option value="cancha2">Cancha 2</option>
+      <select asp-for="Input.Cancha_ID" class="form-select" asp-items="@(new SelectList(Model.Canchas, "Cancha_ID", "Cancha_ID"))">
+        <option value="">-- Seleccione --</option>
       </select>
-
-      <label for="producto">Producto</label>
-      <select id="producto" name="producto" aria-label="Producto">
-        <option value="">Seleccionar producto</option>
-        <option value="pelotas">Pelotas</option>
-        <option value="bebidas">Bebidas</option>
-      </select>
-
-      <label for="cantidad">Cantidad</label>
-      <input type="number" id="cantidad" name="cantidad" min="1" value="1" placeholder="Cantidad">
 
       <div class="grid-2">
         <div>
-          <label for="hora-inicio">Hora de inicio</label>
-          <input type="time" id="hora-inicio" name="hora-inicio" aria-label="Hora de inicio">
-          <small class="field-hint">Elegí la hora de inicio del turno.</small>
+          <label asp-for="Input.HoraInicio"></label>
+          <input asp-for="Input.HoraInicio" type="datetime-local" />
         </div>
         <div>
-          <label for="hora-fin">Hora de fin</label>
-          <input type="time" id="hora-fin" name="hora-fin" aria-label="Hora de fin">
-          <small class="field-hint">Elegí la hora de fin del turno.</small>
+          <label asp-for="Input.HoraFin"></label>
+          <input asp-for="Input.HoraFin" type="datetime-local" />
         </div>
       </div>
 
       <div class="form-actions">
-        <button type="button" class="btn btn-primary">Crear turno</button>
+        @if (Model.EditId == null)
+        {
+            <button type="submit" asp-page-handler="Guardar" class="btn btn-primary">Crear turno</button>
+        }
+        else
+        {
+            <button type="submit" asp-page-handler="Actualizar" class="btn btn-primary">Actualizar</button>
+            <a asp-page="/Turnos/Index" class="btn btn-ghost">Cancelar</a>
+        }
         <button type="reset" class="btn btn-ghost">Limpiar</button>
-        <!-- Se mantiene la flecha como única forma de volver al Home -->
       </div>
     </form>
   </section>
@@ -65,28 +54,45 @@
   <section class="card list-card">
     <div class="list-header">
       <h2>Turnos Cargados</h2>
-      <div class="toolbar">
-        <input type="text" id="buscar" placeholder="Buscar turno..." />
-        <button type="button" class="btn btn-secondary">Buscar</button>
-      </div>
     </div>
     <div class="table-wrap">
       <table>
         <thead>
           <tr>
-            <th>Cliente</th>
+            <th>ID</th>
             <th>Cancha</th>
-            <th>Producto</th>
-            <th>Cantidad</th>
             <th>Inicio</th>
             <th>Fin</th>
-            <th style="width:110px">Acciones</th>
+            <th>Acciones</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td colspan="7" style="text-align:center; color:#eee">No hay turnos cargados.</td>
-          </tr>
+          @if (Model.Items?.Count > 0)
+          {
+            foreach (var t in Model.Items)
+            {
+              <tr>
+                <td>@t.Turno_ID</td>
+                <td>@t.Cancha_ID</td>
+                <td>@t.HoraInicio</td>
+                <td>@t.HoraFin</td>
+                <td>
+                  <form method="post" style="display:inline">
+                    <button type="submit" asp-page-handler="Editar" asp-route-id="@t.Turno_ID" class="btn btn-secondary">Editar</button>
+                  </form>
+                  <form method="post" style="display:inline" onsubmit="return confirm('¿Eliminar turno #@t.Turno_ID?');">
+                    <button type="submit" asp-page-handler="Eliminar" asp-route-id="@t.Turno_ID" class="btn btn-danger">Eliminar</button>
+                  </form>
+                </td>
+              </tr>
+            }
+          }
+          else
+          {
+            <tr>
+              <td colspan="5" style="text-align:center;">No hay turnos cargados.</td>
+            </tr>
+          }
         </tbody>
       </table>
     </div>

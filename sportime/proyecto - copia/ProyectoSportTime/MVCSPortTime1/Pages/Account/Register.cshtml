@@ -1,0 +1,85 @@
+@page
+@model MVCSPortTime1.Pages.Account.RegisterModel
+@{
+    ViewData["Title"] = "Crear cuenta";
+    ViewData["BodyClass"] = "login-body";
+}
+
+<main class="login-container" aria-labelledby="register-title">
+  <img src="~/img/SportTime.png" alt="SportTime" class="login-logo" />
+  <form method="post" class="login-form login-form--solo" novalidate>
+    <h1 id="register-title" class="login-form-title">Crear cuenta</h1>
+
+    <div class="form-group">
+      <label asp-for="Input.Nombre"></label>
+      <input asp-for="Input.Nombre" placeholder="Tu nombre" autocomplete="given-name" />
+      <span asp-validation-for="Input.Nombre" class="field-error"></span>
+    </div>
+
+    <div class="form-group">
+      <label asp-for="Input.Apellido"></label>
+      <input asp-for="Input.Apellido" placeholder="Tu apellido" autocomplete="family-name" />
+      <span asp-validation-for="Input.Apellido" class="field-error"></span>
+    </div>
+
+    <div class="form-group">
+      <label asp-for="Input.Email"></label>
+      <input asp-for="Input.Email" type="email" placeholder="tuusuario@gmail.com" inputmode="email" pattern="^[A-Za-z0-9._%+-]+&#64;gmail\.com$" title="Usá un Gmail válido (usuario@gmail.com)" />
+      <small class="field-hint">Sólo Gmail válido: usuario@gmail.com</small>
+      <span asp-validation-for="Input.Email" class="field-error"></span>
+    </div>
+
+    <div class="form-group">
+      <label asp-for="Input.Telefono"></label>
+      <input asp-for="Input.Telefono" placeholder="Ej: +54 9 11 1234 5678" autocomplete="tel" />
+      <span asp-validation-for="Input.Telefono" class="field-error"></span>
+    </div>
+
+    <div class="form-group">
+      <label asp-for="Input.Password"></label>
+      <div class="password-wrapper">
+        <input asp-for="Input.Password" type="password" placeholder="********" autocomplete="new-password" />
+        <button type="button" class="btn-toggle-pass" aria-label="Mostrar u ocultar contraseña" title="Mostrar" onclick="togglePass(this,'Input_Password')">??</button>
+      </div>
+      <small class="field-hint">Mínimo 6 caracteres. Recomendado: mayúscula, minúscula y número.</small>
+      <span asp-validation-for="Input.Password" class="field-error"></span>
+    </div>
+
+    <div class="form-group">
+      <label asp-for="Input.ConfirmPassword"></label>
+      <div class="password-wrapper">
+        <input asp-for="Input.ConfirmPassword" type="password" placeholder="********" autocomplete="new-password" />
+        <button type="button" class="btn-toggle-pass" aria-label="Mostrar u ocultar contraseña" title="Mostrar" onclick="togglePass(this,'Input_ConfirmPassword')">??</button>
+      </div>
+      <span asp-validation-for="Input.ConfirmPassword" class="field-error"></span>
+    </div>
+
+    <div class="form-messages" role="alert" aria-live="polite">@Model.Error</div>
+
+    <button type="submit" class="btn-login">
+      <span class="btn-text">Crear cuenta</span>
+    </button>
+
+    <div class="divider" role="separator" aria-hidden="true"><span>o</span></div>
+    <div class="register-box">
+      <p>¿Ya tenés cuenta? <a asp-page="/Account/Login">Iniciar sesión</a></p>
+    </div>
+  </form>
+
+  <footer class="login-footer">
+    <small>&copy; @DateTime.Now.Year Sport Time</small>
+  </footer>
+</main>
+
+@section Scripts{
+  <partial name="_ValidationScriptsPartial" />
+  <script>
+    function togglePass(btn, id){
+      const el = document.getElementById(id);
+      if(!el) return;
+      const showing = el.type === 'text';
+      el.type = showing ? 'password' : 'text';
+      btn.textContent = showing ? '??' : '??';
+    }
+  </script>
+}

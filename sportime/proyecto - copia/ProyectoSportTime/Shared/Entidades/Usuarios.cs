@@ -12,9 +12,11 @@ namespace Shared.Entidades
         [Key]
         public int Usuario_ID { get; set; }
         public string Nombre { get; set; }
+        public string Apellido { get; set; } = string.Empty;
         public string Email { get; set; }
         public string NumeroTelefono { get; set; }
-        public string Contraseña { get; set; }
+        // Almacena hash seguro de la contraseña
+        public string PasswordHash { get; set; }
         public string Rol { get; set; } 
     }
 }
