@@ -16,12 +16,13 @@ namespace MVCSPortTime1.ViewModels
 
     public class TurnoIndexViewModel
     {
-        public List<TurnoDTO> Turnos { get; set; } = new();
-        public TurnoDTO NuevoTurno { get; set; } = new();
-        public List<TurnoLookupItem> Canchas { get; set; } = new();
-        public List<TurnoLookupItem> Usuarios { get; set; } = new();
-        public List<TurnoLookupItem> Deportes { get; set; } = new();
-        public List<TurnoLookupItem> Estados { get; set; } = new();
-        public string Search { get; set; } = string.Empty;
+        public List<TurnoDTO> Turnos { get; set; }
+        public TurnoDTO NuevoTurno { get; set; }
+        public List<TurnoLookupItem> Canchas { get; set; }
+        public List<TurnoLookupItem> Usuarios { get; set; }
+        public List<TurnoLookupItem> Deportes { get; set; }
+        public List<TurnoLookupItem> Estados { get; set; }
+        public List<TurnoLookupItem> Productos { get; set; } // Agregado para resolver el error
+        public string Search { get; set; }
     }
 }

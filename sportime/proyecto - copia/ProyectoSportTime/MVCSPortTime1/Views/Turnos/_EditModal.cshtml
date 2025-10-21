@@ -23,7 +23,7 @@
                 <select name="Usuario_ID" class="form-select">
                     <option value="">Seleccionar cliente</option>
                     @foreach(var u in usuarios) {
-                        <option value="@u.Id" @(u.Id == Model.Usuario_ID ? "selected" : "")>@u.Text</option>
+                        <option value="@u.Id" @@(u.Id == Model.Usuario_ID ? "selected" : "")>@u.Text</option>
                     }
                 </select>
             </div>
@@ -33,7 +33,7 @@
                 <select name="Cancha_ID" class="form-select">
                     <option value="">Seleccionar cancha</option>
                     @foreach(var c in canchas) {
-                        <option value="@c.Id" @(c.Id == Model.Cancha_ID ? "selected" : "")>@c.Text</option>
+                        <option value="@c.Id" @@(c.Id == Model.Cancha_ID ? "selected" : "")>@c.Text</option>
                     }
                 </select>
             </div>
@@ -43,7 +43,7 @@
                 <select name="Producto_ID" class="form-select">
                     <option value="">Seleccionar producto</option>
                     @foreach(var p in productos) {
-                        <option value="@p.Id" @(p.Id == Model.Producto_ID ? "selected" : "")>@p.Text</option>
+                        <option value="@p.Id" @@(p.Id == Model.Producto_ID ? "selected" : "")>@p.Text</option>
                     }
                 </select>
             </div>

@@ -12,7 +12,7 @@ namespace Shared.Entidades
     {
         [Key]
         public int Producto_ID { get; set; }
-        public string Nombre { get; set; }
+        public string TipoProducto { get; set; }
         public int Proveedor_ID { get; set; } // Clave Foránea
         public decimal Precio { get; set; }
         public int Stock {  get; set; }
