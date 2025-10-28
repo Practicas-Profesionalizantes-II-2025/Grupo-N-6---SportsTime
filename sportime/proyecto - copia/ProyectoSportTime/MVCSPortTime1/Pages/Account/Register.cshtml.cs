@@ -55,10 +55,23 @@ namespace MVCSPortTime1.Pages.Account
                 Email = email,
                 NumeroTelefono = Input.Telefono?.Trim() ?? string.Empty,
                 PasswordHash = hash,
-                Rol = "Usuario"
+                Rol = "Cliente"
             };
             _db.Add(user);
             await _db.SaveChangesAsync();
+
+            // Crear el registro de Cliente asociado (si no existe uno con ese email)
+            if (!_db.Clientes.Any(c => c.Email.ToLower() == email))
+            {
+                _db.Clientes.Add(new global::Shared.Entidades.Clientes
+                {
+                    Nombre = $"{user.Nombre} {user.Apellido}".Trim(),
+                    Email = user.Email,
+                    NumeroTelefono = user.NumeroTelefono,
+                    Usuario_ID = user.Usuario_ID
+                });
+                await _db.SaveChangesAsync();
+            }
 
             await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
                 LoginModel.BuildPrincipal(user, persist: true), new AuthenticationProperties { IsPersistent = true });

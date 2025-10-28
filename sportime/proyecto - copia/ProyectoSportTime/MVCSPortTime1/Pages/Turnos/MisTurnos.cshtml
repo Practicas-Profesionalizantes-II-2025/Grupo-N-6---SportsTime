@@ -1,0 +1,132 @@
+@page
+@model MVCSPortTime1.Pages.Turnos.MisTurnosModel
+@{
+    ViewData["Title"] = "Reservar turno";
+    ViewData["BodyId"] = "turnos-page";
+}
+
+<div class="section-header">
+  <span>Reservar turno</span>
+  <a asp-page="/Index" aria-label="Volver al menú principal">
+    <img src="~/img/atras.png" alt="Volver al Menú" class="icono-volver" />
+  </a>
+</div>
+
+<partial name="Shared/_Feedback" />
+
+<section class="card form-card" style="max-width:900px;margin:16px auto;">
+  <h2>Nuevo Turno</h2>
+  <form class="formulario" method="post">
+    <div>
+      <label>Cancha</label>
+      <select asp-for="Input.Cancha_ID" class="form-select" asp-items="Model.CanchaOptions">
+        <option value="">-- Seleccione --</option>
+      </select>
+    </div>
+    <div class="grid-2">
+      <div>
+        <label asp-for="Input.HoraInicio"></label>
+        <input id="inicio" asp-for="Input.HoraInicio" type="datetime-local" />
+      </div>
+      <div>
+        <label asp-for="Input.HoraFin"></label>
+        <input id="fin" asp-for="Input.HoraFin" type="datetime-local" />
+      </div>
+    </div>
+
+    <div id="dispMsg" class="small" style="margin:-6px 0 8px 0;"></div>
+
+    <div>
+      <label>Productos (opcional)</label>
+      <div id="items" class="consumos"></div>
+      <button type="button" class="btn btn-quiet small" onclick="openAddConsumo()">+ Agregar producto</button>
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" asp-page-handler="Guardar" class="btn btn-discreet">Reservar</button>
+      <button type="reset" class="btn btn-link-discreet">Limpiar</button>
+    </div>
+  </form>
+</section>
+
+<!-- Modal Agregar producto -->
+<div class="modal fade" id="addConsumoModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-sm modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Agregar producto</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <label for="pickProducto">Producto</label>
+        <select id="pickProducto" class="form-select">
+          <option value="">-- Seleccione --</option>
+          @foreach (var p in Model.Productos)
+          {
+            <option value="@p.Producto_ID">@p.TipoProducto</option>
+          }
+        </select>
+        <label for="pickCantidad" style="margin-top:8px;">Cantidad</label>
+        <input id="pickCantidad" type="number" class="form-control" min="1" value="1" />
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-link-discreet" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-discreet" onclick="confirmAddConsumo()">Agregar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+@section Scripts{
+  <partial name="_ValidationScriptsPartial" />
+  <script>
+    const canchaSel = document.querySelector('[name="Input.Cancha_ID"]');
+    const inicio = document.getElementById('inicio');
+    const fin = document.getElementById('fin');
+    const dispMsg = document.getElementById('dispMsg');
+
+    async function checkDisp(){
+      dispMsg.textContent = '';
+      const canchaId = parseInt(canchaSel?.value||'0');
+      const hi = inicio?.value; const hf = fin?.value;
+      if(!canchaId || !hi || !hf) return;
+      try{
+        const url = `@Url.Page("/Turnos/MisTurnos", "Check", new{ canchaId = "__c__", inicio = "__i__", fin = "__f__" })`
+          .replace("__c__", canchaId).replace("__i__", encodeURIComponent(hi)).replace("__f__", encodeURIComponent(hf));
+        const r = await fetch(url, { credentials:'include' });
+        const data = await r.json();
+        dispMsg.style.color = data.available ? '#065f46' : '#b91c1c';
+        dispMsg.textContent = data.message;
+      }catch{ /* ignore */ }
+    }
+    canchaSel?.addEventListener('change', checkDisp);
+    inicio?.addEventListener('change', checkDisp);
+    fin?.addEventListener('change', checkDisp);
+
+    function openAddConsumo(){
+      document.getElementById('pickProducto').value = '';
+      document.getElementById('pickCantidad').value = '1';
+      var m = new bootstrap.Modal(document.getElementById('addConsumoModal'));
+      m.show();
+    }
+    function confirmAddConsumo(){
+      const sel = document.getElementById('pickProducto');
+      const pid = parseInt(sel.value || '0');
+      const name = sel.options[sel.selectedIndex]?.text || '';
+      const qty = parseInt(document.getElementById('pickCantidad').value || '0');
+      if (!pid || !qty){ return; }
+      const container = document.querySelector('#items');
+      const index = container.querySelectorAll('.consumo-row').length;
+      const row = document.createElement('div');
+      row.className = 'consumo-row';
+      row.innerHTML = `
+        <span class="small">${name} x ${qty}</span>
+        <input type="hidden" name="Input.Consumos[${index}].Producto_ID" value="${pid}" />
+        <input type="hidden" name="Input.Consumos[${index}].Cantidad" value="${qty}" />
+        <button type="button" class="icon-btn icon-btn-danger" title="Quitar" onclick="this.parentElement.remove()">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 9v10H8V9h8m-1.5-6h-5l-1 1H5v2h14V4h-3.5l-1-1z"/></svg>
+        </button>`;
+      container.appendChild(row);
+    }
+  </script>
+}

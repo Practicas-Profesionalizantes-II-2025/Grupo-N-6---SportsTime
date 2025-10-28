@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using CDatos.Data;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using MVCSPortTime1.Services;
+using Shared.Entidades;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,6 +19,14 @@ builder.Services.AddRazorPages(options =>
     // Permitir anónimo para Login y Registro
     options.Conventions.AllowAnonymousToPage("/Account/Login");
     options.Conventions.AllowAnonymousToPage("/Account/Register");
+
+    // Autorización por roles (políticas)
+    options.Conventions.AuthorizeFolder("/Clientes", policy: "AdminOnly");
+    options.Conventions.AuthorizeFolder("/Productos", policy: "AdminOnly");
+    options.Conventions.AuthorizeFolder("/Proveedores", policy: "AdminOnly");
+    options.Conventions.AuthorizeFolder("/Canchas", policy: "AdminOnly");
+    // Página de cliente
+    options.Conventions.AuthorizePage("/Turnos/MisTurnos", policy: "ClienteOnly");
 });
 builder.Services.AddHttpClient();
 
@@ -34,8 +43,16 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
     {
         o.LoginPath = "/Account/Login";
         o.LogoutPath = "/Account/Logout";
-        o.AccessDeniedPath = "/Account/Login";
+        o.AccessDeniedPath = "/Account/AccessDenied";
     });
+
+// Autorización
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("AdminOnly", p => p.RequireRole("Admin"));
+    // Aceptar "Cliente" y antiguos "Usuario" como clientes válidos
+    options.AddPolicy("ClienteOnly", p => p.RequireRole("Cliente", "Usuario"));
+});
 
 builder.Services.AddScoped<IAuthService, AuthService>();
 
@@ -61,17 +78,35 @@ builder.Services.AddScoped<ITurnosAppService, TurnosAppService>();
 
 WebApplication app = builder.Build();   
 
-// Aplicar migraciones automáticamente en arranque (solo desarrollo/probar)
+// Aplicar migraciones y seed de admin
 using (var scope = app.Services.CreateScope())
 {
     try
     {
         var db = scope.ServiceProvider.GetRequiredService<DataContext>();
         db.Database.Migrate();
+
+        // Seed Admin (si no existe)
+        var auth = scope.ServiceProvider.GetRequiredService<IAuthService>();
+        const string adminEmail = "admin@sporttime.local";
+        var admin = db.Usuarios.FirstOrDefault(u => u.Email == adminEmail);
+        if (admin == null)
+        {
+            db.Usuarios.Add(new Usuarios
+            {
+                Nombre = "Admin",
+                Apellido = "",
+                Email = adminEmail,
+                NumeroTelefono = "",
+                PasswordHash = auth.HashPassword("Admin123!"),
+                Rol = "Admin"
+            });
+            db.SaveChanges();
+            Console.WriteLine("Admin creado: admin@sporttime.local / Admin123!");
+        }
     }
     catch (Exception ex)
     {
-        // Log mínimo; en producción usar ILogger
         Console.WriteLine($"Error applying migrations: {ex.Message}");
     }
 }

@@ -5,38 +5,54 @@
     ViewData["BodyClass"] = "menu-body"; // usa fondo con imagen/gradiente como antes
 }
 
-<header class="menu-header">
-  <h1>Menú Principal</h1>
+<header class="menu-header" style="display:flex;justify-content:space-between;align-items:center;gap:12px;">
+  <h1 style="margin:0;">Menú Principal</h1>
+  <form method="post" asp-page="/Account/Logout">
+    <button type="submit" class="btn btn-secondary" style="background:#ffffff; color:#0a4a66; border:0; padding:8px 14px; border-radius:10px; box-shadow:0 2px 6px rgba(0,0,0,.15);">Cerrar sesión</button>
+  </form>
 </header>
 
 <div class="menu-shell">
   <section class="card">
     <h2 class="menu-section-title">Gestión</h2>
     <div class="menu-buttons">
-      <a asp-page="/Turnos/Index" class="menu-btn">
-        <img src="~/img/turnos.png" alt="Turnos">
-        <span>Turnos</span>
-      </a>
+      @if (User.IsInRole("Admin"))
+      {
+        <a asp-page="/Turnos/Index" class="menu-btn">
+          <img src="~/img/turnos.png" alt="Turnos">
+          <span>Turnos</span>
+        </a>
+      }
+      else
+      {
+        <a asp-page="/Turnos/MisTurnos" class="menu-btn">
+          <img src="~/img/turnos.png" alt="Turnos">
+          <span>Mis Turnos</span>
+        </a>
+      }
 
-      <a asp-page="/Canchas/Index" class="menu-btn">
-        <img src="~/img/canchas.png" alt="Canchas">
-        <span>Canchas</span>
-      </a>
+      @if (User.IsInRole("Admin"))
+      {
+        <a asp-page="/Canchas/Index" class="menu-btn">
+          <img src="~/img/canchas.png" alt="Canchas">
+          <span>Canchas</span>
+        </a>
 
-      <a asp-page="/Productos/Index" class="menu-btn">
-        <img src="~/img/productos.png" alt="Productos">
-        <span>Productos</span>
-      </a>
+        <a asp-page="/Productos/Index" class="menu-btn">
+          <img src="~/img/productos.png" alt="Productos">
+          <span>Productos</span>
+        </a>
 
-      <a asp-page="/Clientes/Index" class="menu-btn">
-        <img src="~/img/clientes.png" alt="Clientes">
-        <span>Clientes</span>
-      </a>
-      
-      <a asp-page="/Proveedores/Index" class="menu-btn">
-        <img src="~/img/proveedores.png" alt="Proveedores">
-        <span>Proveedores</span>
-      </a>
+        <a asp-page="/Clientes/Index" class="menu-btn">
+          <img src="~/img/clientes.png" alt="Clientes">
+          <span>Clientes</span>
+        </a>
+        
+        <a asp-page="/Proveedores/Index" class="menu-btn">
+          <img src="~/img/proveedores.png" alt="Proveedores">
+          <span>Proveedores</span>
+        </a>
+      }
     </div>
   </section>
 </div>

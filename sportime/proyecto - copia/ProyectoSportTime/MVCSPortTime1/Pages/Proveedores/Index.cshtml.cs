@@ -17,6 +17,9 @@ namespace MVCSPortTime1.Pages.Proveedores
         [BindProperty]
         public ProveedorInput Input { get; set; } = new();
 
+        [BindProperty]
+        public int? EditId { get; set; }
+
         public System.Collections.Generic.List<global::Shared.Dtos.ProveedorDTO> Proveedores { get; set; } = new();
 
         public async Task OnGet()
@@ -52,6 +55,73 @@ namespace MVCSPortTime1.Pages.Proveedores
                 TempData["ErrorMessage"] = ex.Message;
             }
 
+            Proveedores = await _proveedores.ObtenerTodosLosProveedores();
+            return Page();
+        }
+
+        public async Task<IActionResult> OnPostEditar(int id)
+        {
+            var dto = await _proveedores.ObtenerProveedorPorId(id);
+            if (dto == null)
+            {
+                TempData["ErrorMessage"] = "Proveedor no encontrado";
+            }
+            else
+            {
+                EditId = dto.Proveedor_ID;
+                Input = new ProveedorInput
+                {
+                    Razon = dto.Nombre,
+                    Direccion = dto.Direccion,
+                    Telefono = dto.Telefono,
+                    Email = dto.Email
+                };
+                ViewData["OpenProveedorModal"] = true;
+            }
+            Proveedores = await _proveedores.ObtenerTodosLosProveedores();
+            return Page();
+        }
+
+        public async Task<IActionResult> OnPostActualizar()
+        {
+            if (EditId == null)
+            {
+                TempData["ErrorMessage"] = "Seleccione un proveedor";
+                Proveedores = await _proveedores.ObtenerTodosLosProveedores();
+                return Page();
+            }
+            try
+            {
+                await _proveedores.ModificarProveedor(new global::Shared.Dtos.ProveedorDTO
+                {
+                    Proveedor_ID = EditId.Value,
+                    Nombre = Input.Razon,
+                    Direccion = Input.Direccion,
+                    Telefono = Input.Telefono,
+                    Email = Input.Email
+                });
+                TempData["SuccessMessage"] = "Proveedor actualizado";
+                EditId = null; Input = new();
+            }
+            catch (Exception ex)
+            {
+                TempData["ErrorMessage"] = ex.Message;
+            }
+            Proveedores = await _proveedores.ObtenerTodosLosProveedores();
+            return Page();
+        }
+
+        public async Task<IActionResult> OnPostEliminar(int id)
+        {
+            try
+            {
+                await _proveedores.BajaProveedor(id);
+                TempData["SuccessMessage"] = "Proveedor eliminado";
+            }
+            catch (Exception ex)
+            {
+                TempData["ErrorMessage"] = ex.Message;
+            }
             Proveedores = await _proveedores.ObtenerTodosLosProveedores();
             return Page();
         }

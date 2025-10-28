@@ -23,5 +23,7 @@ namespace Shared.Entidades
         public int Cancha_ID { get; set; }
         //public Canchas Cancha { get; set; } // Propiedad de navegación
 
+        // Nuevo: cliente asociado (opcional para compatibilidad con datos existentes)
+        public int? Cliente_ID { get; set; }
     }
 }

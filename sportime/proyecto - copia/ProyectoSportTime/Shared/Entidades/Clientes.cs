@@ -10,5 +10,7 @@ namespace Shared.Entidades
         public string Nombre { get; set; } = string.Empty;
         public string NumeroTelefono { get; set; } = string.Empty;
         public string Email { get; set; } = string.Empty;
+        // Vínculo opcional al usuario (para clientes creados desde la web)
+        public int? Usuario_ID { get; set; }
     }
 }

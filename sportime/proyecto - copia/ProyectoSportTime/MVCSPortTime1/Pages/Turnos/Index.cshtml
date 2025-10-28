@@ -20,8 +20,13 @@
     <form class="formulario" method="post">
       <input type="hidden" asp-for="EditId" />
 
+      <label for="cliente">Cliente</label>
+      <select asp-for="Input.Cliente_ID" class="form-select" asp-items="@(new SelectList(Model.Clientes, "Cliente_ID", "Nombre"))">
+        <option value="">-- Seleccione --</option>
+      </select>
+
       <label for="cancha">Cancha</label>
-      <select asp-for="Input.Cancha_ID" class="form-select" asp-items="@(new SelectList(Model.Canchas, "Cancha_ID", "Cancha_ID"))">
+      <select asp-for="Input.Cancha_ID" class="form-select" asp-items="Model.CanchaOptions">
         <option value="">-- Seleccione --</option>
       </select>
 
@@ -36,17 +41,38 @@
         </div>
       </div>
 
+      <div>
+        <label>Productos (opcional)</label>
+        <div id="items" class="consumos">
+          @for (int i = 0; i < Model.Input.Consumos.Count; i++)
+          {
+              var pid = Model.Input.Consumos[i]?.Producto_ID ?? 0;
+              var qty = Model.Input.Consumos[i]?.Cantidad ?? 1;
+              var nombre = Model.Productos.FirstOrDefault(p => p.Producto_ID == pid)?.TipoProducto ?? "Producto";
+              <div class="consumo-row">
+                <span class="small">@nombre x @qty</span>
+                <input type="hidden" name="Input.Consumos[@i].Producto_ID" value="@pid" />
+                <input type="hidden" name="Input.Consumos[@i].Cantidad" value="@qty" />
+                <button type="button" class="icon-btn icon-btn-danger" onclick="remConsumo(this)" title="Quitar">
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 9v10H8V9h8m-1.5-6h-5l-1 1H5v2h14V4h-3.5l-1-1z"/></svg>
+                </button>
+              </div>
+          }
+        </div>
+        <button type="button" class="btn btn-quiet small" onclick="openAddConsumo()">+ Agregar producto</button>
+      </div>
+
       <div class="form-actions">
         @if (Model.EditId == null)
         {
-            <button type="submit" asp-page-handler="Guardar" class="btn btn-primary">Crear turno</button>
+            <button type="submit" asp-page-handler="Guardar" class="btn btn-discreet">Crear turno</button>
         }
         else
         {
-            <button type="submit" asp-page-handler="Actualizar" class="btn btn-primary">Actualizar</button>
-            <a asp-page="/Turnos/Index" class="btn btn-ghost">Cancelar</a>
+            <button type="submit" asp-page-handler="Actualizar" class="btn btn-discreet">Actualizar</button>
+            <a asp-page="/Turnos/Index" class="btn btn-link-discreet">Cancelar</a>
         }
-        <button type="reset" class="btn btn-ghost">Limpiar</button>
+        <button type="reset" class="btn btn-link-discreet">Limpiar</button>
       </div>
     </form>
   </section>
@@ -56,13 +82,14 @@
       <h2>Turnos Cargados</h2>
     </div>
     <div class="table-wrap">
-      <table>
+      <table class="turnos-table">
         <thead>
           <tr>
-            <th>ID</th>
+            <th>Cliente</th>
             <th>Cancha</th>
             <th>Inicio</th>
             <th>Fin</th>
+            <th>Productos</th>
             <th>Acciones</th>
           </tr>
         </thead>
@@ -71,17 +98,27 @@
           {
             foreach (var t in Model.Items)
             {
+              var nombreCliente = Model.Clientes.FirstOrDefault(c => c.Cliente_ID == t.Cliente_ID)?.Nombre ?? "-";
+              var resumen = Model.ProductosPorTurno.TryGetValue(t.Turno_ID, out var txt) ? txt : "-";
+              var canchaNombre = Model.NombreCancha.TryGetValue(t.Cancha_ID, out var n) ? n : $"Cancha {t.Cancha_ID}";
               <tr>
-                <td>@t.Turno_ID</td>
-                <td>@t.Cancha_ID</td>
-                <td>@t.HoraInicio</td>
-                <td>@t.HoraFin</td>
-                <td>
-                  <form method="post" style="display:inline">
-                    <button type="submit" asp-page-handler="Editar" asp-route-id="@t.Turno_ID" class="btn btn-secondary">Editar</button>
+                <td>@nombreCliente</td>
+                <td>@canchaNombre</td>
+                <td title="@t.HoraInicio.ToString("dd/MM/yyyy HH:mm")">@t.HoraInicio.ToString("HH:mm")</td>
+                <td title="@t.HoraFin.ToString("dd/MM/yyyy HH:mm")">@t.HoraFin.ToString("HH:mm")</td>
+                <td><small class="muted">@resumen</small></td>
+                <td class="table-actions">
+                  <form method="post">
+                    <button type="submit" asp-page-handler="Editar" asp-route-id="@t.Turno_ID" class="icon-btn" title="Editar">
+                      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1.003 1.003 0 0 0 0-1.42l-2.34-2.34a1.003 1.003 0 0 0-1.42 0l-1.83 1.83 3.75 3.75 1.84-1.82z"/></svg>
+                      <span class="sr-only">Editar</span>
+                    </button>
                   </form>
-                  <form method="post" style="display:inline" onsubmit="return confirm('¿Eliminar turno #@t.Turno_ID?');">
-                    <button type="submit" asp-page-handler="Eliminar" asp-route-id="@t.Turno_ID" class="btn btn-danger">Eliminar</button>
+                  <form method="post" onsubmit="return confirm('¿Eliminar turno?');">
+                    <button type="submit" asp-page-handler="Eliminar" asp-route-id="@t.Turno_ID" class="icon-btn icon-btn-danger" title="Eliminar">
+                      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 9v10H8V9h8m-1.5-6h-5l-1 1H5v2h14V4h-3.5l-1-1z"/></svg>
+                      <span class="sr-only">Eliminar</span>
+                    </button>
                   </form>
                 </td>
               </tr>
@@ -90,7 +127,7 @@
           else
           {
             <tr>
-              <td colspan="5" style="text-align:center;">No hay turnos cargados.</td>
+              <td colspan="6" style="text-align:center;">No hay turnos cargados.</td>
             </tr>
           }
         </tbody>
@@ -98,3 +135,140 @@
     </div>
   </section>
 </div>
+
+<!-- Modal Agregar producto -->
+<div class="modal fade" id="addConsumoModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-sm modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Agregar producto</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <label for="pickProducto">Producto</label>
+        <select id="pickProducto" class="form-select">
+          <option value="">-- Seleccione --</option>
+          @foreach (var p in Model.Productos)
+          {
+            <option value="@p.Producto_ID">@p.TipoProducto</option>
+          }
+        </select>
+        <label for="pickCantidad" style="margin-top:8px;">Cantidad</label>
+        <input id="pickCantidad" type="number" class="form-control" min="1" value="1" />
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-link-discreet" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-discreet" onclick="confirmAddConsumo()">Agregar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal de edición existente -->
+<div class="modal fade" id="editTurnoModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Editar turno @Model.EditId</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form method="post" class="formulario">
+        <div class="modal-body">
+          <input type="hidden" asp-for="EditId" />
+
+          <label for="clienteModal">Cliente</label>
+          <select id="clienteModal" asp-for="Input.Cliente_ID" class="form-select" asp-items="@(new SelectList(Model.Clientes, "Cliente_ID", "Nombre"))">
+            <option value="">-- Seleccione --</option>
+          </select>
+
+          <label for="canchaModal">Cancha</label>
+          <select id="canchaModal" asp-for="Input.Cancha_ID" class="form-select" asp-items="Model.CanchaOptions">
+            <option value="">-- Seleccione --</option>
+          </select>
+
+          <div class="grid-2">
+            <div>
+              <label asp-for="Input.HoraInicio"></label>
+              <input asp-for="Input.HoraInicio" type="datetime-local" />
+            </div>
+            <div>
+              <label asp-for="Input.HoraFin"></label>
+              <input asp-for="Input.HoraFin" type="datetime-local" />
+            </div>
+          </div>
+
+          <div>
+            <label>Productos</label>
+            <div id="itemsModal" class="consumos">
+              @for (int i = 0; i < Model.Input.Consumos.Count; i++)
+              {
+                var pid = Model.Input.Consumos[i]?.Producto_ID ?? 0;
+                var qty = Model.Input.Consumos[i]?.Cantidad ?? 1;
+                var nombre = Model.Productos.FirstOrDefault(p => p.Producto_ID == pid)?.TipoProducto ?? "Producto";
+                <div class="consumo-row">
+                  <span class="small">@nombre x @qty</span>
+                  <input type="hidden" name="Input.Consumos[@i].Producto_ID" value="@pid" />
+                  <input type="hidden" name="Input.Consumos[@i].Cantidad" value="@qty" />
+                  <button type="button" class="icon-btn icon-btn-danger" onclick="remConsumo(this)" title="Quitar">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 9v10H8V9h8m-1.5-6h-5l-1 1H5v2h14V4h-3.5l-1-1z"/></svg>
+                  </button>
+                </div>
+              }
+            </div>
+            <button type="button" class="btn btn-quiet small" onclick="openAddConsumo('#itemsModal')">+ Agregar producto</button>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-link-discreet" data-bs-dismiss="modal">Cerrar</button>
+          <button type="submit" asp-page-handler="Actualizar" class="btn btn-discreet">Guardar cambios</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+@section Scripts{
+  <script>
+    let targetContainerSelector = '#items';
+    function openAddConsumo(target){
+      targetContainerSelector = target || '#items';
+      document.getElementById('pickProducto').value = '';
+      document.getElementById('pickCantidad').value = '1';
+      var m = new bootstrap.Modal(document.getElementById('addConsumoModal'));
+      m.show();
+    }
+    function confirmAddConsumo(){
+      const sel = document.getElementById('pickProducto');
+      const pid = parseInt(sel.value || '0');
+      const name = sel.options[sel.selectedIndex]?.text || '';
+      const qty = parseInt(document.getElementById('pickCantidad').value || '0');
+      if (!pid || !qty){ return; }
+      const container = document.querySelector(targetContainerSelector);
+      const index = container.querySelectorAll('.consumo-row').length;
+      const row = document.createElement('div');
+      row.className = 'consumo-row';
+      row.innerHTML = `
+        <span class="small">${name} x ${qty}</span>
+        <input type="hidden" name="Input.Consumos[${index}].Producto_ID" value="${pid}" />
+        <input type="hidden" name="Input.Consumos[${index}].Cantidad" value="${qty}" />
+        <button type="button" class="icon-btn icon-btn-danger" title="Quitar" onclick="remConsumo(this)">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 9v10H8V9h8m-1.5-6h-5l-1 1H5v2h14V4h-3.5l-1-1z"/></svg>
+        </button>`;
+      container.appendChild(row);
+      bootstrap.Modal.getInstance(document.getElementById('addConsumoModal')).hide();
+    }
+    function remConsumo(btn){
+      const row = btn.closest('.consumo-row');
+      if (row) row.remove();
+    }
+  </script>
+  @if (Model.EditId != null)
+  {
+    <script>
+      document.addEventListener('DOMContentLoaded', function(){
+        var m = new bootstrap.Modal(document.getElementById('editTurnoModal'));
+        m.show();
+      });
+    </script>
+  }
+}

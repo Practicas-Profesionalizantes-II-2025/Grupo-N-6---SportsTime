@@ -42,6 +42,19 @@ namespace CDatos.Data
                         .Property(u => u.Apellido)
                         .HasMaxLength(120);
 
+            // Relación opcional Cliente -> Usuario (no FK explícita por compatibilidad)
+            // Si quisieras FK: descomentar la configuración siguiente y crear migración
+            // modelBuilder.Entity<Clientes>()
+            //     .HasOne<Usuarios>()
+            //     .WithMany()
+            //     .HasForeignKey(c => c.Usuario_ID)
+            //     .OnDelete(DeleteBehavior.Restrict);
+
+            // Precisión de Precio
+            modelBuilder.Entity<Productos>()
+                        .Property(p => p.Precio)
+                        .HasPrecision(18, 2);
+
             // Deportes
             modelBuilder.Entity<Deportes>().HasData(
                 new Deportes { Deporte_ID = 1, Nombre = "Fútbol" },

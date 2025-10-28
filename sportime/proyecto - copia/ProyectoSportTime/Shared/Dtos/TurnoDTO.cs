@@ -17,6 +17,6 @@ namespace Shared.Dtos
         public string Estado { get; set; } // "Pendiente", "Confirmado", "Cancelado"
         public int Usuario_ID { get; set; }       
         public int Cancha_ID { get; set; }
-       
+        public int? Cliente_ID { get; set; }
     }
 }

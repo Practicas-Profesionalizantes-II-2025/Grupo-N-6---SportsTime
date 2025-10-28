@@ -94,6 +94,42 @@
   </section>
 </div>
 
+<!-- Modal edición cancha -->
+<div class="modal fade" id="editCanchaModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-md modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Editar cancha @Model.EditId</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form method="post" class="formulario">
+        <div class="modal-body">
+          <input type="hidden" asp-for="EditId" />
+          <label asp-for="Input.DeporteId">Deporte</label>
+          <select asp-for="Input.DeporteId" class="form-select"
+                  asp-items="@(new SelectList(Model.Deportes, "Deporte_ID", "Nombre"))">
+            <option value="">-- Seleccione --</option>
+          </select>
+          <label style="margin-top:6px;"><input type="checkbox" asp-for="Input.Activa" /> Activa</label>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-link-discreet" data-bs-dismiss="modal">Cerrar</button>
+          <button type="submit" asp-page-handler="Actualizar" class="btn btn-discreet">Guardar cambios</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
 @section Scripts{
   <partial name="_ValidationScriptsPartial" />
+  @if (Model.EditId != null)
+  {
+    <script>
+      document.addEventListener('DOMContentLoaded',function(){
+        var m = new bootstrap.Modal(document.getElementById('editCanchaModal'));
+        m.show();
+      });
+    </script>
+  }
 }
