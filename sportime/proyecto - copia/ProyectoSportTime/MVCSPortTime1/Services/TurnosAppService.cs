@@ -1,6 +1,7 @@
 using CDatos.Data;
 using Microsoft.EntityFrameworkCore;
 using Shared.Entidades;
+using MVCSPortTime1.Monitoring;
 
 namespace MVCSPortTime1.Services
 {
@@ -25,10 +26,8 @@ namespace MVCSPortTime1.Services
         public DateTime? HoraFin { get; set; }
         public int? Cancha_ID { get; set; }
         public int? Cliente_ID { get; set; }
-        // Compatibilidad: un solo producto opcional
         public int? Producto_ID { get; set; }
         public int? Cantidad { get; set; }
-        // Nuevo: múltiples consumos
         public List<ConsumoInput> Consumos { get; set; } = new();
     }
 
@@ -47,7 +46,7 @@ namespace MVCSPortTime1.Services
             }
 
             var e = await Validar(input, null);
-            if (e != null) return (false, e);
+            if (e != null) { AppMetrics.Error("validacion"); return (false, e); }
 
             var turno = new Turnos
             {
@@ -73,13 +72,23 @@ namespace MVCSPortTime1.Services
             if (_db.ChangeTracker.HasChanges())
                 await _db.SaveChangesAsync();
 
+            try
+            {
+                var deporte = await _db.Deportes
+                    .Where(d => d.Deporte_ID == _db.Canchas.Where(c => c.Cancha_ID == turno.Cancha_ID).Select(c => c.Deporte_ID).FirstOrDefault())
+                    .Select(d => d.Nombre)
+                    .FirstOrDefaultAsync() ?? "desconocido";
+                AppMetrics.ReservaCreada(deporte);
+            }
+            catch { /* métricas no deben fallar el flujo */ }
+
             return (true, "Turno creado");
         }
 
         public async Task<(bool ok, string msg)> Actualizar(int id, TurnoInput input)
         {
             var e = await Validar(input, id);
-            if (e != null) return (false, e);
+            if (e != null) { AppMetrics.Error("validacion"); return (false, e); }
 
             var turno = await _db.Turnos.FindAsync(id);
             if (turno == null) return (false, "Turno no encontrado");
@@ -89,7 +98,6 @@ namespace MVCSPortTime1.Services
             turno.Cliente_ID = input.Cliente_ID;
             await _db.SaveChangesAsync();
 
-            // Agregar nuevos consumos (no edita existentes)
             foreach (var c in ExpandConsumos(input))
             {
                 _db.TurnoProductos.Add(new TurnoProducto

@@ -7,6 +7,8 @@ using CDatos.Data;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using MVCSPortTime1.Services;
 using Shared.Entidades;
+using Prometheus;
+using MVCSPortTime1.Monitoring;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -76,7 +78,7 @@ builder.Services.AddScoped<IClientesAppService, ClientesAppService>();
 // Turnos
 builder.Services.AddScoped<ITurnosAppService, TurnosAppService>();
 
-WebApplication app = builder.Build();   
+var app = builder.Build();   
 
 // Aplicar migraciones y seed de admin
 using (var scope = app.Services.CreateScope())
@@ -122,6 +124,26 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
+// Prometheus metrics
+app.UseHttpMetrics();
+app.MapMetrics(); // expone /metrics
+
+// Contador simple de errores 500
+app.Use(async (ctx, next) =>
+{
+    try
+    {
+        await next();
+        // Si el status fue establecido a 500 por un middleware previo
+        if (ctx.Response.StatusCode >= 500) AppMetrics.Error("500");
+    }
+    catch
+    {
+        AppMetrics.Error("500");
+        throw;
+    }
+});
 
 app.UseAuthentication();
 app.UseAuthorization();
