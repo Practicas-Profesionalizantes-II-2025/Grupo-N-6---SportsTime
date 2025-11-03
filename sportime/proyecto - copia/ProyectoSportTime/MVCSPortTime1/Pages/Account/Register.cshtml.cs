@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using MVCSPortTime1.Services;
 using Shared.Entidades;
 using System.Text.RegularExpressions;
+using Microsoft.EntityFrameworkCore;
 
 namespace MVCSPortTime1.Pages.Account
 {
@@ -39,7 +40,7 @@ namespace MVCSPortTime1.Pages.Account
                 return Page();
             }
 
-            var existe = _db.Usuarios.FirstOrDefault(u => u.Email.ToLower() == email);
+            var existe = await _db.Usuarios.FirstOrDefaultAsync(u => u.Email.ToLower() == email);
             if (existe != null)
             {
                 Error = "Ya existe un usuario con ese email";
@@ -60,18 +61,28 @@ namespace MVCSPortTime1.Pages.Account
             _db.Add(user);
             await _db.SaveChangesAsync();
 
-            // Crear el registro de Cliente asociado (si no existe uno con ese email)
-            if (!_db.Clientes.Any(c => c.Email.ToLower() == email))
+            // Crear o actualizar Cliente asociado por Email o por Nombre
+            var cliente = await _db.Clientes.FirstOrDefaultAsync(c => c.Email.ToLower() == email) 
+                          ?? await _db.Clientes.FirstOrDefaultAsync(c => c.Nombre == user.Nombre);
+            if (cliente == null)
             {
-                _db.Clientes.Add(new global::Shared.Entidades.Clientes
+                cliente = new global::Shared.Entidades.Clientes
                 {
                     Nombre = $"{user.Nombre} {user.Apellido}".Trim(),
                     Email = user.Email,
                     NumeroTelefono = user.NumeroTelefono,
                     Usuario_ID = user.Usuario_ID
-                });
-                await _db.SaveChangesAsync();
+                };
+                _db.Clientes.Add(cliente);
             }
+            else
+            {
+                cliente.Nombre = $"{user.Nombre} {user.Apellido}".Trim();
+                cliente.Email = user.Email;
+                cliente.NumeroTelefono = user.NumeroTelefono;
+                cliente.Usuario_ID = user.Usuario_ID;
+            }
+            await _db.SaveChangesAsync();
 
             await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
                 LoginModel.BuildPrincipal(user, persist: true), new AuthenticationProperties { IsPersistent = true });

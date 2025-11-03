@@ -4,13 +4,15 @@ using MVCSPortTime1.Services;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.EntityFrameworkCore;
 
 namespace MVCSPortTime1.Pages.Account
 {
     public class LoginModel : PageModel
     {
         private readonly IAuthService _auth;
-        public LoginModel(IAuthService auth) { _auth = auth; }
+        private readonly CDatos.Data.DataContext _db;
+        public LoginModel(IAuthService auth, CDatos.Data.DataContext db) { _auth = auth; _db = db; }
 
         [BindProperty]
         public string Usuario { get; set; } = string.Empty;
@@ -40,6 +42,29 @@ namespace MVCSPortTime1.Pages.Account
             {
                 Error = "Usuario o contraseña incorrectos";
                 return Page();
+            }
+
+            // Asegurar vinculación Cliente <-> Usuario al iniciar sesión (por email o por nombre)
+            var cliente = await _db.Clientes.FirstOrDefaultAsync(c => c.Email.ToLower() == (user.Email ?? string.Empty).ToLower())
+                          ?? await _db.Clientes.FirstOrDefaultAsync(c => c.Nombre == (user.Nombre ?? string.Empty));
+            if (cliente == null)
+            {
+                _db.Clientes.Add(new global::Shared.Entidades.Clientes
+                {
+                    Nombre = $"{user.Nombre} {user.Apellido}".Trim(),
+                    Email = user.Email ?? string.Empty,
+                    NumeroTelefono = user.NumeroTelefono ?? string.Empty,
+                    Usuario_ID = user.Usuario_ID
+                });
+                await _db.SaveChangesAsync();
+            }
+            else if (cliente.Usuario_ID != user.Usuario_ID || cliente.Email != user.Email || cliente.NumeroTelefono != user.NumeroTelefono || cliente.Nombre != $"{user.Nombre} {user.Apellido}".Trim())
+            {
+                cliente.Usuario_ID = user.Usuario_ID;
+                cliente.Email = user.Email ?? cliente.Email;
+                cliente.NumeroTelefono = user.NumeroTelefono ?? cliente.NumeroTelefono;
+                cliente.Nombre = $"{user.Nombre} {user.Apellido}".Trim();
+                await _db.SaveChangesAsync();
             }
 
             await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,

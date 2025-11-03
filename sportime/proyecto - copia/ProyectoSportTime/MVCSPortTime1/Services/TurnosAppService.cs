@@ -38,13 +38,7 @@ namespace MVCSPortTime1.Services
 
         public async Task<(bool ok, string msg)> Crear(TurnoInput input, int usuarioId)
         {
-            // Si no hay Cliente_ID, buscar el cliente vinculado al usuario
-            if (input.Cliente_ID == null)
-            {
-                var cli = await _db.Clientes.AsNoTracking().FirstOrDefaultAsync(c => c.Usuario_ID == usuarioId);
-                input.Cliente_ID = cli?.Cliente_ID;
-            }
-
+            // No crear clientes aquí: el Cliente_ID debe venir seteado por el llamador (cliente o admin)
             var e = await Validar(input, null);
             if (e != null) { AppMetrics.Error("validacion"); return (false, e); }
 
@@ -133,7 +127,6 @@ namespace MVCSPortTime1.Services
         {
             if (input.Cancha_ID == null || input.Cancha_ID <= 0)
                 return "Seleccione una cancha";
-            // Para clientes, Cliente_ID puede venir null; tras la resolución previa debería venir seteado
             if (input.Cliente_ID == null || input.Cliente_ID <= 0)
                 return "No se pudo identificar el cliente asociado";
             if (input.HoraInicio == null || input.HoraFin == null)
@@ -149,7 +142,6 @@ namespace MVCSPortTime1.Services
                             && hi < t.HoraFin && hf > t.HoraInicio);
             if (overlap) return "La cancha ya está ocupada en ese horario";
 
-            // Validar consumos (múltiples o único)
             var consumos = ExpandConsumos(input).ToList();
             foreach (var c in consumos)
             {
@@ -158,7 +150,6 @@ namespace MVCSPortTime1.Services
                 var exists = await _db.Productos.AnyAsync(p => p.Producto_ID == c.Producto_ID);
                 if (!exists) return "El producto seleccionado no existe";
             }
-
             return null;
         }
 
@@ -170,7 +161,6 @@ namespace MVCSPortTime1.Services
             {
                 list.Add(new ConsumoInput { Producto_ID = input.Producto_ID.Value, Cantidad = input.Cantidad.Value });
             }
-            // Consolidar por producto si se repite (opcional)
             var grouped = list
                 .Where(c => c.Producto_ID > 0 && c.Cantidad > 0)
                 .GroupBy(c => c.Producto_ID)

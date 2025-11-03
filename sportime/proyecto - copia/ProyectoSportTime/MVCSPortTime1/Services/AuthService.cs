@@ -22,27 +22,35 @@ namespace MVCSPortTime1.Services
 
         public async Task<Usuarios?> ValidateAsync(string usuarioOEmail, string password)
         {
+            var input = (usuarioOEmail ?? string.Empty).Trim();
+
+            // 1) Buscar por Email o por Nombre de usuario
             var user = await _db.Usuarios
-                .FirstOrDefaultAsync(u => u.Email == usuarioOEmail || u.Nombre == usuarioOEmail);
+                .FirstOrDefaultAsync(u => u.Email == input || u.Nombre == input);
+
+            // 2) Si no se encontró, permitir login por nombre del Cliente
+            if (user == null)
+            {
+                var cli = await _db.Clientes.AsNoTracking().FirstOrDefaultAsync(c => c.Nombre == input && c.Usuario_ID != null);
+                if (cli?.Usuario_ID != null)
+                {
+                    user = await _db.Usuarios.FindAsync(cli.Usuario_ID);
+                }
+            }
+
             if (user == null) return null;
             if (string.IsNullOrEmpty(user.PasswordHash)) return null;
 
-            // Primero intentá validar como PBKDF2 v=1
+            // Primero intentó validar como PBKDF2 v=1
             var ok = VerifyPassword(password, user.PasswordHash);
 
             // Compatibilidad: si no es válido como PBKDF2, intentamos texto plano heredado
-            bool migratedNow = false;
             if (!ok && string.Equals(user.PasswordHash, password))
             {
                 ok = true;
                 // Migración silenciosa: actualizar a PBKDF2
                 user.PasswordHash = HashPassword(password);
-                try
-                {
-                    await _db.SaveChangesAsync();
-                    migratedNow = true;
-                }
-                catch { /* ignore, login sigue funcionando */ }
+                try { await _db.SaveChangesAsync(); } catch { /* ignore */ }
             }
 
             return ok ? user : null;

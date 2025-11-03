@@ -6,7 +6,7 @@
 }
 
 <div class="section-header">
-  <span>Reservar turno</span>
+  <span>Mis Turnos</span>
   <a asp-page="/Index" aria-label="Volver al menú principal">
     <img src="~/img/atras.png" alt="Volver al Menú" class="icono-volver" />
   </a>
@@ -14,40 +14,92 @@
 
 <partial name="Shared/_Feedback" />
 
-<section class="card form-card" style="max-width:900px;margin:16px auto;">
-  <h2>Nuevo Turno</h2>
-  <form class="formulario" method="post">
-    <div>
-      <label>Cancha</label>
-      <select asp-for="Input.Cancha_ID" class="form-select" asp-items="Model.CanchaOptions">
-        <option value="">-- Seleccione --</option>
-      </select>
-    </div>
-    <div class="grid-2">
+<div class="two-col-shell">
+  <section class="card form-card">
+    <h2>Nuevo Turno</h2>
+    <form class="formulario" method="post">
       <div>
-        <label asp-for="Input.HoraInicio"></label>
-        <input id="inicio" asp-for="Input.HoraInicio" type="datetime-local" />
+        <label>Cancha</label>
+        <select asp-for="Input.Cancha_ID" class="form-select" asp-items="Model.CanchaOptions" id="cancha">
+          <option value="">-- Seleccione --</option>
+        </select>
       </div>
+
+      <div class="grid-2">
+        <div>
+          <label>Fecha</label>
+          <input type="date" id="fecha" min="@DateTime.Today:yyyy-MM-dd" />
+        </div>
+        <div>
+          <label>Hora</label>
+          <select id="hora" class="form-select"></select>
+        </div>
+      </div>
+
+      <input type="hidden" asp-for="Input.HoraInicio" id="hidInicio" />
+      <input type="hidden" asp-for="Input.HoraFin" id="hidFin" />
+
+      <div id="dispMsg" class="small" style="margin:-6px 0 8px 0;"></div>
+
       <div>
-        <label asp-for="Input.HoraFin"></label>
-        <input id="fin" asp-for="Input.HoraFin" type="datetime-local" />
+        <label>Productos (opcional)</label>
+        <div id="items" class="consumos"></div>
+        <button type="button" class="btn btn-quiet small" onclick="openAddConsumo()">+ Agregar producto</button>
       </div>
-    </div>
 
-    <div id="dispMsg" class="small" style="margin:-6px 0 8px 0;"></div>
+      <div class="form-actions">
+        <button type="submit" asp-page-handler="Guardar" class="btn btn-discreet">Reservar</button>
+        <button type="reset" class="btn btn-link-discreet">Limpiar</button>
+      </div>
+    </form>
+  </section>
 
-    <div>
-      <label>Productos (opcional)</label>
-      <div id="items" class="consumos"></div>
-      <button type="button" class="btn btn-quiet small" onclick="openAddConsumo()">+ Agregar producto</button>
+  <section class="card list-card">
+    <div class="list-header">
+      <h2>Mis turnos</h2>
     </div>
-
-    <div class="form-actions">
-      <button type="submit" asp-page-handler="Guardar" class="btn btn-discreet">Reservar</button>
-      <button type="reset" class="btn btn-link-discreet">Limpiar</button>
+    <div class="table-wrap">
+      <table class="turnos-table">
+        <thead>
+          <tr>
+            <th>Cancha</th>
+            <th>Inicio</th>
+            <th>Fin</th>
+            <th>Productos</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          @if (Model.Items?.Count > 0)
+          {
+              foreach (var t in Model.Items)
+              {
+                  var canchaNombre = Model.NombreCancha.TryGetValue(t.Cancha_ID, out var n) ? n : $"Cancha {t.Cancha_ID}";
+                  var resumen = Model.ProductosPorTurno.TryGetValue(t.Turno_ID, out var txt) ? txt : "-";
+                  <tr>
+                      <td>@canchaNombre</td>
+                      <td title="@t.HoraInicio.ToString("dd/MM/yyyy HH:mm")">@t.HoraInicio:HH\:mm</td>
+                      <td title="@t.HoraFin.ToString("dd/MM/yyyy HH:mm")">@t.HoraFin:HH\:mm</td>
+                      <td><small class="muted">@resumen</small></td>
+                      <td class="table-actions">
+                        <form method="post" onsubmit="return confirm('¿Eliminar turno?');">
+                          <button type="submit" asp-page-handler="Eliminar" asp-route-id="@t.Turno_ID" class="icon-btn icon-btn-danger" title="Eliminar">
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 9v10H8V9h8m-1.5-6h-5l-1 1H5v2h14V4h-3.5l-1-1z"/></svg>
+                          </button>
+                        </form>
+                      </td>
+                  </tr>
+              }
+          }
+          else
+          {
+              <tr><td colspan="5" style="text-align:center;">No tenés turnos.</td></tr>
+          }
+        </tbody>
+      </table>
     </div>
-  </form>
-</section>
+  </section>
+</div>
 
 <!-- Modal Agregar producto -->
 <div class="modal fade" id="addConsumoModal" tabindex="-1" aria-hidden="true">
@@ -80,28 +132,65 @@
 @section Scripts{
   <partial name="_ValidationScriptsPartial" />
   <script>
-    const canchaSel = document.querySelector('[name="Input.Cancha_ID"]');
-    const inicio = document.getElementById('inicio');
-    const fin = document.getElementById('fin');
+    const selCancha = document.getElementById('cancha');
+    const selHora = document.getElementById('hora');
+    const inputFecha = document.getElementById('fecha');
+    const hidInicio = document.getElementById('hidInicio');
+    const hidFin = document.getElementById('hidFin');
     const dispMsg = document.getElementById('dispMsg');
 
-    async function checkDisp(){
+    inputFecha.value = new Date().toISOString().slice(0,10);
+
+    async function cargarHoras(){
+      selHora.innerHTML = '<option value="">-- Seleccione --</option>';
       dispMsg.textContent = '';
-      const canchaId = parseInt(canchaSel?.value||'0');
-      const hi = inicio?.value; const hf = fin?.value;
-      if(!canchaId || !hi || !hf) return;
+      const c = parseInt(selCancha.value || '0');
+      const f = inputFecha.value;
+      if(!c || !f) return;
+      const url = `@Url.Page("/Turnos/MisTurnos", "Hours", new{ canchaId = "__c__", fecha = "__f__" })`
+        .replace("__c__", c).replace("__f__", f);
+      const r = await fetch(url, {credentials:'include'});
+      const horas = await r.json();
+      // Poblar horas: mostrar de 08 a 22, deshabilitando ocupadas
+      horas.forEach(h => {
+        const opt = document.createElement('option');
+        const hh = (h.hour+'').padStart(2,'0');
+        opt.value = hh;
+        opt.textContent = `${hh}:00`;
+        if(!h.available) { opt.disabled = true; opt.textContent += ' (ocupado)'; }
+        selHora.appendChild(opt);
+      });
+    }
+
+    selCancha.addEventListener('change', cargarHoras);
+    inputFecha.addEventListener('change', cargarHoras);
+
+    selHora.addEventListener('change', () => {
+      const c = parseInt(selCancha.value || '0');
+      const f = inputFecha.value;
+      const h = parseInt(selHora.value || '0');
+      if(!c || !f || !h) return;
+      const inicio = new Date(`${f}T${String(h).padStart(2,'0')}:00:00`);
+      const fin = new Date(inicio.getTime()+60*60*1000);
+      const iso = (d)=> new Date(d.getTime()-d.getTimezoneOffset()*60000).toISOString().slice(0,16);
+      hidInicio.value = iso(inicio);
+      hidFin.value = iso(fin);
+      checkDispApi(c, hidInicio.value, hidFin.value);
+    });
+
+    async function checkDispApi(canchaId, inicio, fin){
       try{
         const url = `@Url.Page("/Turnos/MisTurnos", "Check", new{ canchaId = "__c__", inicio = "__i__", fin = "__f__" })`
-          .replace("__c__", canchaId).replace("__i__", encodeURIComponent(hi)).replace("__f__", encodeURIComponent(hf));
+          .replace("__c__", canchaId).replace("__i__", encodeURIComponent(inicio)).replace("__f__", encodeURIComponent(fin));
         const r = await fetch(url, { credentials:'include' });
         const data = await r.json();
         dispMsg.style.color = data.available ? '#065f46' : '#b91c1c';
         dispMsg.textContent = data.message;
-      }catch{ /* ignore */ }
+      }catch{}
     }
-    canchaSel?.addEventListener('change', checkDisp);
-    inicio?.addEventListener('change', checkDisp);
-    fin?.addEventListener('change', checkDisp);
+
+    // Inicial
+    cargarHoras();
 
     function openAddConsumo(){
       document.getElementById('pickProducto').value = '';
